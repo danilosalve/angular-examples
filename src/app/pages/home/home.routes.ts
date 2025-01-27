@@ -15,29 +15,24 @@ export const HOME_ROUTES: Routes = [
         component: DashboardComponent
       },
       {
-        path: 'signal-form',
-        title: 'Formulário Signals',
-        loadChildren: () => import('../signals-form/signals-form.routes').then(r => r.SIGNALS_FORM_ROUTES)
+        path: 'dynamic-component',
+        title: 'Componentes Dinâmicos',
+        loadComponent: () => import('../dynamic-component/dynamic-component.component').then(c => c.DynamicComponentComponent)
+      },
+      {
+        path: 'forms',
+        title: 'Formulários',
+        loadChildren: () => import('../forms/forms.routes').then(r => r.FORMS_ROUTES)
+      },
+      {
+        path: 'signals',
+        title: 'Signals',
+        loadChildren: () => import('../signals/signals.routes').then(r => r.SIGNALS_ROUTES)
       },
       {
         path: 'users',
         title: 'Usuários',
         loadChildren: () => import('../users/users-routes').then(r => r.USERS_ROUTES)
-      },
-      {
-        path: 'signal-sample',
-        title: 'Examplos Sinais',
-        loadComponent: () => import('../signals-sample/signals-sample.component').then(c => c.SignalsSampleComponent)
-      },
-      {
-        path: 'container-form',
-        title: 'Exemplo Control Container',
-        loadComponent: () => import('../control-container/control-container.component').then(c => c.ControlContainerComponent)
-      },
-      {
-        path: 'dynamic-component',
-        title: 'Componentes Dinâmicos',
-        loadComponent: () => import('../dynamic-component/dynamic-component.component').then(c => c.DynamicComponentComponent)
       }
     ]
   }

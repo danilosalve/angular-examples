@@ -1,4 +1,4 @@
-<po-page-default p-title="Signals Form" p-subtitle="Comparação de Signals vs GET">
+<po-page-detail p-title="Signals Form" p-subtitle="Comparação de Signals vs GET" (p-back)="onBack()">
   <span class="po-row">
     <po-container class="po-mb-2 po-sm-12" p-title="Formulário" [formGroup]="form">
       <po-input formControlName="name" p-placeholder="Name" p-label="Nome" />
@@ -19,6 +19,5 @@
       <p>Getter Call Count: {{ getterCallCount }}</p>
       <p>Computed Signal Call Count: {{ signalCallCount }}</p>
     </po-container>
-
   </span>
-</po-page-default>
+</po-page-detail>

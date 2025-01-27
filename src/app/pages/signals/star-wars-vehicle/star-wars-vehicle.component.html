@@ -1,0 +1,36 @@
+<po-page-detail p-title="Veiculos" p-subtitle="Exemplo Linked Signals" (p-back)="onBack()">
+  <po-container>
+    <form #f="ngForm">
+      <po-combo
+        name="options"
+        p-label="Veiculo"
+        (p-change)="onVehicleSelected($event)"
+        p-placeholder="Selecione um veiculo"
+        [p-options]="options()"
+        [p-required]="true"
+        [p-show-required]="true"
+        [p-remove-initial-filter]="true"
+      />
+
+      <po-number
+        p-label="Quantidade"
+        name="quantity"
+        [(ngModel)]="quantity"
+        [p-min]="1"
+        p-required
+        [p-show-required]="true"
+      />
+    </form>
+  </po-container>
+
+  <po-container p-title="Resumo da venda">
+    <p class="po-font-text-large">
+      Veiculo Selecionado: {{ selectedVehicle()?.name }} -
+      {{ selectedVehicle()?.passengers }}
+    </p>
+    <p class="po-font-text-large">Capacidade de passageiros: {{ selectedVehicle()?.passengers }}</p>
+    <p class="po-font-text-large">Preço do veiculo: {{ costInCredits() | currency: 'BRL' }}</p>
+    <p class="po-font-text-large">Total: {{ total() | currency: 'BRL' }}</p>
+    <po-tag [p-color]="color()" />
+  </po-container>
+</po-page-detail>

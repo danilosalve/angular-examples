@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
-    selector: 'app-home',
-    imports: [CommonModule, PoToolbarModule, PoMenuModule, PoPageModule, RouterOutlet],
-    templateUrl: './home.component.html'
+  selector: 'app-home',
+  imports: [CommonModule, PoToolbarModule, PoMenuModule, PoPageModule, RouterOutlet],
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
   readonly router: Router = inject(Router);
@@ -18,22 +18,38 @@ export class HomeComponent {
       icon: 'an an-house-line'
     },
     {
-      label: 'Formulário Signals',
-      action: () => this.router.navigate(['home/signal-form']),
-      shortLabel: 'Formulário',
-      icon: 'an an-file'
+      label: 'Formulários',
+      shortLabel: 'Formulários',
+      icon: 'an an-file',
+      subItems: [
+        {
+          label: 'Reaproveitando Formulários',
+          action: () => this.router.navigate(['home/forms/container-form']),
+          shortLabel: 'Container'
+        }
+      ]
     },
     {
-      label: 'Reaproveitando Formulários',
-      action: () => this.router.navigate(['home/container-form']),
-      shortLabel: 'Container',
-      icon: 'an an-file'
-    },
-    {
-      label: 'Exemplo Signals',
-      action: () => this.router.navigate(['home/signal-sample']),
+      label: 'Signals',
       shortLabel: 'Signals',
-      icon: 'an an-radio-signal'
+      icon: 'an an-radio-signal',
+      subItems: [
+        {
+          label: 'Exemplos Signals',
+          action: () => this.router.navigate(['home/signals/samples']),
+          shortLabel: 'Signals'
+        },
+        {
+          label: 'Formulários Signals',
+          action: () => this.router.navigate(['home/signals/form']),
+          shortLabel: 'Formulários'
+        },
+        {
+          label: 'Star Wars Veiculos',
+          action: () => this.router.navigate(['home/signals/vehicle']),
+          shortLabel: 'Veiculos'
+        }
+      ]
     },
     {
       label: 'Usuários',

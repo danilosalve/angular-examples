@@ -4,14 +4,15 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { PoContainerModule, PoFieldModule, PoPageModule } from '@po-ui/ng-components';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { of } from 'rxjs';
+import { BaseDetailComponent } from '../../../shared/components/base/base-detail.component';
 
 @Component({
-    selector: 'app-signals-form',
-    imports: [CommonModule, PoPageModule, PoFieldModule, PoContainerModule, FormsModule, ReactiveFormsModule],
-    templateUrl: './signals-form.component.html',
-    changeDetection: ChangeDetectionStrategy.Default
+  selector: 'app-signals-form',
+  imports: [CommonModule, PoPageModule, PoFieldModule, PoContainerModule, FormsModule, ReactiveFormsModule],
+  templateUrl: './signals-form.component.html',
+  changeDetection: ChangeDetectionStrategy.Default
 })
-export class SignalsFormComponent {
+export class SignalsFormComponent extends BaseDetailComponent {
   form!: FormGroup;
   // Campos Signals do formulário
   buildingName!: Signal<string> | undefined;
@@ -39,6 +40,8 @@ export class SignalsFormComponent {
   private injector = inject(Injector);
 
   constructor(private fb: FormBuilder) {
+    super('home/signals/samples');
+
     this.form = this.fb.group({
       name: '',
       buildingName: [''],
