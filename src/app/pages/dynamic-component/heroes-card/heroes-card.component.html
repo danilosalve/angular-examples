@@ -1,0 +1,7 @@
+<po-container class="po-row">
+  @for (item of dataService.heroes; track item.label; let index = $index) {
+    <po-widget class="po-mb-2 po-xl-3" [p-primary-label]="item.label" (p-primary-action)="onShowAlert(item.name!)">
+      <p>Item: {{ item.value }}</p>
+    </po-widget>
+  }
+</po-container>
