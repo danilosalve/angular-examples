@@ -1,8 +1,17 @@
-import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { PoHttpRequestModule } from '@po-ui/ng-components';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { routes } from './app.routes';
+import { APP_ROUTES } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+  providers: [
+    provideRouter(APP_ROUTES),
+    provideHttpClient(),
+    provideAnimations(),
+    importProvidersFrom([BrowserAnimationsModule, PoHttpRequestModule, BrowserModule])
+  ]
 };
