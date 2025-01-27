@@ -1,6 +1,6 @@
 <po-page-default p-title="Usuários" p-subtitle="Listar Usuários">
   <span class="po-row">
-    <po-container class="po-mb-5">
+    <po-container class="po-mb-5 po-xl-12">
       <po-search [p-filter-select]="filterSelect" (p-filter)="changeFilter($event)"/>
       @if ({ users: users$ | async, usersError: usersError$ | async }; as data) {
         @if (!data.usersError && data.users; as users) {
