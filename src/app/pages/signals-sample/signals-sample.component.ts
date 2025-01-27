@@ -5,11 +5,10 @@ import { PoPageModule, PoFieldModule, PoContainerModule, PoButtonModule } from '
 import { debounceTime, map } from 'rxjs';
 
 @Component({
-  selector: 'app-signals-sample',
-  standalone: true,
-  imports: [CommonModule, PoPageModule, PoFieldModule, PoContainerModule, PoButtonModule, ReactiveFormsModule],
-  providers: [TitleCasePipe],
-  templateUrl: './signals-sample.component.html'
+    selector: 'app-signals-sample',
+    imports: [CommonModule, PoPageModule, PoFieldModule, PoContainerModule, PoButtonModule, ReactiveFormsModule],
+    providers: [TitleCasePipe],
+    templateUrl: './signals-sample.component.html'
 })
 export class SignalsSampleComponent implements OnInit {
   counter = signal(0);

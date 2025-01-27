@@ -6,11 +6,10 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { of } from 'rxjs';
 
 @Component({
-  selector: 'app-signals-form',
-  standalone: true,
-  imports: [CommonModule, PoPageModule, PoFieldModule, PoContainerModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './signals-form.component.html',
-  changeDetection: ChangeDetectionStrategy.Default
+    selector: 'app-signals-form',
+    imports: [CommonModule, PoPageModule, PoFieldModule, PoContainerModule, FormsModule, ReactiveFormsModule],
+    templateUrl: './signals-form.component.html',
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class SignalsFormComponent {
   form!: FormGroup;

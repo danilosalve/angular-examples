@@ -9,19 +9,18 @@ import { UsersService } from '../shared/services/users.service';
 import { UserComponent } from '../user/user.component';
 
 @Component({
-  selector: 'app-list-users',
-  standalone: true,
-  imports: [
-    CommonModule,
-    PoPageModule,
-    PoLoadingModule,
-    PoContainerModule,
-    FilterByDescriptionPipe,
-    UserComponent,
-    PoSearchModule
-  ],
-  templateUrl: './list-users.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-users',
+    imports: [
+        CommonModule,
+        PoPageModule,
+        PoLoadingModule,
+        PoContainerModule,
+        FilterByDescriptionPipe,
+        UserComponent,
+        PoSearchModule
+    ],
+    templateUrl: './list-users.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListUsersComponent {
   protected filter: string = '';

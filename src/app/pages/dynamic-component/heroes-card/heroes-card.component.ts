@@ -4,10 +4,9 @@ import { DataService } from '../shared/services/data.service';
 import { PoContainerModule, PoNotificationService, PoWidgetModule } from '@po-ui/ng-components';
 
 @Component({
-  selector: 'app-heroes-card',
-  standalone: true,
-  imports: [PoContainerModule, PoWidgetModule],
-  templateUrl: './heroes-card.component.html'
+    selector: 'app-heroes-card',
+    imports: [PoContainerModule, PoWidgetModule],
+    templateUrl: './heroes-card.component.html'
 })
 export class HeroesCardComponent {
   heroes = input.required<TemplateRef<unknown>>();

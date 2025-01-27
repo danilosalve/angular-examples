@@ -5,11 +5,10 @@ import { User } from '../shared/interface/user.interface';
 import { PoInfoModule, PoWidgetModule } from '@po-ui/ng-components';
 
 @Component({
-  selector: 'app-user',
-  standalone: true,
-  imports: [CommonModule, PoWidgetModule, PoInfoModule],
-  templateUrl: './user.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-user',
+    imports: [CommonModule, PoWidgetModule, PoInfoModule],
+    templateUrl: './user.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent {
   users: InputSignal<User[]> = input.required<User[]>();

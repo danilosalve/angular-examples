@@ -6,10 +6,9 @@ import { UserCardComponent } from './user-card/user-card.component';
 import { HeroesCardComponent } from './heroes-card/heroes-card.component';
 
 @Component({
-  selector: 'app-dynamic-component',
-  standalone: true,
-  imports: [CommonModule, PoPageModule, PoButtonModule, PoInfoModule],
-  templateUrl: './dynamic-component.component.html'
+    selector: 'app-dynamic-component',
+    imports: [CommonModule, PoPageModule, PoButtonModule, PoInfoModule],
+    templateUrl: './dynamic-component.component.html'
 })
 export class DynamicComponentComponent {
   injector = inject(Injector);

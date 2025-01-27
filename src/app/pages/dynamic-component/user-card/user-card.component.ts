@@ -4,10 +4,9 @@ import { PoContainerModule } from '@po-ui/ng-components';
 import { JsonPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-user-card',
-  standalone: true,
-  imports: [PoContainerModule, JsonPipe],
-  templateUrl: './user-card.component.html'
+    selector: 'app-user-card',
+    imports: [PoContainerModule, JsonPipe],
+    templateUrl: './user-card.component.html'
 })
 export class UserCardComponent {
   userLabel = input.required<TemplateRef<unknown>>();
