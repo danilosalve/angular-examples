@@ -24,6 +24,12 @@ export class HomeComponent {
       icon: 'an an-file'
     },
     {
+      label: 'Reaproveitando Formulários',
+      action: () => this.router.navigate(['home/container-form']),
+      shortLabel: 'Container',
+      icon: 'an an-file'
+    },
+    {
       label: 'Exemplo Signals',
       action: () => this.router.navigate(['home/signal-sample']),
       shortLabel: 'Signals',

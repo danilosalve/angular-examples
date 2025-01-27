@@ -1,0 +1,24 @@
+<po-container p-title="Pessoas">
+  <form [formGroup]="form">
+    <po-input
+      formControlName="name"
+      p-label="Nome"
+      p-placeholder="João da Silva"
+      [p-no-autocomplete]="true"
+      p-clean
+      p-required
+    />
+
+    <po-input
+      formControlName="document"
+      p-label="CPF"
+      p-placeholder="000.000.000-00"
+      p-mask="999.999.999-99"
+      [p-no-autocomplete]="true"
+      p-clean
+      p-required
+    />
+
+    <app-address />
+  </form>
+</po-container>

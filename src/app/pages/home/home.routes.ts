@@ -30,6 +30,11 @@ export const HOME_ROUTES: Routes = [
         loadComponent: () => import('../signals-sample/signals-sample.component').then(c => c.SignalsSampleComponent)
       },
       {
+        path: 'container-form',
+        title: 'Exemplo Control Container',
+        loadComponent: () => import('../control-container/control-container.component').then(c => c.ControlContainerComponent)
+      },
+      {
         path: 'dynamic-component',
         title: 'Componentes Dinâmicos',
         loadComponent: () => import('../dynamic-component/dynamic-component.component').then(c => c.DynamicComponentComponent)
