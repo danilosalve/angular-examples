@@ -15,31 +15,31 @@ export class HomeComponent {
       label: 'Página Inicial',
       link: './',
       shortLabel: 'Inicio',
-      icon: 'ph an an-house-line'
+      icon: 'an an-house-line'
     },
     {
       label: 'Formulário Signals',
       action: () => this.router.navigate(['home/signal-form']),
       shortLabel: 'Formulário',
-      icon: 'ph an an-file'
+      icon: 'an an-file'
     },
     {
       label: 'Exemplo Signals',
       action: () => this.router.navigate(['home/signal-sample']),
       shortLabel: 'Signals',
-      icon: 'ph an an-radio-signal'
+      icon: 'an an-radio-signal'
     },
     {
       label: 'Usuários',
       action: () => this.router.navigate(['home/users']),
       shortLabel: 'Usuários',
-      icon: 'ph an an-user'
+      icon: 'an an-user'
     },
     {
       label: 'Componente Dinâmico',
       action: () => this.router.navigate(['home/dynamic-component']),
       shortLabel: 'Dinâmico',
-      icon: 'ph ph-browsers'
+      icon: 'an an-browsers'
     }
   ];
   readonly name: string = 'Aplicativo de Exemplo Standalone';

@@ -1,0 +1,19 @@
+<po-container p-title="Exemplo Linked">
+  <h1 class="po-font-subtitle po-mb-2">Carrinho de compras</h1>
+
+  <form #f="ngForm">
+    <po-combo
+      name="courses"
+      p-label="Cursos"
+      p-placeholder="Selecione um curso"
+      (p-change)="onCourseSelected($event)"
+      [p-options]="courses"
+      [p-remove-initial-filter]="true"
+      [p-required]="true"
+      p-clean
+    />
+    <po-number name="quantity" [(ngModel)]="quantity" [p-min]="0" [p-max]="10" />
+  </form>
+
+  <po-button p-label="Adicionar ao carrinho" (p-click)="onAddToCart()" />
+</po-container>

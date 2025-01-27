@@ -1,12 +1,4 @@
 <po-page-default p-title="Exemplos Signals">
-  <po-container p-title="Exemplo Untracked">
-    <p class="po-font-subtitle">Exemplo Untracked</p>
-    <form [formGroup]="form">
-      <po-input formControlName="name" p-placeholder="Digite o nome aqui" p-label="Nome" p-clean p-required />
-      <po-button p-label="Incrementar Contador" (p-click)="incrementCount()" />
-      <p class="po-mt-2">{{ info() }}</p>
-      <p class="po-mt-2"> Contador Atual: {{ counter() }}</p>
-    </form>
-
-  </po-container>
+  <app-untracked />
+  <app-linked />
 </po-page-default>
