@@ -1,0 +1,10 @@
+<po-page-default p-title="Componentes Dinâmicos" >
+  <ng-container #spot ></ng-container>
+  <div class="po-row">
+    <po-button class="po-mr-2 po-mt-2 po-mb-5" (p-click)="loadContent()" p-label="Carregar Componente 1"></po-button>
+    <po-button class="po-mt-2 po-mb-5" (p-click)="loadHeroes()" p-label="Carregar Componente 2"></po-button>
+  </div>
+</po-page-default>
+
+<ng-template #userLabel let-labelOption let-index="index" />
+<ng-template #heroes let-labelOption let-index="index" />
