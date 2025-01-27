@@ -1,0 +1,24 @@
+<po-page-default p-title="Signals Form">
+  <span class="po-row">
+    <po-container class="po-mb-2 po-sm-12" p-title="Formulário" [formGroup]="form">
+      <po-input formControlName="name" p-placeholder="Name" p-label="Nome" />
+      <po-input formControlName="buildingName" p-placeholder="Building Name" p-label="Descrição do endereço" />
+      <po-input formControlName="buildingNumber" p-placeholder="Building Number" p-label="Número" />
+      <po-input formControlName="streetAddress" p-placeholder="Street Address" p-label="Logradouro" />
+      <po-input formControlName="city" p-placeholder="City" p-label="Cidade" />
+      <po-input formControlName="state" p-placeholder="State" p-label="Estado" />
+      <po-input formControlName="country" p-placeholder="Country" p-label="Pais" />
+      <po-input formControlName="postalCode" p-placeholder="Postal Code" p-label="CEP" />
+    </po-container>
+
+    <po-container class="po-mb-5 po-sm-12" p-title="Resultados:">
+      <h3>Example Data</h3>
+      <pre>{{ exampleData | json }}</pre>
+      <p>Address (Getter): {{ fullAddressGetter }}</p>
+      <p>Address (Computed Signal): {{ fullAddressSignal() }}</p>
+      <p>Getter Call Count: {{ getterCallCount }}</p>
+      <p>Computed Signal Call Count: {{ signalCallCount }}</p>
+    </po-container>
+
+  </span>
+</po-page-default>
