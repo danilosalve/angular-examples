@@ -1,0 +1,29 @@
+<po-container [p-no-border]="true" [p-no-padding]="true">
+  <div class="po-row">
+    <img
+      class="po-sm-12 po-mt-5"
+      ngSrc="assets/img/undraw_page-not-found_6wni.svg"
+      style="display: block; margin-left: auto; margin-right: auto"
+      alt="Página não existe"
+      width="600"
+      height="300"
+      decoding="sync"
+      [priority]="true"
+    />
+
+    <div class="po-sm-12 po-mt-2 po-mb-5" style="text-align: center">
+      <!-- Entrar -->
+      <p class="po-font-title po-mt-2" style="text-align: center">Ops!</p>
+      <p class="po-font-text-large po-mt-2" style="text-align: center">
+        A página que você está tentando acessar não existe ou está indisponível no momento.
+      </p>
+    </div>
+
+    <po-button
+      class="po-offset-md-3 po-offset-lg-4 po-offset-xl-4 po-xl-4 po-lg-4 po-md-6 po-sm-12 po-mt-2 po-mb-1"
+      p-label="Voltar para página Inicial"
+      p-kind="primary"
+      (p-click)="navigateToHome()"
+    />
+  </div>
+</po-container>
