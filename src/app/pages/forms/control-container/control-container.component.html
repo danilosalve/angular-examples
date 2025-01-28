@@ -1,10 +1,12 @@
 <po-page-detail p-title="Formulários" p-subtitle="Control Container" (p-back)="onBack()">
-  <po-accordion>
-    <po-accordion-item p-label="Pessoas" #person>
-      <app-person />
-    </po-accordion-item>
-    <po-accordion-item p-label="Vendedores" #seller>
-      <app-seller />
-    </po-accordion-item>
-  </po-accordion>
+  <div class="po-row">
+    <po-accordion class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-5" >
+      <po-accordion-item  p-label="Pessoas" #person>
+        <app-person />
+      </po-accordion-item>
+      <po-accordion-item p-label="Vendedores" #seller>
+        <app-seller />
+      </po-accordion-item>
+    </po-accordion>
+  </div>
 </po-page-detail>

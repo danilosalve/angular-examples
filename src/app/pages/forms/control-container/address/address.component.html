@@ -1,51 +1,42 @@
-<po-container p-title="Endereço">
-  <form [formGroup]="form">
-    <po-input
-      formControlName="street"
-      p-label="Endereço"
-      p-placeholder="Ex: Rua Exemplo"
-      [p-no-autocomplete]="true"
-      p-required
-      p-clean
-    />
-    <po-number
-      formControlName="addressNumber"
-      p-label="Número"
-      p-placeholder="123"
-      [p-no-autocomplete]="true"
-      p-required
-      p-clean
-    />
-    <po-input
-      formControlName="city"
-      p-label="Cidade"
-      p-placeholder="São Paulo"
-      [p-no-autocomplete]="true"
-      p-required
-      p-clean
-    />
-    <po-input
-      formControlName="state"
-      p-label="Estado"
-      p-placeholder="SP"
-      [p-no-autocomplete]="true"
-      p-required
-      p-clean
-    />
-    <po-input
-      formControlName="zipCode"
-      p-label="CEP"
-      p-placeholder="00000-000"
-      [p-no-autocomplete]="true"
-      p-required
-      p-clean
-    />
-    <po-input
-      formControlName="complement"
-      p-label="Complemento"
-      p-placeholder="Ex: Apartamento 123"
-      [p-no-autocomplete]="true"
-      p-clean
-    />
-  </form>
-</po-container>
+<form [formGroup]="form">
+  <po-input
+    formControlName="street"
+    p-label="Endereço"
+    p-placeholder="Ex: Rua Exemplo"
+    [p-no-autocomplete]="true"
+    p-required
+    p-clean
+  />
+  <po-number
+    formControlName="addressNumber"
+    p-label="Número"
+    p-placeholder="123"
+    [p-no-autocomplete]="true"
+    p-required
+    p-clean
+  />
+  <po-input
+    formControlName="city"
+    p-label="Cidade"
+    p-placeholder="São Paulo"
+    [p-no-autocomplete]="true"
+    p-required
+    p-clean
+  />
+  <po-input formControlName="state" p-label="Estado" p-placeholder="SP" [p-no-autocomplete]="true" p-required p-clean />
+  <po-input
+    formControlName="zipCode"
+    p-label="CEP"
+    p-placeholder="00000-000"
+    [p-no-autocomplete]="true"
+    p-required
+    p-clean
+  />
+  <po-input
+    formControlName="complement"
+    p-label="Complemento"
+    p-placeholder="Ex: Apartamento 123"
+    [p-no-autocomplete]="true"
+    p-clean
+  />
+</form>

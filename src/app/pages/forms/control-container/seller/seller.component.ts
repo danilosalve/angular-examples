@@ -1,11 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AddressComponent } from '../address/address.component';
-import { PoContainerModule, PoFieldModule } from '@po-ui/ng-components';
+import { PoContainerModule, PoFieldModule, PoTabsModule } from '@po-ui/ng-components';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-seller',
-  imports: [ReactiveFormsModule, PoContainerModule, PoFieldModule, AddressComponent],
+  imports: [ReactiveFormsModule, PoContainerModule, PoFieldModule, PoTabsModule, JsonPipe, AddressComponent],
   templateUrl: './seller.component.html'
 })
 export class SellerComponent implements OnInit {

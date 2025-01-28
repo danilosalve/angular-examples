@@ -1,24 +1,32 @@
 <po-container p-title="Vendedores">
   <form [formGroup]="form">
-    <po-input
-      formControlName="name"
-      p-label="Nome"
-      p-placeholder="João da Silva"
-      [p-no-autocomplete]="true"
-      p-clean
-      p-required
-    />
+    <po-tabs>
+      <po-tab p-label="Dados Gerais" [p-active]="true">
+        <po-input
+          formControlName="name"
+          p-label="Nome"
+          p-placeholder="João da Silva"
+          [p-no-autocomplete]="true"
+          p-clean
+          p-required
+        />
 
-    <po-input
-      formControlName="document"
-      p-label="CNPJ"
-      p-placeholder="00.000.000/0000-00"
-      p-mask="99.999.999/9999-99"
-      [p-no-autocomplete]="true"
-      p-clean
-      p-required
-    />
-
-    <app-address />
+        <po-input
+          formControlName="document"
+          p-label="CNPJ"
+          p-placeholder="00.000.000/0000-00"
+          p-mask="99.999.999/9999-99"
+          [p-no-autocomplete]="true"
+          p-clean
+          p-required
+        />
+      </po-tab>
+      <po-tab p-label="Endereço">
+        <app-address />
+      </po-tab>
+      <po-tab p-label="JSON">
+        <pre> {{ form.getRawValue() | json }}</pre>
+      </po-tab>
+    </po-tabs>
   </form>
 </po-container>
