@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:prod": "ng build --configuration production --base-href 'https://danilosalve.github.io/angular-examples'",
-    "deploy": "npx angular-cli-ghpages --dir=dist/angular-examples"
+    "build:local": "ng build --configuration production",
+    "deploy:gh-pages": "npx angular-cli-ghpages --dir=dist/angular-examples/browser",
+    "serve:local": "cd dist/angular-examples/browser && npx serve"
   },
   "private": true,
   "dependencies": {
