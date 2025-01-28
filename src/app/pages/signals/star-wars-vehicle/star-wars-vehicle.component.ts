@@ -31,7 +31,7 @@ export class StarWarsVehicleComponent extends BaseDetailComponent {
   costInCredits = this.vehicleService.costInCredits;
 
   constructor() {
-    super('home/signals/samples');
+    super('signals/samples');
   }
 
   onVehicleSelected(name: string): void {

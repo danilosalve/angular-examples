@@ -40,7 +40,7 @@ export class SignalsFormComponent extends BaseDetailComponent {
   private injector = inject(Injector);
 
   constructor(private fb: FormBuilder) {
-    super('home/signals/samples');
+    super('signals/samples');
 
     this.form = this.fb.group({
       name: '',
