@@ -1,0 +1,15 @@
+<po-widget p-title="When" p-primary-label="Exibir conteúdo" (p-primary-action)="onClick()" [p-height]="height()">
+  <p class="po-font-text">
+    O acionador carrega o conteúdo adiado quando o conteúdo especificado entra na janela de visualização usando a API do
+    Intersection Observer. O conteúdo observado pode ser conteúdo ou uma referência explícita de elemento.
+  </p>
+
+  @defer (when isShow) {
+    <p class="po-font-text po-mt-1">
+      Esta é uma operação única – o bloco não volta para o espaço reservado se a condição mudar para um valor falso
+      depois de se tornar verdadeira.
+    </p>
+  } @placeholder {
+    <p class="po-font-text-bold">Texto Alternativo...</p>
+  }
+</po-widget>

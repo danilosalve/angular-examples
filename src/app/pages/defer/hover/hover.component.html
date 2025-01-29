@@ -1,0 +1,13 @@
+<po-widget p-title="Hover" [p-height]="height()">
+  <p class="po-font-text">
+    O gatilho carrega o conteúdo adiado quando o mouse passa o mouse sobre a área acionada por meio dos eventos hover,
+    mouseover e focusin.
+  </p>
+  @defer (on hover(complement)) {
+    <p class="po-font-text po-mt-1">
+      Este conteudo é acionado quando o usuário passa o mouse sobre um elemento.
+    </p>
+  } @placeholder {
+    <p #complement class="po-font-text-bold">Passe o mouse aqui para exibir o complemento</p>
+  }
+</po-widget>

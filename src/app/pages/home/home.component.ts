@@ -52,17 +52,23 @@ export class HomeComponent {
       ]
     },
     {
-      label: 'Usuários',
-      action: () => this.router.navigate(['users']),
-      shortLabel: 'Usuários',
-      icon: 'an an-user'
+      label: 'Carregamento adiado',
+      action: () => this.router.navigate(['defer']),
+      shortLabel: 'Defer',
+      icon: 'an an-timer'
     },
     {
       label: 'Componente Dinâmico',
       action: () => this.router.navigate(['dynamic-component']),
       shortLabel: 'Dinâmico',
       icon: 'an an-browsers'
-    }
+    },
+    {
+      label: 'Usuários',
+      action: () => this.router.navigate(['users']),
+      shortLabel: 'Usuários',
+      icon: 'an an-user'
+    },
   ];
   readonly name: string = 'Aplicativo de Exemplo Standalone';
 }

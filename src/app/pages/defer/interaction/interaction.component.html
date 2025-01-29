@@ -1,0 +1,14 @@
+<po-widget p-title="Interaction" [p-height]="height()">
+  <p class="po-font-text">
+    O gatilho carrega o conteúdo adiado quando o usuário interage com o elemento especificado por meio de eventos
+    <i>interaction, click ou keydown</i>.
+  </p>
+  @defer (on interaction(complement)) {
+    <p class="po-font-text po-mt-1">
+      Carregue um componente somente depois que um usuário interagir com um elemento específico (por exemplo, clicando
+      em um botão).
+    </p>
+  } @placeholder {
+    <p #complement class="po-font-text-bold">Clique aqui para exibir o complemento</p>
+  }
+</po-widget>

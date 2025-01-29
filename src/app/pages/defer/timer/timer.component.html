@@ -1,0 +1,12 @@
+<po-widget p-title="Timer" [p-height]="height()">
+  <p class="po-font-text">O gatilho carrega o conteúdo adiado após uma duração especificada.</p>
+
+  @defer (on timer(3s)) {
+    <p class="po-font-text po-mt-1">
+      O parâmetro de duração deve ser especificado em milissegundos () ou segundos ().mss
+    </p>
+    <i class="an an-alien"></i>
+  } @placeholder {
+    <p class="po-font-text">Neste exemplo um conteúdo deve ser carregado em 3s</p>
+  }
+</po-widget>

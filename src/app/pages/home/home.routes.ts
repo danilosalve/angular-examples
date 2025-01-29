@@ -15,6 +15,11 @@ export const HOME_ROUTES: Routes = [
         component: DashboardComponent
       },
       {
+        path: 'defer',
+        title: 'Carregamento Adiado',
+        loadComponent: () => import('../defer/defer.component').then(c => c.DeferComponent)
+      },
+      {
         path: 'dynamic-component',
         title: 'Componentes Dinâmicos',
         loadComponent: () => import('../dynamic-component/dynamic-component.component').then(c => c.DynamicComponentComponent)

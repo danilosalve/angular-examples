@@ -1,0 +1,17 @@
+<po-widget p-title="Viewport" p-primary-label="Exibir conteúdo" (p-primary-action)="onClick()" [p-height]="height()">
+  <p class="po-font-text">
+    O acionador carrega o conteúdo adiado quando o conteúdo especificado entra na janela de visualização usando a API do
+    Intersection Observer. O conteúdo observado pode ser conteúdo ou uma referência explícita de elemento.
+  </p>
+
+  <p #complement class="po-font-text-bold po-mt-1" [hidden]="isHidden">Gatilho para exibir complemento</p>
+
+  @defer (on viewport(complement)) {
+    <p class="po-font-text po-mt-1">
+      Carregue um componente quando ele entrar na janela de visualização (por exemplo, enquanto o usuário rola a página
+      para baixo).
+    </p>
+  } @placeholder {
+    <p class="po-font-text-bold">Aguardando conteúdo aparecer na tela para exibir o complemento</p>
+  }
+</po-widget>
