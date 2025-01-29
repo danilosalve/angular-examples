@@ -1,10 +1,15 @@
-<div class="po-row">
-  @for (user of users(); track user.id) {
-    <po-widget class="po-mt-2 po-sm-4" [p-title]="user.displayname">
-      <po-info p-label="Usuário" [p-value]="user.id" />
-      <po-info p-label="Qtd" [p-value]="($index + 1).toString()" />
-    </po-widget>
-  } @empty {
-    <p class="po-font-text-bold po-mt-2">Não há items.</p>
-  }
-</div>
+@for (user of users(); track user.id) {
+  @let displayName = user.displayname;
+
+  <po-widget
+    class="po-mt-2 po-sm-12 po-md-6 po-lg-4 po-xl-3"
+    [p-title]="displayName.length > 30 ? (displayName | slice: 0 : 30) + '...' : displayName"
+    [p-tooltip]="displayName"
+    p-tooltip-position="top-left"
+  >
+    <po-info p-label="Usuário" [p-value]="user.id" />
+    <po-info p-label="Qtd" [p-value]="($index + 1).toString()" />
+  </po-widget>
+} @empty {
+  <p class="po-font-text-bold po-mt-2">Não há items.</p>
+}
