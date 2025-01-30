@@ -1,11 +1,11 @@
 <po-page-default p-title="Usuários" p-subtitle="Listar Usuários">
   <span class="po-row">
     <po-container class="po-mb-5 po-xl-12">
-      <po-search [p-filter-select]="filterSelect" (p-filter)="changeFilter($event)"/>
+      <po-search [p-filter-select]="filterSelect" (p-filter)="changeFilter($event)" />
       @if ({ users: users$ | async, usersError: usersError$ | async }; as data) {
         @if (!data.usersError && data.users; as users) {
           <!-- <app-user [users]="users.data" /> -->
-          <app-user [users]="users.data | filterByDescription: {type: filterType, query: filter}" />
+          <app-user [users]="users.data | filterByDescription: { type: filterType, query: filter }" />
         }
         @if (data.usersError; as error) {
           <p>Ops, ocorreu erro ao tentar listar os Usuários :(</p>

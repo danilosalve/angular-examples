@@ -5,25 +5,25 @@ import { PoButtonModule, PoContainerModule, PoFieldModule, PoNotificationService
 @Component({
   selector: 'app-linked',
   imports: [PoContainerModule, PoButtonModule, PoFieldModule, FormsModule],
-  templateUrl: './linked.component.html'
+  templateUrl: './linked.component.html',
 })
 export class LinkedComponent {
   readonly courses = [
     {
       value: 'BEGINNERS',
       label: 'Angular para Iniciantes',
-      defaultQuantity: 10
+      defaultQuantity: 10,
     },
     {
       value: 'SIGNALS',
       label: 'Angular | Se aprofundando em Signals',
-      defaultQuantity: 20
+      defaultQuantity: 20,
     },
     {
       value: 'SSR',
       label: 'Angular | Se aprofundando em SSR',
-      defaultQuantity: 30
-    }
+      defaultQuantity: 30,
+    },
   ];
   selectedCourse = signal<string | null>('BEGINNERS');
   quantity = linkedSignal({
@@ -33,9 +33,9 @@ export class LinkedComponent {
      * o bloco de computação, neste caso, obtemos o curso selecionado
      * quantidade padrão e defini-la para o sinal de quantidade
      */
-    computation: (source) => {
+    computation: source => {
       return this.courses.find(c => c.value === source.courseCode())?.defaultQuantity ?? 1;
-    }
+    },
   });
 
   private readonly poNotificationService: PoNotificationService = inject(PoNotificationService);

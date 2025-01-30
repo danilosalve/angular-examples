@@ -12,6 +12,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(APP_ROUTES),
     provideHttpClient(),
     provideAnimations(),
-    importProvidersFrom([BrowserAnimationsModule, PoHttpRequestModule, BrowserModule])
-  ]
+    importProvidersFrom([BrowserAnimationsModule, PoHttpRequestModule, BrowserModule]),
+  ],
 };

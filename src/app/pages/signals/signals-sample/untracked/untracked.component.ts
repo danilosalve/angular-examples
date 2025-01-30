@@ -8,7 +8,7 @@ import { debounceTime, map } from 'rxjs';
   selector: 'app-untracked',
   imports: [CommonModule, PoButtonModule, PoFieldModule, PoContainerModule, ReactiveFormsModule],
   providers: [TitleCasePipe],
-  templateUrl: './untracked.component.html'
+  templateUrl: './untracked.component.html',
 })
 export class UntrackedComponent implements OnInit {
   counter = signal(0);
@@ -21,7 +21,7 @@ export class UntrackedComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      name: ['', Validators.required]
+      name: ['', Validators.required],
     });
   }
 
@@ -36,7 +36,7 @@ export class UntrackedComponent implements OnInit {
       )
       .subscribe({
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        next: value => this.name.update(name => (name = this.titleCasePipe.transform(value.name)))
+        next: value => this.name.update(name => (name = this.titleCasePipe.transform(value.name))),
       });
   }
 

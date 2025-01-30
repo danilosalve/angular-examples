@@ -7,7 +7,7 @@ import { VehicleResponse } from '../interfaces/vehicle-response';
 import { Vehicle } from '../interfaces/vehicle';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VehicleService {
   private readonly vehicleUrl: string = 'https://swapi.py4e.com/api/vehicles';
@@ -24,7 +24,7 @@ export class VehicleService {
         return v.passengers == 0 ? v.crew : v.passengers;
       }
       return 0;
-    }
+    },
   });
   costInCredits = linkedSignal({
     source: this.selectedVehicle,
@@ -33,22 +33,25 @@ export class VehicleService {
         return isNaN(v.cost_in_credits) ? 0 : v.cost_in_credits;
       }
       return 0;
-    }
+    },
   });
 
   // Computed signals
   total = computed(() => {
-    const costInCredits = isNaN((this.selectedVehicle()?.cost_in_credits) || 0) ? 0 : (this.selectedVehicle()?.cost_in_credits ?? 0);
-    return costInCredits * this.quantity()
-  })
+    const costInCredits = isNaN(this.selectedVehicle()?.cost_in_credits || 0)
+      ? 0
+      : (this.selectedVehicle()?.cost_in_credits ?? 0);
+    return costInCredits * this.quantity();
+  });
   color = computed(() => (this.total() === 0 ? 'color-07' : this.total() > 50000 ? 'color-10' : 'color-02'));
 
   vehiclesResource = rxResource({
-    loader: () => this.http.get<VehicleResponse>(this.vehicleUrl)
-      .pipe(
-        map(vr => vr.results),
-      )
+    loader: () => this.http.get<VehicleResponse>(this.vehicleUrl).pipe(map(vr => vr.results)),
   });
   vehicles = computed(() => this.vehiclesResource.value() ?? ([] as Vehicle[]));
-  options = computed(() => this.vehiclesResource.value()?.map(v => ({value: v.name, label: `${v.name} - ${v.passengers}`})) ?? ([] as Vehicle[]));
+  options = computed(
+    () =>
+      this.vehiclesResource.value()?.map(v => ({ value: v.name, label: `${v.name} - ${v.passengers}` })) ??
+      ([] as Vehicle[])
+  );
 }

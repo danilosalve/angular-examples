@@ -16,9 +16,9 @@ import { WhenComponent } from './when/when.component';
     HoverComponent,
     InteractionComponent,
     ViewportComponent,
-    WhenComponent
+    WhenComponent,
   ],
-  templateUrl: './defer.component.html'
+  templateUrl: './defer.component.html',
 })
 export class DeferComponent {
   height = 350;

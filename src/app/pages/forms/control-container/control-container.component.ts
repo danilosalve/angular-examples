@@ -8,7 +8,7 @@ import { BaseDetailComponent } from '../../../shared/components/base/base-detail
 @Component({
   selector: 'app-control-container',
   imports: [PoPageModule, PersonComponent, SellerComponent, PoAccordionModule],
-  templateUrl: './control-container.component.html'
+  templateUrl: './control-container.component.html',
 })
 export class ControlContainerComponent extends BaseDetailComponent implements AfterContentInit {
   readonly accordionItem = viewChild.required(PoAccordionItemComponent);
@@ -18,6 +18,6 @@ export class ControlContainerComponent extends BaseDetailComponent implements Af
   }
 
   ngAfterContentInit(): void {
-   this.accordionItem().expand();
+    this.accordionItem().expand();
   }
 }

@@ -11,8 +11,8 @@ export const FORMS_ROUTES: Routes = [
         path: 'container-form',
         pathMatch: 'full',
         title: 'Formulários | Control Container',
-        component: ControlContainerComponent
-      }
-    ]
-  }
+        component: ControlContainerComponent,
+      },
+    ],
+  },
 ];

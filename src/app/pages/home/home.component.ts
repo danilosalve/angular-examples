@@ -6,7 +6,7 @@ import { Router, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-home',
   imports: [CommonModule, PoToolbarModule, PoMenuModule, PoPageModule, RouterOutlet],
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
 })
 export class HomeComponent {
   readonly router: Router = inject(Router);
@@ -15,7 +15,7 @@ export class HomeComponent {
       label: 'Página Inicial',
       link: './',
       shortLabel: 'Inicio',
-      icon: 'an an-house-line'
+      icon: 'an an-house-line',
     },
     {
       label: 'Formulários',
@@ -25,9 +25,9 @@ export class HomeComponent {
         {
           label: 'Reaproveitando Formulários',
           action: () => this.router.navigate(['forms/container-form']),
-          shortLabel: 'Container'
-        }
-      ]
+          shortLabel: 'Container',
+        },
+      ],
     },
     {
       label: 'Signals',
@@ -37,37 +37,37 @@ export class HomeComponent {
         {
           label: 'Exemplos Signals',
           action: () => this.router.navigate(['signals/samples']),
-          shortLabel: 'Signals'
+          shortLabel: 'Signals',
         },
         {
           label: 'Formulários Signals',
           action: () => this.router.navigate(['signals/form']),
-          shortLabel: 'Formulários'
+          shortLabel: 'Formulários',
         },
         {
           label: 'Star Wars Veiculos',
           action: () => this.router.navigate(['signals/vehicle']),
-          shortLabel: 'Veiculos'
-        }
-      ]
+          shortLabel: 'Veiculos',
+        },
+      ],
     },
     {
       label: 'Carregamento adiado',
       action: () => this.router.navigate(['defer']),
       shortLabel: 'Defer',
-      icon: 'an an-timer'
+      icon: 'an an-timer',
     },
     {
       label: 'Componente Dinâmico',
       action: () => this.router.navigate(['dynamic-component']),
       shortLabel: 'Dinâmico',
-      icon: 'an an-browsers'
+      icon: 'an an-browsers',
     },
     {
       label: 'Usuários',
       action: () => this.router.navigate(['users']),
       shortLabel: 'Usuários',
-      icon: 'an an-user'
+      icon: 'an an-user',
     },
   ];
   readonly name: string = 'Aplicativo de Exemplo Standalone';

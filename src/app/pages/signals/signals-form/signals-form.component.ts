@@ -10,7 +10,7 @@ import { BaseDetailComponent } from '../../../shared/components/base/base-detail
   selector: 'app-signals-form',
   imports: [CommonModule, PoPageModule, PoFieldModule, PoContainerModule, FormsModule, ReactiveFormsModule],
   templateUrl: './signals-form.component.html',
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class SignalsFormComponent extends BaseDetailComponent {
   form!: FormGroup;
@@ -31,7 +31,7 @@ export class SignalsFormComponent extends BaseDetailComponent {
     city: 'São Paulo',
     state: 'SP',
     country: 'Brasil',
-    postalCode: '00000000'
+    postalCode: '00000000',
   };
 
   getterCallCount = 0;
@@ -50,23 +50,23 @@ export class SignalsFormComponent extends BaseDetailComponent {
       city: [''],
       state: [''],
       country: [''],
-      postalCode: ['']
+      postalCode: [''],
     });
     // Initialize Signals after form creation with ?? and Injector
     this.buildingName = toSignal(this.form.controls['buildingName'].valueChanges ?? of(undefined), {
-      injector: this.injector
+      injector: this.injector,
     });
     this.buildingNumber = toSignal(this.form.controls['buildingNumber'].valueChanges ?? of(undefined), {
-      injector: this.injector
+      injector: this.injector,
     });
     this.streetAddress = toSignal(this.form.controls['streetAddress'].valueChanges ?? of(undefined), {
-      injector: this.injector
+      injector: this.injector,
     });
     this.city = toSignal(this.form.controls['city'].valueChanges ?? of(undefined), { injector: this.injector });
     this.state = toSignal(this.form.controls['state'].valueChanges ?? of(undefined), { injector: this.injector });
     this.country = toSignal(this.form.controls['country'].valueChanges ?? of(undefined), { injector: this.injector });
     this.postalCode = toSignal(this.form.controls['postalCode'].valueChanges ?? of(undefined), {
-      injector: this.injector
+      injector: this.injector,
     });
 
     this.form.patchValue(this.exampleData);
@@ -82,7 +82,7 @@ export class SignalsFormComponent extends BaseDetailComponent {
       this.form.value.city,
       this.form.value.state,
       this.form.value.country,
-      this.form.value.postalCode
+      this.form.value.postalCode,
     ]
       .filter(Boolean)
       .join(', ');
@@ -97,7 +97,7 @@ export class SignalsFormComponent extends BaseDetailComponent {
       this.city?.(),
       this.state?.(),
       this.country?.(),
-      this.postalCode?.()
+      this.postalCode?.(),
     ]
       .filter(Boolean)
       .join(', ');

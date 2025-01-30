@@ -1,4 +1,4 @@
-import { Vehicle } from "./vehicle";
+import { Vehicle } from './vehicle';
 
 export interface VehicleResponse {
   count: number;

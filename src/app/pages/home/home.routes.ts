@@ -12,33 +12,34 @@ export const HOME_ROUTES: Routes = [
         path: '',
         pathMatch: 'full',
         title: 'Página Inicial',
-        component: DashboardComponent
+        component: DashboardComponent,
       },
       {
         path: 'defer',
         title: 'Carregamento Adiado',
-        loadComponent: () => import('../defer/defer.component').then(c => c.DeferComponent)
+        loadComponent: () => import('../defer/defer.component').then(c => c.DeferComponent),
       },
       {
         path: 'dynamic-component',
         title: 'Componentes Dinâmicos',
-        loadComponent: () => import('../dynamic-component/dynamic-component.component').then(c => c.DynamicComponentComponent)
+        loadComponent: () =>
+          import('../dynamic-component/dynamic-component.component').then(c => c.DynamicComponentComponent),
       },
       {
         path: 'forms',
         title: 'Formulários',
-        loadChildren: () => import('../forms/forms.routes').then(r => r.FORMS_ROUTES)
+        loadChildren: () => import('../forms/forms.routes').then(r => r.FORMS_ROUTES),
       },
       {
         path: 'signals',
         title: 'Signals',
-        loadChildren: () => import('../signals/signals.routes').then(r => r.SIGNALS_ROUTES)
+        loadChildren: () => import('../signals/signals.routes').then(r => r.SIGNALS_ROUTES),
       },
       {
         path: 'users',
         title: 'Usuários',
-        loadChildren: () => import('../users/users-routes').then(r => r.USERS_ROUTES)
-      }
-    ]
-  }
+        loadChildren: () => import('../users/users-routes').then(r => r.USERS_ROUTES),
+      },
+    ],
+  },
 ];

@@ -7,7 +7,7 @@ import { JsonPipe } from '@angular/common';
 @Component({
   selector: 'app-seller',
   imports: [ReactiveFormsModule, PoContainerModule, PoFieldModule, PoTabsModule, JsonPipe, AddressComponent],
-  templateUrl: './seller.component.html'
+  templateUrl: './seller.component.html',
 })
 export class SellerComponent implements OnInit {
   form!: FormGroup;
@@ -26,7 +26,7 @@ export class SellerComponent implements OnInit {
       city: ['São Paulo', Validators.required],
       state: ['SP', Validators.required],
       zipCode: ['', Validators.required],
-      complement: ['']
+      complement: [''],
     });
   }
 }

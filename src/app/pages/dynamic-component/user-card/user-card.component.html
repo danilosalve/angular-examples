@@ -1,7 +1,7 @@
 <div class="po-row">
   <po-container class="po-mb-2 po-xl-12">
     @for (item of dataService.data; track item.label; let index = $index) {
-      <p>{{index}} {{item | json}}</p>
+      <p>{{ index }} {{ item | json }}</p>
     }
   </po-container>
 </div>

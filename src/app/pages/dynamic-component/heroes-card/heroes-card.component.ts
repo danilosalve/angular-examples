@@ -4,16 +4,16 @@ import { DataService } from '../shared/services/data.service';
 import { PoContainerModule, PoNotificationService, PoWidgetModule } from '@po-ui/ng-components';
 
 @Component({
-    selector: 'app-heroes-card',
-    imports: [PoContainerModule, PoWidgetModule],
-    templateUrl: './heroes-card.component.html'
+  selector: 'app-heroes-card',
+  imports: [PoContainerModule, PoWidgetModule],
+  templateUrl: './heroes-card.component.html',
 })
 export class HeroesCardComponent {
   heroes = input.required<TemplateRef<unknown>>();
-  poNotificationService = inject(PoNotificationService)
+  poNotificationService = inject(PoNotificationService);
   dataService = inject(DataService);
 
   onShowAlert(name: string): void {
-    this.poNotificationService.information(`O nome do Heroi é ${name}`)
+    this.poNotificationService.information(`O nome do Heroi é ${name}`);
   }
 }

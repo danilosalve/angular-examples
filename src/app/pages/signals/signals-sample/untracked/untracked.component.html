@@ -1,8 +1,19 @@
 <po-container p-title="Exemplo Untracked">
   <form class="po-row" [formGroup]="form">
-    <po-input class="po-sm-12 po-mb-2" formControlName="name" p-placeholder="Digite o nome aqui" p-label="Nome" p-clean p-required />
-    <po-button class="po-mb-2 po-sm-12 po-md-12 po-lg-3 po-xl-2" p-label="Incrementar Contador" (p-click)="incrementCount()" />
+    <po-input
+      class="po-sm-12 po-mb-2"
+      formControlName="name"
+      p-placeholder="Digite o nome aqui"
+      p-label="Nome"
+      p-clean
+      p-required
+    />
+    <po-button
+      class="po-mb-2 po-sm-12 po-md-12 po-lg-3 po-xl-2"
+      p-label="Incrementar Contador"
+      (p-click)="incrementCount()"
+    />
     <p class="po-mb-1 po-sm-12">{{ info() }}</p>
-    <p class="po-sm-12"> Contador Atual: {{ counter() }}</p>
+    <p class="po-sm-12">Contador Atual: {{ counter() }}</p>
   </form>
 </po-container>

@@ -6,7 +6,7 @@ import { UserAPIResponse } from '../interface/user.interface';
 import { BASE_API } from '../../../../app.constraints';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
   private readonly http: HttpClient = inject(HttpClient);
@@ -22,7 +22,7 @@ export class UsersService {
     const headers: HttpHeaders = new HttpHeaders({
       page: page,
       pageSize: pageSize,
-      Authorization: this.getToken('ADMIN', '1234')
+      Authorization: this.getToken('ADMIN', '1234'),
     });
 
     return this.http.get<UserAPIResponse>(`${BASE_API}/api/framework/getusers`, { headers }).pipe(shareReplay());

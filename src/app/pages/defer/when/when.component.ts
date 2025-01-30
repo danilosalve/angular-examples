@@ -6,7 +6,7 @@ import { BaseDeferComponent } from '../base-defer.component';
 @Component({
   selector: 'app-when',
   imports: [PoWidgetModule],
-  templateUrl: './when.component.html'
+  templateUrl: './when.component.html',
 })
 export class WhenComponent extends BaseDeferComponent {
   isShow = false;

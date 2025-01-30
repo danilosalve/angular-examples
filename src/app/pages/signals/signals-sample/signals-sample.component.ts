@@ -6,6 +6,6 @@ import { LinkedComponent } from './linked/linked.component';
 @Component({
   selector: 'app-signals-sample',
   imports: [PoPageModule, UntrackedComponent, LinkedComponent],
-  templateUrl: './signals-sample.component.html'
+  templateUrl: './signals-sample.component.html',
 })
 export class SignalsSampleComponent {}

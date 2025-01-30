@@ -10,18 +10,18 @@ import { UserComponent } from '../user/user.component';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-    selector: 'app-list-users',
-    imports: [
-        CommonModule,
-        PoPageModule,
-        PoLoadingModule,
-        PoContainerModule,
-        FilterByDescriptionPipe,
-        UserComponent,
-        PoSearchModule
-    ],
-    templateUrl: './list-users.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-list-users',
+  imports: [
+    CommonModule,
+    PoPageModule,
+    PoLoadingModule,
+    PoContainerModule,
+    FilterByDescriptionPipe,
+    UserComponent,
+    PoSearchModule,
+  ],
+  templateUrl: './list-users.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListUsersComponent implements OnInit {
   protected filter = '';
@@ -32,7 +32,7 @@ export class ListUsersComponent implements OnInit {
   private usersService: UsersService = inject(UsersService);
   protected readonly filterSelect = [
     { label: 'Usuário', value: 'id' },
-    { label: 'Nome', value: 'displayName' }
+    { label: 'Nome', value: 'displayName' },
   ];
 
   ngOnInit(): void {
@@ -50,7 +50,7 @@ export class ListUsersComponent implements OnInit {
    *
    * @param $event Evento de alteração do filtro
    */
-  changeFilter($event: {filter: string[] | string , value: string}): void {
+  changeFilter($event: { filter: string[] | string; value: string }): void {
     this.filter = $event.value;
     this.filterType = Array.isArray($event.filter) ? 'All' : $event.filter;
   }

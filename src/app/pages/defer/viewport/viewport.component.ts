@@ -5,7 +5,7 @@ import { BaseDeferComponent } from '../base-defer.component';
 @Component({
   selector: 'app-viewport',
   imports: [PoWidgetModule],
-  templateUrl: './viewport.component.html'
+  templateUrl: './viewport.component.html',
 })
 export class ViewportComponent extends BaseDeferComponent {
   isHidden = true;
