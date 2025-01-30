@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { PoContainerModule, PoLoadingModule, PoPageModule, PoSearchModule } from '@po-ui/ng-components';
 import { Observable, finalize, ignoreElements, catchError, of } from 'rxjs';
 
@@ -7,6 +7,7 @@ import { UserAPIResponse } from '../shared/interface/user.interface';
 import { FilterByDescriptionPipe } from '../shared/pipes/filter-by-description.pipe';
 import { UsersService } from '../shared/services/users.service';
 import { UserComponent } from '../user/user.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
     selector: 'app-list-users',
@@ -22,12 +23,12 @@ import { UserComponent } from '../user/user.component';
     templateUrl: './list-users.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListUsersComponent {
-  protected filter: string = '';
-  protected filterType: string = 'All';
-  protected isHideLoading: boolean = false;
+export class ListUsersComponent implements OnInit {
+  protected filter = '';
+  protected filterType = 'All';
+  protected isHideLoading = false;
   protected users$!: Observable<UserAPIResponse>;
-  protected usersError$!: Observable<any>;
+  protected usersError$!: Observable<HttpErrorResponse>;
   private usersService: UsersService = inject(UsersService);
   protected readonly filterSelect = [
     { label: 'Usuário', value: 'id' },
@@ -49,7 +50,7 @@ export class ListUsersComponent {
    *
    * @param $event Evento de alteração do filtro
    */
-  changeFilter($event: any): void {
+  changeFilter($event: {filter: string[] | string , value: string}): void {
     this.filter = $event.value;
     this.filterType = Array.isArray($event.filter) ? 'All' : $event.filter;
   }

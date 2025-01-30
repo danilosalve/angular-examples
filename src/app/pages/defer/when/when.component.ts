@@ -9,7 +9,7 @@ import { BaseDeferComponent } from '../base-defer.component';
   templateUrl: './when.component.html'
 })
 export class WhenComponent extends BaseDeferComponent {
-  isShow: boolean = false;
+  isShow = false;
 
   onClick(): void {
     this.isShow = true;

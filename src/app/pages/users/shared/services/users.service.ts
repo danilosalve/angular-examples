@@ -18,7 +18,7 @@ export class UsersService {
    * @param page Página
    * @param pageSize Tamanho da página
    */
-  getUsers(page: number = 1, pageSize: number = 20): Observable<UserAPIResponse> {
+  getUsers(page = 1, pageSize = 20): Observable<UserAPIResponse> {
     const headers: HttpHeaders = new HttpHeaders({
       page: page,
       pageSize: pageSize,

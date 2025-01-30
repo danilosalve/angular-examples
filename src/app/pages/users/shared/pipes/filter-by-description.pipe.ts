@@ -7,8 +7,9 @@ import { User } from '../interface/user.interface';
 })
 export class FilterByDescriptionPipe implements PipeTransform {
   transform(users: User[], args: { type: string; query: string }): User[] {
-    let { type, query } = args;
-    query = query.trim().toLowerCase();
+    const type = args.type;
+    const query = args.query.trim().toLowerCase();
+
 
     if (query) {
       if (type === 'displayName') {

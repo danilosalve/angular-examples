@@ -8,7 +8,7 @@ import { BaseDeferComponent } from '../base-defer.component';
   templateUrl: './viewport.component.html'
 })
 export class ViewportComponent extends BaseDeferComponent {
-  isHidden: boolean = true;
+  isHidden = true;
 
   onClick(): void {
     this.isHidden = false;

@@ -35,6 +35,7 @@ export class UntrackedComponent implements OnInit {
         })
       )
       .subscribe({
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         next: value => this.name.update(name => (name = this.titleCasePipe.transform(value.name)))
       });
   }

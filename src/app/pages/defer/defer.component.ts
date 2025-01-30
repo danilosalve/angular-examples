@@ -21,5 +21,5 @@ import { WhenComponent } from './when/when.component';
   templateUrl: './defer.component.html'
 })
 export class DeferComponent {
-  height: number = 350;
+  height = 350;
 }

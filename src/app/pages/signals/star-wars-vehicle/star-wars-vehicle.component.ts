@@ -1,7 +1,7 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
-import { PoContainerModule, PoFieldModule, PoPageModule, PoTagModule, PoWidgetModule } from '@po-ui/ng-components';
+import { Component, inject } from '@angular/core';
+import { PoContainerModule, PoFieldModule, PoPageModule, PoTagModule } from '@po-ui/ng-components';
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { BaseDetailComponent } from '../../../shared/components/base/base-detail.component';
 import { VehicleService } from './shared/services/vehicle.service';

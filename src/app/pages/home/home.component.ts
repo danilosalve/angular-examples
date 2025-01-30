@@ -10,7 +10,7 @@ import { Router, RouterOutlet } from '@angular/router';
 })
 export class HomeComponent {
   readonly router: Router = inject(Router);
-  readonly menus: Array<PoMenuItem> = [
+  readonly menus: PoMenuItem[] = [
     {
       label: 'Página Inicial',
       link: './',

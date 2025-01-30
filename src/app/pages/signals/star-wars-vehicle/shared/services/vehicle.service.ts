@@ -37,9 +37,8 @@ export class VehicleService {
   });
 
   // Computed signals
-  //total = computed(() => (this.selectedVehicle()?.cost_in_credits ?? 0) * this.quantity());
   total = computed(() => {
-    const costInCredits = isNaN(this.selectedVehicle()?.cost_in_credits!) ? 0 : (this.selectedVehicle()?.cost_in_credits ?? 0);
+    const costInCredits = isNaN((this.selectedVehicle()?.cost_in_credits) || 0) ? 0 : (this.selectedVehicle()?.cost_in_credits ?? 0);
     return costInCredits * this.quantity()
   })
   color = computed(() => (this.total() === 0 ? 'color-07' : this.total() > 50000 ? 'color-10' : 'color-02'));

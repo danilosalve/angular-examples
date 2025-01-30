@@ -33,9 +33,7 @@ export class LinkedComponent {
      * o bloco de computação, neste caso, obtemos o curso selecionado
      * quantidade padrão e defini-la para o sinal de quantidade
      */
-    computation: (source, previous) => {
-      console.log(`linkedSignal source: `, source.courseCode());
-      console.log(`linkedSignal previous: `, previous);
+    computation: (source) => {
       return this.courses.find(c => c.value === source.courseCode())?.defaultQuantity ?? 1;
     }
   });
