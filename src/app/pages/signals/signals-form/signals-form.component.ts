@@ -15,23 +15,23 @@ import { BaseDetailComponent } from '../../../shared/components/base/base-detail
 export class SignalsFormComponent extends BaseDetailComponent {
   form!: FormGroup;
   // Campos Signals do formulário
-  buildingName!: Signal<string> | undefined;
-  buildingNumber!: Signal<string> | undefined;
-  streetAddress!: Signal<string> | undefined;
-  city!: Signal<string> | undefined;
-  state!: Signal<string> | undefined;
-  country!: Signal<string> | undefined;
-  postalCode!: Signal<string> | undefined;
+  buildingName: Signal<string> | undefined;
+  buildingNumber: Signal<string> | undefined;
+  streetAddress: Signal<string> | undefined;
+  city: Signal<string> | undefined;
+  state: Signal<string> | undefined;
+  country: Signal<string> | undefined;
+  postalCode: Signal<string> | undefined;
 
   exampleData = {
     name: 'Danilo Salve',
-    buildingName: 'Residencia Souza Salve',
-    buildingNumber: '129',
-    streetAddress: 'Rua Baltazar Pereira',
+    buildingName: 'Casa',
+    buildingNumber: '123',
+    streetAddress: 'Rua Xpto',
     city: 'São Paulo',
-    state: 'São Paulo',
+    state: 'SP',
     country: 'Brasil',
-    postalCode: '05175340'
+    postalCode: '00000000'
   };
 
   getterCallCount = 0;

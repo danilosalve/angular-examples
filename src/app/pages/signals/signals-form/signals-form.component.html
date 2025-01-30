@@ -1,14 +1,91 @@
 <po-page-detail p-title="Signals Form" p-subtitle="Comparação de Signals vs GET" (p-back)="onBack()">
-  <span class="po-row">
+  <div class="po-row">
     <po-container class="po-mb-2 po-sm-12" p-title="Formulário" [formGroup]="form">
-      <po-input formControlName="name" p-placeholder="Name" p-label="Nome" />
-      <po-input formControlName="buildingName" p-placeholder="Building Name" p-label="Descrição do endereço" />
-      <po-input formControlName="buildingNumber" p-placeholder="Building Number" p-label="Número" />
-      <po-input formControlName="streetAddress" p-placeholder="Street Address" p-label="Logradouro" />
-      <po-input formControlName="city" p-placeholder="City" p-label="Cidade" />
-      <po-input formControlName="state" p-placeholder="State" p-label="Estado" />
-      <po-input formControlName="country" p-placeholder="Country" p-label="Pais" />
-      <po-input formControlName="postalCode" p-placeholder="Postal Code" p-label="CEP" />
+      <po-input
+        class="po-sm-12 po-md-12 po-lg-7 po-xl-7"
+        formControlName="name"
+        p-label="Nome"
+        p-placeholder="EX: Danilo Salve"
+        p-help="Informe o seu nome"
+        p-pattern="^[\D]*$"
+        p-error-pattern="Valor digitado inválido, preencha o campo somente com Letras"
+        p-icon="an an-user"
+        [p-no-autocomplete]="true"
+        p-clean
+      />
+      <po-input
+        class="po-sm-12 po-md-6 po-lg-7 po-xl-7"
+        formControlName="buildingName"
+        p-label="Descrição do endereço"
+        p-placeholder="Ex: Trabalho"
+        p-help="Informe o tipo de endereço"
+        p-icon="an an-warehouse"
+        [p-no-autocomplete]="true"
+        p-clean
+      />
+      <po-input
+        class="po-sm-12 po-md-6 po-lg-5 po-xl-5"
+        formControlName="postalCode"
+        p-label="CEP"
+        p-placeholder="00000-000"
+        p-help="Informe o CEP"
+        p-mask="99999-999"
+        [p-no-autocomplete]="true"
+        p-clean
+      />
+      <po-input
+        class="po-sm-12 po-md-12 po-lg-7 po-xl-7"
+        formControlName="streetAddress"
+        p-label="Logradouro"
+        p-placeholder="Ex: Avenida Xpto"
+        p-help="Informe o Logradouro"
+        p-icon="an an-map-pin"
+        [p-no-autocomplete]="true"
+        p-clean
+      />
+      <po-input
+        class="po-sm-12 po-md-12 po-lg-5 po-xl-5"
+        formControlName="buildingNumber"
+        p-label="Número"
+        p-placeholder="0"
+        p-help="Informe o número do logradouro"
+        [p-no-autocomplete]="true"
+        p-clean
+      />
+      <po-input
+        class="po-sm-12 po-md-6 po-lg-5 po-xl-5"
+        formControlName="city"
+        p-label="Cidade"
+        p-placeholder="Ex: São Paulo"
+        p-help="Informe o nome da cidade"
+        p-icon="an an-city"
+        p-error-pattern="Valor digitado inválido, preencha o campo somente com Letras"
+        p-pattern="^[\D]*$"
+        [p-no-autocomplete]="true"
+        p-clean
+      />
+      <po-input
+        class="po-sm-12 po-md-6 po-lg-2 po-xl-2"
+        formControlName="state"
+        p-label="Estado"
+        p-placeholder="Ex: SP"
+        p-help="Informe a sigla do estado"
+        p-mask="@@"
+        [p-no-autocomplete]="true"
+        [p-upper-case]="true"
+        p-clean
+      />
+      <po-input
+        class="po-sm-12 po-md-6 po-lg-5 po-xl-5"
+        formControlName="country"
+        p-label="Pais"
+        p-placeholder="Ex: Brasil"
+        p-help="Informe o nome do país"
+        p-error-pattern="Valor digitado inválido, preencha o campo somente com Letras"
+        p-pattern="^[\D]*$"
+        [p-no-autocomplete]="true"
+        p-clean
+      />
     </po-container>
 
     <po-container class="po-mb-5 po-sm-12" p-title="Resultados:">
@@ -19,5 +96,5 @@
       <p>Getter Call Count: {{ getterCallCount }}</p>
       <p>Computed Signal Call Count: {{ signalCallCount }}</p>
     </po-container>
-  </span>
+  </div>
 </po-page-detail>
