@@ -71,7 +71,7 @@ export class HomeComponent {
           label: 'Serviços',
           action: () => this.router.navigate(['dynamic/services']),
           shortLabel: 'Serviços',
-        }
+        },
       ],
     },
     {

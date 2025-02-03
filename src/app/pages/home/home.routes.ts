@@ -22,7 +22,7 @@ export const HOME_ROUTES: Routes = [
       {
         path: 'dynamic',
         title: 'Componentes Dinâmicos',
-        loadChildren: () => import('../dynamic-component/dynamic-component.routes').then(r => r.DYNAMIC_ROUTES)
+        loadChildren: () => import('../dynamic-component/dynamic-component.routes').then(r => r.DYNAMIC_ROUTES),
       },
       {
         path: 'forms',
