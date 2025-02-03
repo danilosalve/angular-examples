@@ -59,9 +59,20 @@ export class HomeComponent {
     },
     {
       label: 'Componente Dinâmico',
-      action: () => this.router.navigate(['dynamic-component']),
       shortLabel: 'Dinâmico',
       icon: 'an an-browsers',
+      subItems: [
+        {
+          label: 'Componentes',
+          action: () => this.router.navigate(['dynamic/components']),
+          shortLabel: 'Componentes',
+        },
+        {
+          label: 'Serviços',
+          action: () => this.router.navigate(['dynamic/services']),
+          shortLabel: 'Serviços',
+        }
+      ],
     },
     {
       label: 'Usuários',

@@ -1,0 +1,35 @@
+<po-page-detail p-title="Serviços Dinâmicos" p-subtitle="Instanciando serviços dinamicamente" (p-back)="onBack()">
+  <po-container class="po-sm-12 po-md-12 po-lg-4 po-xl-4">
+    <form [formGroup]="form">
+      <po-decimal
+        class="po-sm-12 po-md-12 po-lg-12 po-xl-12"
+        p-label="Total"
+        p-icon="an an-currency-dollar"
+        [formControl]="form.controls.amount"
+        [p-min]="0"
+        p-required
+        p-clean
+      />
+
+      <po-input
+        class="po-sm-12 po-md-12 po-lg-12 po-xl-12"
+        p-label="Endereço"
+        p-icon="an an-map-pin"
+        [formControl]="form.controls.address"
+        p-required
+        p-clean
+      />
+
+      <po-radio-group
+        class="po-sm-12 po-md-12 po-lg-12 po-xl-12"
+        p-label="Forma de Pagamento"
+        [formControl]="form.controls.type"
+        [p-options]="optionsPayment"
+        [p-columns]="3"
+        [p-required]="true"
+      />
+
+      <po-button class="po-sm-12 po-md-12 po-lg-12 po-xl-12" p-label="Pagar" (p-click)="onSubmit()" p-kind="primary" />
+    </form>
+  </po-container>
+</po-page-detail>

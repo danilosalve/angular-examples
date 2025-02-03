@@ -20,10 +20,9 @@ export const HOME_ROUTES: Routes = [
         loadComponent: () => import('../defer/defer.component').then(c => c.DeferComponent),
       },
       {
-        path: 'dynamic-component',
+        path: 'dynamic',
         title: 'Componentes Dinâmicos',
-        loadComponent: () =>
-          import('../dynamic-component/dynamic-component.component').then(c => c.DynamicComponentComponent),
+        loadChildren: () => import('../dynamic-component/dynamic-component.routes').then(r => r.DYNAMIC_ROUTES)
       },
       {
         path: 'forms',
