@@ -37,6 +37,4 @@ export class ToolbarComponent implements OnInit {
       this.theme.changeTheme(type);
     }
   }
-
-
 }
