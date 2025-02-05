@@ -76,6 +76,12 @@ export class HomeComponent {
       ],
     },
     {
+      label: 'Rick & Morty | Personagens',
+      action: () => this.router.navigate(['persons']),
+      shortLabel: 'Personagens',
+      icon: 'an an-person',
+    },
+    {
       label: 'Usuários',
       action: () => this.router.navigate(['users']),
       shortLabel: 'Usuários',

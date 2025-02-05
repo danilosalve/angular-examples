@@ -30,6 +30,11 @@ export const HOME_ROUTES: Routes = [
         loadChildren: () => import('../forms/forms.routes').then(r => r.FORMS_ROUTES),
       },
       {
+        path: 'persons',
+        title: 'Rick & Morty | Personagens',
+        loadComponent: () => import('../persons/persons.component').then(c => c.PersonsComponent)
+      },
+      {
         path: 'signals',
         title: 'Signals',
         loadChildren: () => import('../signals/signals.routes').then(r => r.SIGNALS_ROUTES),
