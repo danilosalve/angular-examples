@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { PoMenuItem, PoMenuModule, PoPageModule, PoToolbarModule } from '@po-ui/ng-components';
+import { PoMenuItem, PoMenuModule, PoPageModule } from '@po-ui/ng-components';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, PoToolbarModule, PoMenuModule, PoPageModule, RouterOutlet],
+  imports: [CommonModule, PoMenuModule, PoPageModule, RouterOutlet, ToolbarComponent],
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
@@ -81,5 +82,4 @@ export class HomeComponent {
       icon: 'an an-user',
     },
   ];
-  readonly name: string = 'Aplicativo de Exemplo Standalone';
 }
