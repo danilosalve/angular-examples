@@ -28,7 +28,7 @@ export class ToolbarComponent implements OnInit {
 
   ngOnInit(): void {
     const theme = this.theme.onInitTheme();
-    this.changeTheme(theme);
+    this.changeTheme(theme, false);
   }
 
   changeTheme(type: PoThemeTypeEnum, changeTheme = true) {
