@@ -1,0 +1,46 @@
+<po-container class="po-sm-12 po-md-12 po-lg-6 po-xl-6 po-mb-2" style="position: relative">
+  <po-input
+    class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-1"
+    p-icon="an an-map-pin"
+    [formControl]="form.controls.city"
+    (p-change)="onChangeCity()"
+    p-placeholder="Nome da Cidade: Exemplo São Paulo"
+    p-required
+    p-clean
+  />
+
+  @let weather = wheatherResource.value();
+  @let hasValue = wheatherResource.hasValue();
+  @let isLoading = wheatherResource.isLoading();
+  @let error = wheatherResource.error();
+
+  @if (error) {
+    <p class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2">Ops, ocorreu erro ao tentar buscar a previsão do tempo :(</p>
+  } @else {
+    @if (hasValue) {
+      <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2">
+        <p class="po-font-text-large-bold" style="text-align: center">{{ city() }}</p>
+        <p class="po-font-subtitle" style="text-align: center">{{ weather.temperature }}</p>
+        <p class="po-font-text-small" style="text-align: center">{{ weather.wind }}</p>
+      </po-container>
+
+      <p class="po-font-text-large-bold po-mb-1">Proximos dias</p>
+      @for (dailyWeather of weather.forecast; track $index) {
+        <app-daily-weather-forecast [weather]="dailyWeather" />
+      }
+    } @else {
+      <ngx-skeleton-loader class="h-3" count="1" appearance="line" />
+      <ngx-skeleton-loader
+        count="3"
+        appearance="circle"
+        [theme]="{
+          width: '70px',
+          height: '70px',
+          'border-radius': '10px',
+        }"
+      />
+    }
+  }
+
+  <po-loading-overlay [hidden]="!isLoading" p-text="Buscando Previsão do Tempo " />
+</po-container>

@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { PoPageModule, PoWidgetModule } from '@po-ui/ng-components';
+import { PoContainerModule, PoPageModule } from '@po-ui/ng-components';
+
 import { CoinsComponent } from './coins/coins.component';
+import { WeatherComponent } from '../weather/weather.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, PoPageModule, PoWidgetModule, CoinsComponent],
+  imports: [CommonModule, PoPageModule, PoContainerModule, CoinsComponent, WeatherComponent],
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {}
