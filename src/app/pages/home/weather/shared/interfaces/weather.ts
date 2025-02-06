@@ -1,4 +1,3 @@
-
 export interface Weather extends BaseWeather {
   description: string;
   forecast: WeatherForecast[];
