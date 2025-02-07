@@ -8,8 +8,7 @@
       <po-tag class="po-mb-1" [p-value]="product().category" />
       <po-info p-label="Preço" [p-value]="product().price.toString()" />
 
-      <app-rating [rating]="product().rating.rate" [max]="5" [count]="product().rating.count"/>
-
+      <app-rating [rating]="product().rating.rate" [max]="5" [count]="product().rating.count" />
     </div>
     <div class="po-visible-sm">
       <po-avatar p-size="xl" [p-src]="product().image" p-loading="eager" />
