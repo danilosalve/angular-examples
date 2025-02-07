@@ -1,5 +1,5 @@
 <po-widget class="po-sm-12 po-md-12 po-lg-6 po-xl-4 po-mb-2" [p-height]="height">
-  @let price = (product().price | currency: 'BRL' ) ?? 0;
+  @let price = (product().price | currency: 'BRL') ?? 0;
   <div class="po-row">
     <div class="po-md-5 po-lg-5">
       <po-avatar p-size="xl" [p-src]="product().image" p-loading="lazy" />

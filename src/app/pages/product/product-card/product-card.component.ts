@@ -16,7 +16,7 @@ export class ProductCardComponent implements OnInit {
   height = 250;
 
   ngOnInit(): void {
-    if (this.isSmartPhone())  {
+    if (this.isSmartPhone()) {
       this.height = 420;
     }
   }
