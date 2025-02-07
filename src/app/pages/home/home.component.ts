@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { PoMenuItem, PoMenuModule, PoPageModule } from '@po-ui/ng-components';
 import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @Component({
@@ -10,7 +11,6 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  readonly router: Router = inject(Router);
   readonly menus: PoMenuItem[] = [
     {
       label: 'Página Inicial',
@@ -25,7 +25,7 @@ export class HomeComponent {
       subItems: [
         {
           label: 'Reaproveitando Formulários',
-          action: () => this.router.navigate(['forms/container-form']),
+          link: 'forms/container-form',
           shortLabel: 'Container',
         },
       ],
@@ -37,24 +37,24 @@ export class HomeComponent {
       subItems: [
         {
           label: 'Exemplos Signals',
-          action: () => this.router.navigate(['signals/samples']),
+          link: 'signals/samples',
           shortLabel: 'Signals',
         },
         {
           label: 'Formulários Signals',
-          action: () => this.router.navigate(['signals/form']),
+          link: 'signals/form',
           shortLabel: 'Formulários',
         },
         {
           label: 'Star Wars Veiculos',
-          action: () => this.router.navigate(['signals/vehicle']),
+          link: 'signals/vehicle',
           shortLabel: 'Veiculos',
         },
       ],
     },
     {
       label: 'Carregamento adiado',
-      action: () => this.router.navigate(['defer']),
+      link: 'defer',
       shortLabel: 'Defer',
       icon: 'an an-timer',
     },
@@ -65,25 +65,31 @@ export class HomeComponent {
       subItems: [
         {
           label: 'Componentes',
-          action: () => this.router.navigate(['dynamic/components']),
+          link: 'dynamic/components',
           shortLabel: 'Componentes',
         },
         {
           label: 'Serviços',
-          action: () => this.router.navigate(['dynamic/services']),
+          link: 'dynamic/services',
           shortLabel: 'Serviços',
         },
       ],
     },
     {
+      label: 'Produtos',
+      link: 'products',
+      shortLabel: 'Produtos',
+      icon: 'an an-shopping-cart-simple',
+    },
+    {
       label: 'Rick & Morty | Personagens',
-      action: () => this.router.navigate(['persons']),
+      link: 'persons',
       shortLabel: 'Personagens',
       icon: 'an an-person',
     },
     {
       label: 'Usuários',
-      action: () => this.router.navigate(['users']),
+      link: 'users',
       shortLabel: 'Usuários',
       icon: 'an an-user',
     },

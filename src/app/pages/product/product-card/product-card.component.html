@@ -1,0 +1,15 @@
+<po-widget class="po-sm-12 po-md-12 po-lg-6 po-xl-4 po-mb-2" [p-height]="200">
+  <div class="po-row">
+    <div class="po-md-5 po-lg-5 po-hidden-sm">
+      <po-avatar p-size="xl" [p-src]="product().image" p-loading="lazy" />
+    </div>
+    <div class="po-md-7 po-lg-7">
+      <p class="po-font-text-large-bold po-mb-1">{{ product().title }}</p>
+      <po-tag class="po-mb-1" [p-value]="product().category" />
+      <po-info p-label="Preço" [p-value]="product().price.toString()" />
+    </div>
+    <div class="po-visible-sm">
+      <po-avatar p-size="xl" [p-src]="product().image" p-loading="eager" />
+    </div>
+  </div>
+</po-widget>

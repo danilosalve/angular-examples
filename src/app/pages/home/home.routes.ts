@@ -35,6 +35,11 @@ export const HOME_ROUTES: Routes = [
         loadComponent: () => import('../persons/persons.component').then(c => c.PersonsComponent),
       },
       {
+        path: 'products',
+        title: 'Produtos',
+        loadChildren: () => import('../product/product.routes').then(r => r.PRODUCT_ROUTES),
+      },
+      {
         path: 'signals',
         title: 'Signals',
         loadChildren: () => import('../signals/signals.routes').then(r => r.SIGNALS_ROUTES),

@@ -1,13 +1,20 @@
-import { Component, inject, linkedSignal, signal } from '@angular/core';
+import { Component, inject, linkedSignal, OnInit, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { PoButtonModule, PoContainerModule, PoFieldModule, PoNotificationService } from '@po-ui/ng-components';
+import {
+  PoButtonModule,
+  PoContainerModule,
+  PoFieldModule,
+  PoNotificationService,
+  PoSelectComponent,
+} from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-linked',
   imports: [PoContainerModule, PoButtonModule, PoFieldModule, FormsModule],
   templateUrl: './linked.component.html',
 })
-export class LinkedComponent {
+export class LinkedComponent implements OnInit {
+  readonly poSelect = viewChild.required(PoSelectComponent);
   readonly courses = [
     {
       value: 'BEGINNERS',
@@ -40,12 +47,17 @@ export class LinkedComponent {
 
   private readonly poNotificationService: PoNotificationService = inject(PoNotificationService);
 
+  ngOnInit(): void {
+    this.poSelect().modelValue = this.selectedCourse();
+  }
+
   onQuantityChanged(quantity: string): void {
     this.quantity.set(parseInt(quantity));
   }
 
   onAddToCart(): void {
-    this.poNotificationService.success(`${this.quantity()} adicionado para o curso ${this.selectedCourse()}`);
+    const course = this.courses.find(c => c.value === this.selectedCourse());
+    this.poNotificationService.success(`${this.quantity()} adicionado para o curso ${course?.label}`);
   }
 
   onCourseSelected(courseCode: string): void {

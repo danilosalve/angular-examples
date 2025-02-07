@@ -2,13 +2,12 @@
   <h1 class="po-font-subtitle po-mb-2">Carrinho de compras</h1>
 
   <form #f="ngForm">
-    <po-combo
+    <po-select
       name="courses"
       p-label="Cursos"
       p-placeholder="Selecione um curso"
       (p-change)="onCourseSelected($event)"
       [p-options]="courses"
-      [p-remove-initial-filter]="true"
       [p-required]="true"
       p-clean
     />
