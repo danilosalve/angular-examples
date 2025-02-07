@@ -1,0 +1,6 @@
+@for (star of stars; track star) {
+  <i [class]="getStarClass($index + 1)"></i>
+}
+@if (count()) {
+  <p class="po-font-text-smaller">Avaliações: ({{ count() }})</p>
+}
