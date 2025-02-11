@@ -6,15 +6,27 @@
 
   <div class="po-row">
     <po-select
+      class="po-sm-12 po-md-4 po-lg-2 po-xl-2"
       p-label="Itens por página"
       [p-options]="optionsLimit"
       (p-change)="onChangeLimit($event)"
       name="limit"
-    ></po-select>
-    <po-container class="po-mb-5">
+    />
+    <po-search
+      class="po-sm-12 po-md-8 po-lg-4 po-xl-3 po-mt-md-4 po-mt-lg-4 po-mt-xl-4"
+      [p-items]="products!"
+      [p-disabled]="!hasValue"
+      [p-filter-keys]="filterKeys"
+      p-aria-label="Campos para pesquisa de Produtos"
+      [p-show-listbox]="true"
+      (p-filter)="onChangeFilter($event)"
+    />
+    <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-5">
       @if (hasValue) {
-        @for (product of products; track product.id) {
+        @for (product of products! | productsSearch: filter(); track product.id) {
           <app-product-card [product]="product" />
+        } @empty {
+          <p>Nenhum produto encontrado.</p>
         }
       } @else {
         <p>Nenhum produto encontrado.</p>
