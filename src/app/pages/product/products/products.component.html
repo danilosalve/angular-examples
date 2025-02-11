@@ -1,5 +1,5 @@
 <po-page-default p-title="Produtos" p-subtitle="Exemplo de uso da API RxResource">
-  @let products = productsResource.value();
+  @let products = (productsResource.value() || []) | productsSearch: filter();
   @let hasValue = productsResource.hasValue();
   @let isLoading = productsResource.isLoading();
   @let error = productsResource.error();
@@ -23,7 +23,7 @@
     />
     <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-5">
       @if (hasValue) {
-        @for (product of products! | productsSearch: filter(); track product.id) {
+        @for (product of products; track product.id) {
           <app-product-card [product]="product" />
         } @empty {
           <p>Nenhum produto encontrado.</p>

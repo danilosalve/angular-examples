@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal, viewChild } from '@angular/core';
+import { AfterContentInit, Component, inject, signal, viewChild } from '@angular/core';
 import {
   PoContainerModule,
   PoFieldModule,
@@ -8,11 +8,12 @@ import {
   PoSelectComponent,
   PoSelectOption,
 } from '@po-ui/ng-components';
+import { FormsModule } from '@angular/forms';
+
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductsService } from '../shared/services/products.service';
-import { FormsModule } from '@angular/forms';
 import { ProductsSearchPipe } from '../shared/pipe/products-search.pipe';
-//
+
 @Component({
   selector: 'app-products',
   imports: [
@@ -27,7 +28,7 @@ import { ProductsSearchPipe } from '../shared/pipe/products-search.pipe';
   ],
   templateUrl: './products.component.html',
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements AfterContentInit {
   readonly filter = signal<string>('');
   readonly filterKeys: string[] = ['title', 'category'];
   readonly limit = signal<number>(10);
@@ -49,7 +50,7 @@ export class ProductsComponent implements OnInit {
     },
   ];
 
-  ngOnInit(): void {
+  ngAfterContentInit(): void {
     this.poSelect().modelValue = this.limit();
   }
 
