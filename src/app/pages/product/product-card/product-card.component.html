@@ -2,13 +2,21 @@
   @let price = (product().price | currency: 'BRL') ?? 0;
   <div class="po-row">
     <div class="po-md-5 po-lg-5">
-      <po-avatar p-size="xl" [p-src]="product().image" p-loading="lazy" />
+      <po-image #poImage [p-src]="product().image" p-loading="lazy" [p-alt]="product().description" />
+      <po-popover
+        p-trigger="click"
+        [p-target]="poImageRef()"
+        p-title="Descrição"
+        p-position="bottom"
+        [p-hide-arrow]="true"
+      >
+        {{ product().description }}
+      </po-popover>
     </div>
     <div class="po-md-7 po-lg-7">
       <p class="po-font-text-large-bold po-mb-1">{{ product().title }}</p>
       <po-tag class="po-mb-1" [p-value]="product().category" />
       <po-info p-label="Preço" [p-value]="price.toString()" />
-
       <app-rating [rating]="product().rating.rate" [max]="5" [count]="product().rating.count" />
     </div>
   </div>

@@ -9,7 +9,6 @@ import { shareReplay } from 'rxjs';
 })
 export class ProductsService {
   private readonly apiUrl = 'https://fakestoreapi.com/products';
-  private readonly productId = signal<number>(0);
   private readonly limit = signal<number>(10);
   private readonly http = inject(HttpClient);
 
@@ -19,17 +18,6 @@ export class ProductsService {
       return this.http.get<Product[]>(`${this.apiUrl}?limit=${limit}`).pipe(shareReplay(1));
     },
   });
-
-  readonly getProductById = rxResource({
-    request: this.productId,
-    loader: ({ request: id }) => {
-      return this.http.get<Product>(`${this.apiUrl}/${id}`).pipe(shareReplay(1));
-    },
-  });
-
-  updateProduct(id: number): void {
-    this.productId.set(id);
-  }
 
   updateLimit(limit: number): void {
     this.limit.set(limit);
