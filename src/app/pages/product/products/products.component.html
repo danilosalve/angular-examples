@@ -1,5 +1,5 @@
 <po-page-default p-title="Produtos" p-subtitle="Exemplo de uso da API RxResource">
-  @let products = (productsResource.value() || []) | productsSearch: filter();
+  @let products = productsResource.value() || [] | productsSearch: filter();
   @let hasValue = productsResource.hasValue();
   @let isLoading = productsResource.isLoading();
   @let error = productsResource.error();

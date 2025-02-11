@@ -2,7 +2,13 @@
   @let price = (product().price | currency: 'BRL') ?? 0;
   <div class="po-row">
     <div class="po-md-5 po-lg-5">
-      <po-image #poImage [p-src]="product().image" p-loading="lazy" [p-alt]="product().description" [p-height]="imageHeight()" />
+      <po-image
+        #poImage
+        [p-src]="product().image"
+        p-loading="lazy"
+        [p-alt]="product().description"
+        [p-height]="imageHeight()"
+      />
       <po-popover
         p-trigger="click"
         [p-target]="poImageRef()"
