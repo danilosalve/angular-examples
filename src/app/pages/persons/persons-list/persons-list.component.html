@@ -1,0 +1,15 @@
+<po-table
+  [p-items]="persons()"
+  (p-show-more)="loadPersons()"
+  [p-loading]="isLoading()"
+  [p-height]="height"
+  [p-columns]="columns"
+  [p-draggable]="true"
+  [p-sort]="true"
+  p-container="shadow"
+  [p-filtered-columns]="['name']"
+  [p-hide-table-search]="false"
+  [p-filter-type]="filterType"
+  [p-actions]="actions"
+  [p-actions-right]="true"
+/>

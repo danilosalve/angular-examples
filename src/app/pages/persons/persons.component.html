@@ -1,7 +1,5 @@
 <po-page-default p-title="Rick & Morty | Personagens" p-subtitle="Exemplo de uso da API resource">
-  @let persons = personsResource.value() ?? [];
-  @let hasValue = personsResource.hasValue();
-  <!-- @let status = personsResource.status(); -->
+  @let persons = personsResource.value() || [];
   @let isLoading = personsResource.isLoading();
   @let error = personsResource.error();
 
@@ -9,12 +7,15 @@
     <p>Ops, ocorreu erro ao tentar listar os Usuários :(</p>
     {{ error }}
   } @else {
-    <po-table
-      [p-items]="persons"
-      [p-show-more-disabled]="!hasValue"
-      (p-show-more)="loadPersons()"
-      [p-loading]="isLoading"
-      [p-height]="height"
+    <app-persons-list
+      [persons]="persons"
+      [isLoading]="isLoading"
+      (loadMorePersons)="loadPersons()"
+      (viewDetailPerson)="viewDetail($event)"
     />
   }
+
+  <po-modal [p-title]="person()?.name || 'Detalhes'" p-size="lg">
+    <app-person-detail [person]="person()!" />
+  </po-modal>
 </po-page-default>

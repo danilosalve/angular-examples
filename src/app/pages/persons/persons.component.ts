@@ -1,21 +1,21 @@
-import { AfterViewInit, Component, HostListener, inject, signal } from '@angular/core';
-import { PersonsService } from './shared/services/persons.service';
-import { PoPageModule, PoTableModule } from '@po-ui/ng-components';
+import { Component, inject, signal, viewChild } from '@angular/core';
+import { PoModalComponent, PoModalModule, PoPageModule } from '@po-ui/ng-components';
 
+import { Person } from './shared/interfaces/person';
+import { PersonDetailComponent } from './person-detail/person-detail.component';
+import { PersonsListComponent } from './persons-list/persons-list.component';
+import { PersonsService } from './shared/services/persons.service';
 @Component({
   selector: 'app-persons',
-  imports: [PoPageModule, PoTableModule],
+  imports: [PoPageModule, PoModalModule, PersonsListComponent, PersonDetailComponent],
   templateUrl: './persons.component.html',
 })
-export class PersonsComponent implements AfterViewInit {
+export class PersonsComponent {
+  modal = viewChild.required(PoModalComponent);
   page = signal(1);
   personsService = inject(PersonsService);
   personsResource = this.personsService.getPersons;
-  height = 400;
-
-  ngAfterViewInit(): void {
-    this.onResize();
-  }
+  person = signal<Person | undefined>(undefined);
 
   loadPersons(): void {
     this.page.update(page => page + 1);
@@ -26,26 +26,8 @@ export class PersonsComponent implements AfterViewInit {
     this.personsResource.reload();
   }
 
-  @HostListener('window:resize')
-  onResize(): void {
-    setTimeout(() => this.setHeight(), 200);
-  }
-
-  setHeight(): void {
-    const elements = [];
-
-    elements.push(this.getElementHeightById('.po-page-header'));
-    elements.push(this.getElementHeightById('.po-row po-table-footer-show-more ng-star-inserted'));
-
-    this.height = this.calculateHeight(elements) - 145;
-  }
-
-  getElementHeightById(id: string): number {
-    const el = document.querySelector(id);
-    return el ? el.clientHeight : 0;
-  }
-
-  calculateHeight(elements: number[]): number {
-    return elements.reduce((amount, currency) => amount - currency, window.innerHeight);
+  viewDetail(person: Person): void {
+    this.person.set(person);
+    this.modal().open();
   }
 }
