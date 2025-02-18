@@ -22,6 +22,7 @@
         <p class="po-font-text-large-bold" style="text-align: center">{{ city() }}</p>
         <p class="po-font-subtitle" style="text-align: center">{{ weather.temperature }}</p>
         <p class="po-font-text-small" style="text-align: center">{{ weather.wind }}</p>
+        <app-weather-icon [description]="weather.description" />
       </po-container>
 
       <p class="po-font-text-large-bold po-mb-1">Proximos dias</p>

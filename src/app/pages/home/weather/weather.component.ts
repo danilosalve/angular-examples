@@ -1,12 +1,13 @@
 import { Component, inject, Injector, Signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PoContainerModule, PoFieldModule, PoLoadingModule } from '@po-ui/ng-components';
-import { WeatherService } from './shared/services/weather.service';
-
-import { DailyWeatherForecastComponent } from './daily-weather-forecast/daily-weather-forecast.component';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { of } from 'rxjs';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
+import { WeatherService } from './shared/services/weather.service';
+import { DailyWeatherForecastComponent } from './daily-weather-forecast/daily-weather-forecast.component';
+import { WeatherIconComponent } from './weather-icon/weather-icon.component';
 
 @Component({
   selector: 'app-weather',
@@ -16,6 +17,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     PoLoadingModule,
     ReactiveFormsModule,
     DailyWeatherForecastComponent,
+    WeatherIconComponent,
     NgxSkeletonLoaderModule,
   ],
   templateUrl: './weather.component.html',
