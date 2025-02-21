@@ -59,7 +59,7 @@ export class HomeComponent {
       icon: 'an an-timer',
     },
     {
-      label: 'Componente Dinâmico',
+      label: 'Componentes Dinâmicos',
       shortLabel: 'Dinâmico',
       icon: 'an an-browsers',
       subItems: [

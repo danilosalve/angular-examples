@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CoinsService } from './shared/services/coins.service';
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { PoIconModule, PoInfoModule, PoInfoOrientation, PoTooltipModule, PoWidgetModule } from '@po-ui/ng-components';
 import { Subject, takeUntil } from 'rxjs';
+
+import { CoinsService } from './shared/services/coins.service';
 
 @Component({
   selector: 'app-coins',
