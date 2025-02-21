@@ -23,7 +23,13 @@
           @for (field of dynamicFields.controls; track $index; let i = $index) {
             <div [formGroupName]="i">
               @let label = 'Field ' + (i + 1);
-              <po-input class="po-sm-12 po-md-9 po-lg-9 po-xl-11" [p-label]="label" formControlName="value" p-clean p-required />
+              <po-input
+                class="po-sm-12 po-md-9 po-lg-9 po-xl-11"
+                [p-label]="label"
+                formControlName="value"
+                p-clean
+                p-required
+              />
               <po-button
                 class="po-sm-12 po-md-3 po-lg-3 po-xl-1 po-mt-4 po-mt-sm-1"
                 p-label="Remover"
