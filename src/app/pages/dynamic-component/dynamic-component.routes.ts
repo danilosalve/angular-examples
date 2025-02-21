@@ -17,6 +17,11 @@ export const DYNAMIC_ROUTES: Routes = [
         loadComponent: () =>
           import('./dynamic-services/dynamic-services.component').then(c => c.DynamicServicesComponent),
       },
+      {
+        path: 'forms',
+        title: 'Dinâmicos | Formulários',
+        loadComponent: () => import('./dynamic-forms/dynamic-forms.component').then(c => c.DynamicFormsComponent),
+      },
     ],
   },
 ];

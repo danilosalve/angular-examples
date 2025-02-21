@@ -1,0 +1,48 @@
+<po-page-detail p-title="Formulários Dinâmicos" p-subtitle="Criando um Formulário Dinâmicamente" (p-back)="onBack()">
+  <div class="po-row">
+    <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2">
+      <po-button
+        class="po-sm-12 po-md-5 po-lg-3 po-xl-2 po-mb-sm-1"
+        p-label="Adicionar campo"
+        (p-click)="addField()"
+        p-size="medium"
+        p-kind="secondary"
+      />
+      <po-button
+        class="po-sm-12 po-md-3 po-lg-2 po-xl-1"
+        p-label="Salvar"
+        (p-click)="onSubmit()"
+        p-size="medium"
+        p-kind="primary"
+        [p-disabled]="form.invalid || dynamicFields.controls.length === 0"
+      />
+    </po-container>
+    <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-5">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div formArrayName="dynamicFields">
+          @for (field of dynamicFields.controls; track $index; let i = $index) {
+            <div [formGroupName]="i">
+              @let label = 'Field ' + (i + 1);
+              <po-input class="po-sm-12 po-md-9 po-lg-9 po-xl-11" [p-label]="label" formControlName="value" p-clean p-required />
+              <po-button
+                class="po-sm-12 po-md-3 po-lg-3 po-xl-1 po-mt-4 po-mt-sm-1"
+                p-label="Remover"
+                (p-click)="removeField(i)"
+                p-size="medium"
+                p-kind="secondary"
+                p-danger
+              />
+            </div>
+          } @empty {
+            <p>Nenhum campo foi adicionado ao formulário</p>
+          }
+        </div>
+      </form>
+    </po-container>
+  </div>
+
+  @if (submitted) {
+    <h3>Form Submitted</h3>
+    <pre>{{ form.value | json }}</pre>
+  }
+</po-page-detail>

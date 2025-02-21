@@ -73,6 +73,11 @@ export class HomeComponent {
           link: 'dynamic/services',
           shortLabel: 'Serviços',
         },
+        {
+          label: 'Formulários',
+          link: 'dynamic/forms',
+          shortLabel: 'Formulários',
+        },
       ],
     },
     {
