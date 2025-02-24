@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, inject, input, output } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener, inject, input, output } from '@angular/core';
 import { PoSearchFilterMode, PoTableAction, PoTableModule } from '@po-ui/ng-components';
 
 import { PersonsService } from './../shared/services/persons.service';
@@ -8,6 +8,7 @@ import { Person } from '../shared/interfaces/person';
   selector: 'app-persons-list',
   imports: [PoTableModule],
   templateUrl: './persons-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PersonsListComponent implements AfterViewInit {
   persons = input.required<Person[]>();
