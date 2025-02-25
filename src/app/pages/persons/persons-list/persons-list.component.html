@@ -1,7 +1,5 @@
-@let items = persons() || [];
-
 <po-table
-  [p-items]="items"
+  [p-items]="persons()"
   (p-show-more)="loadPersons()"
   [p-loading]="isLoading()"
   [p-height]="height"
