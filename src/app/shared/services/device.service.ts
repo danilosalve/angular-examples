@@ -17,6 +17,6 @@ export class DeviceService {
   }
 
   isTable(): boolean {
-    return window.innerWidth >= 481 && window.innerWidth < 700
+    return window.innerWidth >= 481 && window.innerWidth < 700;
   }
 }

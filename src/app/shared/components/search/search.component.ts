@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit, OnDestroy {
         debounceTime(300),
         distinctUntilChanged(),
         filter(value => (value?.search?.length || 0) >= 3 || !value.search?.length),
-        map(value => value.search?.toLowerCase() )
+        map(value => value.search?.toLowerCase())
       )
       .subscribe({
         next: value => this.changeInValue.emit(value || ''),
