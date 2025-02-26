@@ -3,6 +3,7 @@ import {
   Component,
   computed,
   ElementRef,
+  inject,
   input,
   OnInit,
   signal,
@@ -13,6 +14,7 @@ import { PoImageModule, PoInfoModule, PoPopoverModule, PoTagModule, PoWidgetModu
 import { Product } from '../shared/interfaces/product';
 import { RatingComponent } from '../../../shared/components/rating/rating.component';
 import { CurrencyPipe } from '@angular/common';
+import { DeviceService } from '../../../shared/services/device.service';
 
 @Component({
   selector: 'app-product-card',
@@ -27,14 +29,12 @@ export class ProductCardComponent implements OnInit {
   image = signal(40);
   imageHeight = computed(() => this.height() - this.image());
 
+  private readonly device = inject(DeviceService);
+
   ngOnInit(): void {
-    if (this.isSmartPhone()) {
+    if (this.device.isSmartPhone()) {
       this.height.set(610);
       this.image.set(300);
     }
-  }
-
-  isSmartPhone(): boolean {
-    return window.innerWidth < 481;
   }
 }
