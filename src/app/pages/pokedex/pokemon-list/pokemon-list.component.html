@@ -1,0 +1,44 @@
+<po-page-default p-title="Pokedex">
+  @let pokemons = pokemons$ | async;
+
+  <div class="po-row">
+    <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-2">
+      <app-search class="po-xl-3 po-lg-4 po-md-8 po-sm-12 po-mb-1" (changeInValue)="onChangeFilter($event)" />
+
+      @if (pokemons) {
+        <p class="po-font-text-small po-xl-12 po-lg-12 po-md-12 po-sm-12">
+          Exibindo: 1 - {{ pokemons?.results?.length }} de {{ pokemons?.count }}
+        </p>
+      }
+    </po-container>
+
+    @if (pokemons) {
+      <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-2">
+        @for (pokemon of pokemons?.results; track $index) {
+          <app-pokemon-card [pokemon]="pokemon" />
+        }
+      </po-container>
+
+      <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-4">
+        <po-button
+          class="po-offset-md-3 po-offset-lg-4 po-offset-xl-4 po-xl-4 po-lg-4 po-md-6 po-sm-12"
+          p-label="Carregar mais"
+          p-kind="primary"
+          [p-disabled]="pokemons?.next === null"
+          (p-click)="onShowMore()"
+          [p-loading]="!isHideLoading"
+        ></po-button>
+      </po-container>
+    } @else {
+      @if (isLoadShowMore) {
+        <po-loading-overlay p-text="Carregando lista de Pokémons" />
+      } @else {
+        <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-4">
+          <p class="po-font-text-bold">Nenhum Pokémon foi encontrado</p>
+        </po-container>
+      }
+    }
+  </div>
+</po-page-default>
+
+<po-loading-overlay [hidden]="isHideLoading" />

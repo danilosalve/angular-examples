@@ -36,6 +36,11 @@ export const HOME_ROUTES: Routes = [
         loadComponent: () => import('../../../pages/persons/persons.component').then(c => c.PersonsComponent),
       },
       {
+        path: 'pokedex',
+        title: 'Pokémon',
+        loadChildren: () => import('../../../pages/pokedex/pokedex.routes').then(r => r.POKEDEX_ROUTES),
+      },
+      {
         path: 'products',
         title: 'Produtos',
         loadChildren: () => import('../../../pages/product/product.routes').then(r => r.PRODUCT_ROUTES),

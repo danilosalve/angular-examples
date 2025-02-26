@@ -1,0 +1,17 @@
+@if (pokemon()) {
+  <po-widget class="po-xl-2 po-lg-4 po-md-6 po-sm-12 po-mb-2" (p-click)="onClick()">
+    <po-image
+      [p-src]="pokemon().sprites.other['official-artwork'].front_default || pokemon().sprites.front_default || ''"
+      p-loading="lazy"
+      p-alt="Imagem do pokemon"
+    />
+    <p class="po-font-text-smaller">{{ pokemon().id | idPokemon }}</p>
+    <p class="po-font-text-large-bold">{{ pokemon().name | titlecase }}</p>
+
+    @for (type of pokemon().types; track $index) {
+      <app-types-of-pokemon [typeofPokemon]="type.type.name" />
+    }
+  </po-widget>
+} @else {
+  <p>Pokemon inválido</p>
+}

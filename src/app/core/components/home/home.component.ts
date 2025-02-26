@@ -93,6 +93,12 @@ export class HomeComponent {
       icon: 'an an-person',
     },
     {
+      label: 'Pokémon | Pokédex',
+      link: 'pokedex',
+      shortLabel: 'Pokédex',
+      icon: 'an an-poker-chip',
+    },
+    {
       label: 'Usuários',
       link: 'users',
       shortLabel: 'Usuários',

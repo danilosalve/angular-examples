@@ -1,0 +1,48 @@
+<po-page-detail [p-title]="pokemon.name || '' | titlecase" [p-subtitle]="pokemon.id | idPokemon" (p-back)="onBack()">
+  @if (pokemon) {
+    <div class="po-row">
+      <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-5">
+        <div class="po-row">
+          <po-image
+            class="po-sm-12 po-md-9 po-lg-6 po-xl-4 po-mb-2"
+            [p-src]="pokemon.sprites.other['official-artwork'].front_default! || pokemon.sprites.front_default!"
+            p-loading="lazy"
+            p-alt="Imagem do pokemon"
+            [p-height]="imgHeight"
+          />
+
+          <div class="po-sm-12 po-md-3 po-lg-6 po-xl-8">
+            <div class="po-row">
+              <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2">
+                <po-info
+                  class="po-sm-12 po-md-3 po-lg-3 po-xl-3"
+                  p-label="Peso"
+                  [p-value]="pokemon.weight | weightPokemon"
+                />
+                <po-info p-label="Altura" [p-value]="pokemon.height | heightPokemon" />
+              </po-container>
+
+              <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2" p-title="Habilidades">
+                @for (ability of pokemon.abilities; track $index) {
+                  <app-ability-of-pokemon [ability]="ability" />
+                }
+              </po-container>
+
+              <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2"p-title="Tipo">
+                @for (type of pokemon.types; track $index) {
+                  <app-types-of-pokemon [typeofPokemon]="type.type.name" />
+                }
+              </po-container>
+            </div>
+          </div>
+        </div>
+
+        <po-container p-title="Estatísticas">
+          <po-chart [p-series]="seriesStats" />
+        </po-container>
+      </po-container>
+    </div>
+  } @else {
+    <p>Falha ao carregar Pokemon</p>
+  }
+</po-page-detail>
