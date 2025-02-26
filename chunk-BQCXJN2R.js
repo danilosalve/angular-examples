@@ -1,0 +1,1 @@
+import"./chunk-4CLCTAJ7.js";var t=[{path:"",title:"Formul\xE1rios",children:[{path:"container-form",pathMatch:"full",title:"Formul\xE1rios | Control Container",loadComponent:()=>import("./chunk-IUNMYBEW.js").then(o=>o.ControlContainerComponent)}]}];export{t as FORMS_ROUTES};
