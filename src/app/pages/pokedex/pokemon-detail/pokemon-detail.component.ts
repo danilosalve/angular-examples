@@ -39,7 +39,7 @@ import { DeviceService } from '../../../shared/services/device.service';
 })
 export class PokemonDetailComponent extends BaseDetailComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
-  private readonly device = inject(DeviceService)
+  private readonly device = inject(DeviceService);
   protected pokemon!: Pokemon;
   protected seriesStats: PoChartSerie[] = [
     { label: 'HP', data: [0], type: PoChartType.Column },

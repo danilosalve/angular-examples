@@ -28,7 +28,7 @@
                 }
               </po-container>
 
-              <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2"p-title="Tipo">
+              <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2" p-title="Tipo">
                 @for (type of pokemon.types; track $index) {
                   <app-types-of-pokemon [typeofPokemon]="type.type.name" />
                 }
