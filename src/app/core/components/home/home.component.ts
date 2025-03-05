@@ -46,6 +46,11 @@ export class HomeComponent {
           shortLabel: 'Formulários',
         },
         {
+          label: 'Formulários Simples',
+          link: 'signals/form-simple',
+          shortLabel: 'Form. Simples',
+        },
+        {
           label: 'Star Wars Veiculos',
           link: 'signals/vehicle',
           shortLabel: 'Veiculos',

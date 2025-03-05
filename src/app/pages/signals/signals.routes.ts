@@ -16,6 +16,12 @@ export const SIGNALS_ROUTES: Routes = [
         loadComponent: () => import('./signals-form/signals-form.component').then(c => c.SignalsFormComponent),
       },
       {
+        path: 'form-simple',
+        title: 'Signals | Formulário Simples',
+        loadComponent: () =>
+          import('./signals-form-simple/signals-form-simple.component').then(c => c.SignalsFormSimpleComponent),
+      },
+      {
         path: 'vehicle',
         title: 'Signals | Linked',
         loadComponent: () =>

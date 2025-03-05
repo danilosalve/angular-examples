@@ -1,0 +1,13 @@
+<po-page-detail p-title="Formulário Simples" p-subtitle="Formulário Signal sem ReactForm" (p-back)="onBack()">
+  <div class="po-row">
+    <po-container class="po-sm-12 po-md-12 po-lg-6 po-xl-6" p-title="Componente Filho" [p-height]="containerHeight">
+      <app-child-form [(firstName)]="firstName" [(lastName)]="lastName" [(age)]="age" />
+    </po-container>
+
+    <po-container class="po-sm-12 po-md-12 po-lg-6 po-xl-6" p-title="Resultado" [p-height]="containerHeight">
+      <pre class="po-font-text">{{ firstName() }}</pre>
+      <pre class="po-font-text">{{ lastName() }}</pre>
+      <pre class="po-font-text">{{ age() }}</pre>
+    </po-container>
+  </div>
+</po-page-detail>

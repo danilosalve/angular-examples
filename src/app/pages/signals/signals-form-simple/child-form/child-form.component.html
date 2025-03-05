@@ -1,0 +1,35 @@
+<form>
+  <po-input
+    [(ngModel)]="firstName"
+    name="firstName"
+    p-label="Nome"
+    p-placeholder="Informe o nome"
+    p-pattern="^[A-Z][a-z]+$"
+    p-error-pattern="Informe somente Letras - Somente a primeira letra deve ser maiúscula"
+    [p-no-autocomplete]="true"
+    p-required
+    p-clean
+  />
+
+  <po-input
+    [(ngModel)]="lastName"
+    name="lastName"
+    p-label="Sobrenome"
+    p-placeholder="Informe o Sobrenome"
+    p-pattern="^[A-Z][a-z]+$"
+    p-error-pattern="Informe somente Letras - Somente a primeira letra deve ser maiúscula"
+    [p-no-autocomplete]="true"
+    p-required
+    p-clean
+  />
+
+  <po-number
+    [(ngModel)]="age"
+    name="age"
+    p-label="Idade"
+    [p-min]="0"
+    p-placeholder="0"
+    [p-no-autocomplete]="true"
+    p-clean
+  />
+</form>
