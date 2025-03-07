@@ -1,0 +1,62 @@
+<po-page-detail p-title="Formulários" p-subtitle="Form Record" (p-back)="onBack()">
+  <po-container class="po-sm-12 po-md-6 po-lg-9 po-xl-9" p-title="Formulário">
+    <form [formGroup]="form">
+      @for (field of fieldsFormControl; track $index) {
+        @if (field.type === 'boolean') {
+          <po-checkbox
+            [p-label]="field.label"
+            [formControlName]="field.name"
+            [p-required]="field.required || 'false'"
+          />
+        }
+
+        @if (field.type === 'email') {
+          <po-email
+            [p-label]="field.label"
+            [p-placeholder]="field.placeHolder || ''"
+            [formControlName]="field.name"
+            p-clean
+            [p-show-required]="true"
+            [p-required]="field.required || 'false'"
+          />
+        }
+
+        @if (field.type === 'number') {
+          <po-number
+            [p-label]="field.label"
+            [p-placeholder]="field.placeHolder || ''"
+            [formControlName]="field.name"
+            [p-show-required]="true"
+            [p-required]="field.required || 'false'"
+            p-clean
+          />
+        }
+
+        @if (field.type === 'string') {
+          <po-input
+            [p-label]="field.label"
+            [p-placeholder]="field.placeHolder || ''"
+            [formControlName]="field.name"
+            [p-show-required]="true"
+            [p-required]="field.required || 'false'"
+            p-clean
+          />
+        }
+      } @empty {
+        <p class="po-font-text-bold">Nenhum campo foi selecionado</p>
+      }
+    </form>
+  </po-container>
+
+  <po-container class="po-sm-12 po-md-6 po-lg-3 po-xl-3" p-title="Selecionar Campos">
+    <po-checkbox-group [p-options]="options" [p-columns]="1" (p-change)="onSelectingField($event)" />
+  </po-container>
+
+  @if (fieldsFormControl.length > 0) {
+    <po-container class="po-sm-12 po-md-6 po-lg-12 po-xl-12 po-mb-5" p-title="Selecionar Campos">
+      <pre>
+        {{ form.getRawValue() | json }}
+      </pre>
+    </po-container>
+  }
+</po-page-detail>

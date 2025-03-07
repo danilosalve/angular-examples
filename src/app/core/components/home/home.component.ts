@@ -28,6 +28,11 @@ export class HomeComponent {
           link: 'forms/container-form',
           shortLabel: 'Container',
         },
+        {
+          label: 'Form. Record',
+          link: 'forms/form-record',
+          shortLabel: 'Record',
+        },
       ],
     },
     {

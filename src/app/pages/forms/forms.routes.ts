@@ -12,6 +12,11 @@ export const FORMS_ROUTES: Routes = [
         loadComponent: () =>
           import('./control-container/control-container.component').then(c => c.ControlContainerComponent),
       },
+      {
+        path: 'form-record',
+        title: 'Formulários | Form Record',
+        loadComponent: () => import('./form-record/form-record.component').then(c => c.FormRecordComponent),
+      },
     ],
   },
 ];
