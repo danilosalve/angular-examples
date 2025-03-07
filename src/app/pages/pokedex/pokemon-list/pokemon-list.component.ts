@@ -7,8 +7,9 @@ import { PoLoadingModule, PoPageModule, PoContainerModule, PoButtonModule } from
 import { ListOfPokemonWithDetail } from '../shared/interfaces/list-pokemon';
 import { PokemonService } from '../shared/services/pokemon.service';
 import { Pokemon } from '../shared/interfaces/pokemon';
-import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
+import { PokemonResultsComponent } from './pokemon-results/pokemon-results.component';
 import { SearchComponent } from '../../../shared/components/search/search.component';
+import { ListOfPokemonsCardsComponent } from './list-of-pokemons-cards/list-of-pokemons-cards.component';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -19,7 +20,8 @@ import { SearchComponent } from '../../../shared/components/search/search.compon
     PoContainerModule,
     PoButtonModule,
     SearchComponent,
-    PokemonCardComponent,
+    PokemonResultsComponent,
+    ListOfPokemonsCardsComponent,
   ],
   templateUrl: './pokemon-list.component.html',
 })
@@ -62,6 +64,7 @@ export class PokemonListComponent implements OnInit {
 
   onChangeFilter(filter: string): void {
     this.isLoadShowMore = false;
+    this.results = [];
 
     if (filter) {
       this.pokemons$ = this.pokemonService
