@@ -1,5 +1,5 @@
-import { LinksApiResponse } from "./links-api-response";
-import { MetaApiResponse } from "./meta-api-response";
+import { LinksApiResponse } from './links-api-response';
+import { MetaApiResponse } from './meta-api-response';
 
 /**
  * Caracteristas dos personagens do Dragon Ball
@@ -22,9 +22,9 @@ export interface Character {
   /* URL com imagem do personagem*/
   image: string;
   /* afiliação */
-  affiliation: string
+  affiliation: string;
   /* data de exclusão */
-  deletedAt: null | string
+  deletedAt: null | string;
 }
 
 export interface ListCharacters {
