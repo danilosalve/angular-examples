@@ -91,19 +91,26 @@ export class HomeComponent {
       ],
     },
     {
-      label: 'Produtos',
-      link: 'products',
-      shortLabel: 'Produtos',
-      icon: 'an an-shopping-cart-simple',
+      label: 'Resources API',
+      icon: 'an an-angular-logo',
+      shortLabel: 'Resources',
+      subItems: [
+        {
+          label: 'Produtos | RxResource',
+          link: 'resources-api/products',
+          shortLabel: 'Produtos',
+          icon: 'an an-shopping-cart-simple',
+        },
+        {
+          label: 'Rick & Morty - Personagens | Resource',
+          link: 'resources-api/persons',
+          shortLabel: 'Personagens',
+          icon: 'an an-person',
+        },
+      ],
     },
     {
-      label: 'Rick & Morty | Personagens',
-      link: 'persons',
-      shortLabel: 'Personagens',
-      icon: 'an an-person',
-    },
-    {
-      label: 'Pokémon | Pokédex',
+      label: 'Pokédex | Master & Detail',
       link: 'pokedex',
       shortLabel: 'Pokédex',
       icon: 'an an-poker-chip',

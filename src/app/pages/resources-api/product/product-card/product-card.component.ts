@@ -11,10 +11,10 @@ import {
 } from '@angular/core';
 import { PoImageModule, PoInfoModule, PoPopoverModule, PoTagModule, PoWidgetModule } from '@po-ui/ng-components';
 
-import { Product } from '../shared/interfaces/product';
-import { RatingComponent } from '../../../shared/components/rating/rating.component';
 import { CurrencyPipe } from '@angular/common';
-import { DeviceService } from '../../../shared/services/device.service';
+import { DeviceService } from '../../../../shared/services/device.service';
+import { Product } from '../shared/interfaces/product';
+import { RatingComponent } from '../../../../shared/components/rating/rating.component';
 
 @Component({
   selector: 'app-product-card',

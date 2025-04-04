@@ -31,19 +31,15 @@ export const HOME_ROUTES: Routes = [
         loadChildren: () => import('../../../pages/forms/forms.routes').then(r => r.FORMS_ROUTES),
       },
       {
-        path: 'persons',
-        title: 'Rick & Morty | Personagens',
-        loadComponent: () => import('../../../pages/persons/persons.component').then(c => c.PersonsComponent),
-      },
-      {
         path: 'pokedex',
         title: 'Pokémon',
         loadChildren: () => import('../../../pages/pokedex/pokedex.routes').then(r => r.POKEDEX_ROUTES),
       },
       {
-        path: 'products',
-        title: 'Produtos',
-        loadChildren: () => import('../../../pages/product/product.routes').then(r => r.PRODUCT_ROUTES),
+        path: 'resources-api',
+        title: 'API de recursos Angular',
+        loadChildren: () =>
+          import('../../../pages/resources-api/resources-api.routes').then(r => r.RESOURCES_API_ROUTES),
       },
       {
         path: 'signals',
