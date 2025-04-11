@@ -1,1 +1,0 @@
-import{f as t}from"./chunk-LUFRNRS2.js";import{ia as r}from"./chunk-FC34NM5Q.js";var o=class{constructor(c){this.router=r(t),this.backTo=c}onBack(){this.router.navigate([this.backTo])}};export{o as a};
