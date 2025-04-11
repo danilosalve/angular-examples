@@ -1,0 +1,20 @@
+<form>
+  <div class="po-row">
+    <po-checkbox
+      class="po-mb-1 po-sm-12 po-md-12 po-lg-12 po-xl-12"
+      [(ngModel)]="canAccessUsers"
+      name="canAccessUsers"
+      p-label="Pode acessar cadastro de usuários?"
+      (p-change)="onChange()"
+    />
+
+    <po-checkbox
+      class="po-sm-12 po-md-12 po-lg-12 po-xl-12"
+      [(ngModel)]="isAdmin"
+      name="isAdmin"
+      p-label="É Usuário Administrador?"
+      [p-disabled]="true"
+      (p-change)="onChange()"
+    />
+  </div>
+</form>

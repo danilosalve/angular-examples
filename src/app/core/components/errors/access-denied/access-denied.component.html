@@ -1,0 +1,26 @@
+<po-page-default>
+  <div class="po-row">
+    <img
+      class="po-sm-12 po-mt-5"
+      ngSrc="assets/img/undraw_cancel_7zdh.svg"
+      style="display: block; margin-left: auto; margin-right: auto"
+      alt="Usuário sem acesso a página"
+      width="600"
+      height="300"
+      decoding="sync"
+      [priority]="true"
+    />
+
+    <div class="po-sm-12 po-mt-2 po-mb-5" style="text-align: center">
+      <p class="po-font-title po-mt-2">Acesso Negado</p>
+      <p class="po-font-text-large po-mt-2">Ops! Parece que você não tem permissão para acessar esta página</p>
+    </div>
+
+    <po-button
+      class="po-offset-md-3 po-offset-lg-4 po-offset-xl-4 po-xl-4 po-lg-4 po-md-6 po-sm-12 po-mt-2 po-mb-1"
+      p-label="Voltar para página Inicial"
+      p-kind="primary"
+      (p-click)="navigateToHome()"
+    />
+  </div>
+</po-page-default>

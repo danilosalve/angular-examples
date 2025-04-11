@@ -1,13 +1,23 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { PoThemeTypeEnum, PoToolbarAction, PoToolbarModule } from '@po-ui/ng-components';
+import { Component, inject, OnInit, signal, viewChild } from '@angular/core';
+import {
+  PoModalComponent,
+  PoModalModule,
+  PoThemeTypeEnum,
+  PoToolbarAction,
+  PoToolbarModule,
+  PoToolbarProfile,
+} from '@po-ui/ng-components';
+
+import { UserAccessesComponent } from './user-accesses/user-accesses.component';
 import { ThemeService } from './shared/services/theme.service';
 
 @Component({
   selector: 'app-toolbar',
-  imports: [PoToolbarModule],
+  imports: [PoToolbarModule, PoModalModule, UserAccessesComponent],
   templateUrl: './toolbar.component.html',
 })
 export class ToolbarComponent implements OnInit {
+  readonly userAccessModal = viewChild.required(PoModalComponent);
   readonly name: string = 'Aplicativo de exemplo Standalone';
   readonly actions: PoToolbarAction[] = [
     {
@@ -23,6 +33,15 @@ export class ToolbarComponent implements OnInit {
       disabled: () => this.iconTheme() === 'an an-moon',
     },
   ];
+  readonly profile: PoToolbarProfile = {
+    avatar: 'https://avatars.githubusercontent.com/u/42416870?s=96&v=4',
+    subtitle: 'danilo.salve@teste.com.br',
+    title: 'Danilo Salve',
+  };
+  readonly profileActions: PoToolbarAction[] = [
+    { icon: 'an an-user-gear', label: 'Restrições de acesso', action: () => this.openModal() },
+  ];
+
   iconTheme = signal<string>('an an-sun');
   theme = inject(ThemeService);
 
@@ -36,5 +55,9 @@ export class ToolbarComponent implements OnInit {
     if (changeTheme) {
       this.theme.changeTheme(type);
     }
+  }
+
+  openModal(): void {
+    this.userAccessModal().open();
   }
 }

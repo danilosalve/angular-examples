@@ -13,5 +13,5 @@ export const APP_ROUTES: Routes = [
     path: 'not-found',
     loadComponent: () =>
       import('./core/components/errors/not-found/not-found.component').then(c => c.NotFoundComponent),
-  },
+  }
 ];

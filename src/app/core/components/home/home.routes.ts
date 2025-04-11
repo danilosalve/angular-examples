@@ -51,6 +51,11 @@ export const HOME_ROUTES: Routes = [
         title: 'Usuários',
         loadChildren: () => import('../../../pages/users/users-routes').then(r => r.USERS_ROUTES),
       },
+      {
+        path: 'access-denied',
+        title: 'Acesso negado',
+        loadComponent: () => import('../errors/access-denied/access-denied.component').then(c => c.AccessDeniedComponent)
+      }
     ],
   },
 ];
