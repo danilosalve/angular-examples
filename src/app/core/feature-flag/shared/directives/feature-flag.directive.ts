@@ -3,7 +3,7 @@ import { Directive, inject, input, OnInit, TemplateRef, ViewContainerRef } from 
 import { FeatureFlagStoreService } from '../services/feature-flag-store.service';
 
 @Directive({
-  selector: '[appFeatureFlag]'
+  selector: '[appFeatureFlag]',
 })
 export class FeatureFlagDirective implements OnInit {
   featureFlag = input<string | string[]>('');
@@ -15,8 +15,7 @@ export class FeatureFlagDirective implements OnInit {
   private featureFlagStore = inject(FeatureFlagStoreService);
 
   ngOnInit(): void {
-    if (this.featureFlagStore.hasFlags(this.featureFlag()) ||
-     this.featureFlagStore.hasFlags(this.featureFlagOr())){
+    if (this.featureFlagStore.hasFlags(this.featureFlag()) || this.featureFlagStore.hasFlags(this.featureFlagOr())) {
       this.vcr.createEmbeddedView(this.tpl);
     }
   }

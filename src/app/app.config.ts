@@ -14,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideAnimations(),
     importProvidersFrom([BrowserAnimationsModule, PoHttpRequestModule, BrowserModule]),
-    provideAppInitializer(loadFeatureFlagsFn)
-  ]
+    provideAppInitializer(loadFeatureFlagsFn),
+  ],
 };
