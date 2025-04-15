@@ -5,10 +5,11 @@ import { PoIconModule, PoInfoModule, PoInfoOrientation, PoTooltipModule, PoWidge
 import { Subject, takeUntil } from 'rxjs';
 
 import { CoinsService } from './shared/services/coins.service';
+import { IsDeveloperModeDirective } from '../../../../../shared/directives/is-developer-mode.directive';
 
 @Component({
   selector: 'app-coins',
-  imports: [CommonModule, PoWidgetModule, PoInfoModule, PoIconModule, PoTooltipModule],
+  imports: [CommonModule, PoWidgetModule, PoInfoModule, PoIconModule, PoTooltipModule, IsDeveloperModeDirective],
   templateUrl: './coins.component.html',
 })
 export class CoinsComponent implements OnInit, OnDestroy {

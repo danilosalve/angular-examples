@@ -8,6 +8,7 @@ import { FilterByDescriptionPipe } from '../shared/pipes/filter-by-description.p
 import { UsersService } from '../shared/services/users.service';
 import { UserComponent } from '../user/user.component';
 import { HttpErrorResponse } from '@angular/common/http';
+import { IsDeveloperModeDirective } from '../../../shared/directives/is-developer-mode.directive';
 
 @Component({
   selector: 'app-list-users',
@@ -19,6 +20,7 @@ import { HttpErrorResponse } from '@angular/common/http';
     FilterByDescriptionPipe,
     UserComponent,
     PoSearchModule,
+    IsDeveloperModeDirective,
   ],
   templateUrl: './list-users.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
