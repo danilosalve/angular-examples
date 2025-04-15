@@ -1,4 +1,4 @@
-import { FeatureFlag } from "../interfaces/feature-flag";
+import { FeatureFlag } from '../interfaces/feature-flag';
 
 /**
  * Constante com valores padrões das Flags
@@ -9,6 +9,6 @@ export const DEFAULT_FLAGS: FeatureFlag = {
   featureFlags: {
     users: false,
     darkMode: true,
-    isAdmin: true
-  }
-}
+    isAdmin: true,
+  },
+};

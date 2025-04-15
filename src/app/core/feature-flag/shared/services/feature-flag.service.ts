@@ -19,11 +19,9 @@ export class FeatureFlagService {
     const headers: HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/json; charset=UTF-8',
     });
-    return this.http
-      .get<FeatureFlag>(this.apiUrl, { headers })
-      .pipe(
-        catchError(() => of(DEFAULT_FLAGS)),
-        tap(featureFlags => this.featureFlagStore.setStore(featureFlags)));
+    return this.http.get<FeatureFlag>(this.apiUrl, { headers }).pipe(
+      catchError(() => of(DEFAULT_FLAGS)),
+      tap(featureFlags => this.featureFlagStore.setStore(featureFlags))
+    );
   }
 }
-
