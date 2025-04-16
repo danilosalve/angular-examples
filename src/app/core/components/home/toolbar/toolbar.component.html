@@ -6,6 +6,19 @@
   [p-actions]="actions"
 />
 
-<po-modal p-title="Acessos do Usuário">
+<po-modal #userAccess p-title="Acessos do Usuário">
   <app-user-accesses />
+</po-modal>
+
+<po-modal #about p-title="Sobre">
+  <div class="po-row">
+    <p class="po-font-text-small po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2">
+      Este site apresenta funcionalidades práticas desenvolvidas com Angular, permitindo que os visitantes consultem
+      dados dinâmicos e interativos.
+    </p>
+    <p class="po-font-text-small po-sm-12 po-md-12 po-lg-12 po-xl-12">
+      Embora não seja uma plataforma para aprendizado de Angular, desenvolvedores que trabalham com o framework podem
+      utilizá-lo como referência para implementação de funcionalidades semelhantes em seus próprios projetos.
+    </p>
+  </div>
 </po-modal>

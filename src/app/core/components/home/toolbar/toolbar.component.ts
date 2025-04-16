@@ -17,8 +17,9 @@ import { ThemeService } from './shared/services/theme.service';
   templateUrl: './toolbar.component.html',
 })
 export class ToolbarComponent implements OnInit {
-  readonly userAccessModal = viewChild.required(PoModalComponent);
-  readonly name: string = 'Aplicativo de exemplo Standalone';
+  readonly aboutModal = viewChild.required('about', { read: PoModalComponent });
+  readonly userAccessModal = viewChild.required('userAccess', { read: PoModalComponent });
+  readonly name: string = 'Exemplos Angular';
   readonly actions: PoToolbarAction[] = [
     {
       icon: 'an an-sun',
@@ -39,7 +40,8 @@ export class ToolbarComponent implements OnInit {
     title: 'Danilo Salve',
   };
   readonly profileActions: PoToolbarAction[] = [
-    { icon: 'an an-user-gear', label: 'Restrições de acesso', action: () => this.openModal() },
+    { icon: 'an an-user-gear', label: 'Restrições de acesso', action: () => this.openModalUserAccess() },
+    { icon: 'an an-info', label: 'Sobre', action: () => this.openModalAbout() },
   ];
 
   iconTheme = signal<string>('an an-sun');
@@ -57,7 +59,11 @@ export class ToolbarComponent implements OnInit {
     }
   }
 
-  openModal(): void {
+  openModalUserAccess(): void {
     this.userAccessModal().open();
+  }
+
+  openModalAbout(): void {
+    this.aboutModal().open();
   }
 }
