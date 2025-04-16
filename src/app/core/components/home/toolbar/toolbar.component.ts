@@ -36,7 +36,7 @@ export class ToolbarComponent implements OnInit {
   ];
   readonly profile: PoToolbarProfile = {
     avatar: 'https://avatars.githubusercontent.com/u/42416870?s=96&v=4',
-    subtitle: 'danilo.salve@teste.com.br',
+    subtitle: 'github.com/danilosalve',
     title: 'Danilo Salve',
   };
   readonly profileActions: PoToolbarAction[] = [
