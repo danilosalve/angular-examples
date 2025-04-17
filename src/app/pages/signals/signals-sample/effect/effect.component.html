@@ -1,0 +1,34 @@
+<po-container p-title="Exemplo Effect">
+  <form>
+    <po-input
+      [(ngModel)]="zipCode"
+      name="zipCode"
+      p-label="CEP"
+      p-help="Pesquisar um Endereço utilizando o CEP"
+      p-placeholder="00000-000"
+      p-clean
+      p-mask="99999-999"
+    />
+  </form>
+
+  @let address = addressResource.value();
+  @let isLoading = addressResource.isLoading();
+  @let error = addressResource.error();
+
+  @if (isLoading) {
+    <po-loading-overlay />
+  } @else {
+    @if (address && enabled()) {
+      <po-info p-label="Logradouro" [p-value]="address.logradouro" />
+      <po-info p-label="Bairro" [p-value]="address.bairro" />
+      <po-info p-label="Cidade" [p-value]="address.localidade" />
+      <po-info p-label="Estado" [p-value]="address.estado" />
+      <po-info p-label="Região" [p-value]="address.regiao" />
+      <po-info p-label="DDD" [p-value]="address.ddd" />
+    }
+  }
+  @if (error) {
+    <p class="po-font-text-large po-mt-2">Ops...</p>
+    <p class="po-font-text-large">Ocorreu um erro ao buscar o Endereço :(</p>
+  }
+</po-container>
