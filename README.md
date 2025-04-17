@@ -1,27 +1,25 @@
 # angular-examples
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+![GitHub deployments](https://img.shields.io/github/deployments/danilosalve/angular-examples/github-pages)
+![GitHub top language](https://img.shields.io/github/languages/top/danilosalve/angular-examples)
+![GitHub language count](https://img.shields.io/github/languages/count/danilosalve/angular-examples)
 
-## Development server
+Este projeto foi desenvolvido para testar e explorar novas funcionalidades do Angular, utilizando componentes Standalone. Ele inclui exemplos práticos e interativos para desenvolvedores que desejam aprender ou se aprofundar nas novas features do framework.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+- **RxJS**: Exemplos práticos utilizando operadores como `Concat` e `MergeMap`.
+- **Nova API de Recursos (Resources)**: Demonstração de como utilizar a nova API para manipulação de recursos.
+- **Signals**: Exemplos de uso da nova API de Signals para gerenciamento de estado reativo.
+- **Carregamento Deferido (Defer)**: Exemplos de carregamento adiado de componentes e conteúdo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Atenção
+Algumas funcionalidades estão disponíveis somente em ambiente de desenvolvimento. 
+* Web Socket (Coins) - Widget na página inicial.
+* Página de Usuários (Possui dependência com um servidor *backend* local).
 
-## Build
+## Servidor de Desenvolvimento
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute `ng serve` para iniciar o servidor de desenvolvimento. Navegue até `http://localhost:4200/`. A aplicação será recarregada automaticamente ao alterar qualquer arquivo do código-fonte.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
