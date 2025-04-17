@@ -1,5 +1,5 @@
 import { FormsModule } from '@angular/forms';
-import { Component, effect, inject, resource, signal } from '@angular/core';
+import { Component, effect, inject, isDevMode, resource, signal } from '@angular/core';
 import {
   PoContainerModule,
   PoFieldModule,
@@ -17,13 +17,14 @@ import { Address } from '../shared/interface/address.interface';
 })
 export class EffectComponent {
   private readonly notification = inject(PoNotificationService);
+  private readonly apiUrl = isDevMode() ? 'http://viacep.com.br/ws' : 'https://viacep.com.br/ws';
   zipCode = signal<string>('');
   enabled = signal(false);
 
   addressResource = resource({
     request: this.zipCode,
     loader: ({ request: zipCode, abortSignal }): Promise<Address> => {
-      return fetch(`http://viacep.com.br/ws/${zipCode || '0'}/json/`, { signal: abortSignal }).then(
+      return fetch(`${this.apiUrl}/${zipCode || '0'}/json/`, { signal: abortSignal }).then(
         address => address.json() as unknown as Address
       );
     },
