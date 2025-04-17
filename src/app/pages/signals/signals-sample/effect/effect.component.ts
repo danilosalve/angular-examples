@@ -9,7 +9,6 @@ import {
 } from '@po-ui/ng-components';
 
 import { Address } from '../shared/interface/address.interface';
-import { ADDRESS_DEFAULT } from '../shared/helpers/address-default.constrants';
 
 @Component({
   selector: 'app-effect',
@@ -22,15 +21,11 @@ export class EffectComponent {
   enabled = signal(false);
 
   addressResource = resource({
-    request: () => ({ zipCode: this.zipCode(), enable: this.enabled() }),
+    request: this.zipCode,
     loader: ({ request: zipCode, abortSignal }): Promise<Address> => {
-      if (this.enabled()) {
-        return fetch(`http://viacep.com.br/ws/${zipCode}/json/`, { signal: abortSignal }).then(
-          address => address.json() as unknown as Address
-        );
-      } else {
-        return Promise.resolve(ADDRESS_DEFAULT);
-      }
+      return fetch(`http://viacep.com.br/ws/${zipCode || '0'}/json/`, { signal: abortSignal }).then(
+        address => address.json() as unknown as Address
+      );
     },
   });
 
