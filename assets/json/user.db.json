@@ -1,0 +1,179 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Logan",
+      "nickname": "Wolverine",
+      "description": "O mutante com garras de adamantium e fator de cura.",
+      "email": "logan@xmen.com"
+    },
+    {
+      "id": 2,
+      "name": "Charles Xavier",
+      "nickname": "Professor X",
+      "description": "Poderoso telepata e líder dos X-Men.",
+      "email": "charlesx@xmen.com"
+    },
+    {
+      "id": 3,
+      "name": "Jean Grey",
+      "nickname": "Fênix",
+      "description": "Mutante com habilidades telepáticas e telecinéticas.",
+      "email": "jeangrey@xmen.com"
+    },
+    {
+      "id": 4,
+      "name": "Scott Summers",
+      "nickname": "Ciclope",
+      "description": "Dispara rajadas ópticas poderosas.",
+      "email": "scott-summers@xmen.com"
+    },
+    {
+      "id": 5,
+      "name": "Ororo Munroe",
+      "nickname": "Tempestade",
+      "description": "Controla o clima e pode invocar tempestades.",
+      "email": "tempestade@xmen.com"
+    },
+    {
+      "id": 6,
+      "name": "Erik Lehnsherr",
+      "nickname": "Magneto",
+      "description": "Manipula campos magnéticos e controla metais. Um dos mutantes mais poderosos e líder de várias facções mutantes.",
+      "email": "magneto@clube-inferno.com"
+    },
+    {
+      "id": 7,
+      "name": "Remy LeBeau",
+      "nickname": "Gambit",
+      "description": "Carrega objetos com energia cinética, fazendo-os explodir.",
+      "email": "gambit@xmen.com"
+    },
+    {
+      "id": 8,
+      "name": "Kurt Wagner",
+      "nickname": "Noturno",
+      "description": "Pode se teleportar e possui agilidade sobre-humana.",
+      "email": "noturno@xmen.com"
+    },
+    {
+      "id": 9,
+      "name": "Rogue",
+      "nickname": "Vampira",
+      "description": "Absorve poderes e memórias através do toque.",
+      "email": "vampira@xmen.com"
+    },
+    {
+      "id": 10,
+      "name": "Emma Frost",
+      "nickname": "Rainha Branca",
+      "description": "Poderosa telepata e capaz de transformar seu corpo em diamante.",
+      "email": "frost@xmen.com"
+    },
+    {
+      "id": 11,
+      "name": "Piotr Rasputin",
+      "nickname": "Colossus",
+      "description": "Pode transformar seu corpo em aço orgânico, ganhando força e resistência.",
+      "email": "colossus@xmen.com"
+    },
+    {
+      "id": 12,
+      "name": "Bobby Drake",
+      "nickname": "Homem de Gelo",
+      "description": "Manipula gelo e temperaturas extremamente baixas.",
+      "email": "drake-ice@xmen.com"
+    },
+    {
+      "id": 13,
+      "name": "Laura Kinney",
+      "nickname": "X-23",
+      "description": "Clone de Wolverine com garras de adamantium e fator de cura.",
+      "email": "kinney-23@xmen.com"
+    },
+    {
+      "id": 14,
+      "name": "Lucas Bishop",
+      "nickname": "Bishop",
+      "description": "Absorve e redireciona energia para ataques poderosos.",
+      "email": "bishop@xmen.com"
+    },
+    {
+      "id": 15,
+      "name": "Warren Worthington III",
+      "nickname": "Arcanjo",
+      "description": "Possui asas metálicas e habilidades de voo aprimoradas.",
+      "email": "magneto@clube-inferno.com"
+    },
+    {
+      "id": 16,
+      "name": "Raven Darkhölme",
+      "nickname": "Mística",
+      "description": "Metamorfa capaz de alterar sua aparência e voz para se transformar em qualquer pessoa.",
+      "email": "mistica@clube-inferno.com"
+    },
+    {
+      "id": 17,
+      "name": "Victor Creed",
+      "nickname": "Dentes-de-Sabre",
+      "description": "Mutante com força sobre-humana, sentidos aguçados e fator de cura acelerado.",
+      "email": "creed@clube-inferno.com"
+    },
+    {
+      "id": 18,
+      "name": "Jason Wyngarde",
+      "nickname": "Mestre Mental",
+      "description": "Poderoso telepata capaz de criar ilusões extremamente realistas.",
+      "email": "mestre-mental@clube-inferno.com"
+    },
+    {
+      "id": 19,
+      "name": "Mortimer Toynbee",
+      "nickname": "Groxo",
+      "description": "Mutante com habilidades anfíbias, incluindo força aumentada e agilidade extrema.",
+      "email": "magneto@clube-inferno.com"
+    },
+    {
+      "id": 20,
+      "name": "Fabian Cortez",
+      "nickname": "Cortez",
+      "description": "Mutante capaz de amplificar os poderes de outros mutantes, mas com efeitos colaterais perigosos.",
+      "email": "cortez@clube-inferno.com"
+    },
+    {
+      "id": 21,
+      "name": "Suvik Senyaka",
+      "nickname": "Senyaka",
+      "description": "Manipula energia bioelétrica para ataques e regeneração.",
+      "email": "senyaka@clube-inferno.com"
+    },
+    {
+      "id": 22,
+      "name": "Exodus",
+      "nickname": "Exodus",
+      "description": "Mutante extremamente poderoso com habilidades telecinéticas e telepáticas.",
+      "email": "exodus@clube-inferno.com"
+    },
+    {
+      "id": 23,
+      "name": "Sven Kleinstock",
+      "nickname": "Irmãos Kleinstock",
+      "description": "Mutantes que podem se fundir em um único ser, aumentando força e resistência.",
+      "email": "kleinstock@clube-inferno.com"
+    },
+    {
+      "id": 24,
+      "name": "Rusty Collins",
+      "nickname": "Firefist",
+      "description": "Mutante com habilidade de pirocinese, capaz de controlar e manipular fogo.",
+      "email": "firefist@clube-inferno.com"
+    },
+    {
+      "id": 25,
+      "name": "Joanna Cargill",
+      "nickname": "Frenesi",
+      "description": "Mutante com força sobre-humana e pele resistente a danos físicos.",
+      "email": "frenesi@clube-inferno.com"
+    }
+  ]
+}
