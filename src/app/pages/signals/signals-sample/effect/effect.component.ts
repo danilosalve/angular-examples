@@ -3,16 +3,26 @@ import { Component, computed, effect, inject, isDevMode, resource, signal } from
 import {
   PoContainerModule,
   PoFieldModule,
+  PoIconModule,
   PoInfoModule,
   PoLoadingModule,
   PoNotificationService,
+  PoTooltipModule,
 } from '@po-ui/ng-components';
 
 import { Address } from '../shared/interface/address.interface';
 
 @Component({
   selector: 'app-effect',
-  imports: [FormsModule, PoContainerModule, PoFieldModule, PoInfoModule, PoLoadingModule],
+  imports: [
+    FormsModule,
+    PoContainerModule,
+    PoFieldModule,
+    PoInfoModule,
+    PoLoadingModule,
+    PoIconModule,
+    PoTooltipModule,
+  ],
   templateUrl: './effect.component.html',
 })
 export class EffectComponent {

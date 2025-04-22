@@ -1,4 +1,4 @@
-import { PoButtonModule, PoContainerModule, PoFieldModule } from '@po-ui/ng-components';
+import { PoButtonModule, PoContainerModule, PoFieldModule, PoIconModule, PoTooltipModule } from '@po-ui/ng-components';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { Component, computed, inject, OnInit, signal, untracked } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -6,7 +6,15 @@ import { debounceTime, map } from 'rxjs';
 
 @Component({
   selector: 'app-untracked',
-  imports: [CommonModule, PoButtonModule, PoFieldModule, PoContainerModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    PoButtonModule,
+    PoFieldModule,
+    PoContainerModule,
+    ReactiveFormsModule,
+    PoIconModule,
+    PoTooltipModule,
+  ],
   providers: [TitleCasePipe],
   templateUrl: './untracked.component.html',
 })

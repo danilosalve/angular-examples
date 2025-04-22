@@ -4,13 +4,15 @@ import {
   PoButtonModule,
   PoContainerModule,
   PoFieldModule,
+  PoIconModule,
   PoNotificationService,
   PoSelectComponent,
+  PoTooltipModule,
 } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-linked',
-  imports: [PoContainerModule, PoButtonModule, PoFieldModule, FormsModule],
+  imports: [PoContainerModule, PoButtonModule, PoFieldModule, FormsModule, PoIconModule, PoTooltipModule],
   templateUrl: './linked.component.html',
 })
 export class LinkedComponent implements OnInit {
