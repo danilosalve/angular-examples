@@ -60,6 +60,11 @@ export class HomeComponent {
           link: 'signals/vehicle',
           shortLabel: 'Veiculos',
         },
+        {
+          label: 'Signals | Store',
+          link: 'signals/store',
+          shortLabel: 'Store',
+        },
       ],
     },
     {

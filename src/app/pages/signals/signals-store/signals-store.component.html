@@ -1,0 +1,40 @@
+<po-page-detail p-title="Store" p-subtitle="Exemplo de uso do SignalsStore" (p-back)="onBack()">
+  <div class="po-row">
+    <po-container class="po-mb-5 po-sm-12 po-md-12 po-lg-12 po-xl-12">
+      <div class="po-row search">
+        <app-search-box
+          class="po-xl-3 po-lg-4 po-md-8 po-sm-12 po-mb-1"
+          [query]="store.query()"
+          (queryChange)="store.updateQuery($event)"
+        />
+
+        <div class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-2">
+          <p class="po-font-text-small">Usuários: {{ store.userCount() }}</p>
+        </div>
+      </div>
+
+      @if (store.isLoading()) {
+        <po-loading-overlay />
+      }
+
+      @if (!store.isLoading()) {
+        <div class="po-row">
+          <po-list-view
+            class="po-sm-12 po-md-12 po-lg-12 po-xl-12"
+            p-property-title="name"
+            [p-height]="height"
+            [p-items]="store.users()"
+          >
+            <ng-template p-list-view-content-template let-item>
+              <div class="po-row">
+                <po-info class="po-sm-12 po-md-6 po-lg-3 po-xl-3" p-label="Apelido" [p-value]="item.nickname" />
+                <po-info class="po-sm-12 po-md-6 po-lg-9 po-xl-9" p-label="Email" [p-value]="item.email" />
+                <po-info class="po-sm-12 po-md-12 po-lg-12 po-xl-12" p-label="Descrição" [p-value]="item.description" />
+              </div>
+            </ng-template>
+          </po-list-view>
+        </div>
+      }
+    </po-container>
+  </div>
+</po-page-detail>

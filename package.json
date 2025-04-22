@@ -25,6 +25,8 @@
     "@angular/platform-browser": "~19.1.4",
     "@angular/platform-browser-dynamic": "~19.1.4",
     "@angular/router": "~19.1.4",
+    "@ngrx/operators": "^19.1.0",
+    "@ngrx/signals": "^19.1.0",
     "@po-ui/ng-components": "19.7.0",
     "@po-ui/ng-templates": "19.7.0",
     "@totvs/po-theme": "^19.7.0",

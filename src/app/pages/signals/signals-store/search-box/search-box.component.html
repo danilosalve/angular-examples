@@ -1,0 +1,9 @@
+<po-input
+  p-icon="an an-magnifying-glass"
+  p-placeholder="Pesquisar usuários..."
+  p-clean
+  [p-no-autocomplete]="true"
+  [(ngModel)]="query"
+  name="query"
+  (ngModelChange)="queryChange.emit($event)"
+/>

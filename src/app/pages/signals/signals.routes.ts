@@ -22,6 +22,11 @@ export const SIGNALS_ROUTES: Routes = [
           import('./signals-form-simple/signals-form-simple.component').then(c => c.SignalsFormSimpleComponent),
       },
       {
+        path: 'store',
+        title: 'Signals | Store',
+        loadComponent: () => import('./signals-store/signals-store.component').then(c => c.SignalsStoreComponent),
+      },
+      {
         path: 'vehicle',
         title: 'Signals | Linked',
         loadComponent: () =>
