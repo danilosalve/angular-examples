@@ -42,14 +42,14 @@ export const HOME_ROUTES: Routes = [
           import('../../../pages/resources-api/resources-api.routes').then(r => r.RESOURCES_API_ROUTES),
       },
       {
+        path: 'rxjs',
+        title: 'Exemplos RXJS',
+        loadChildren: () => import('../../../pages/rxjs/rxjs.routes').then(r => r.RXJS_ROUTES)
+      },
+      {
         path: 'signals',
         title: 'Signals',
         loadChildren: () => import('../../../pages/signals/signals.routes').then(r => r.SIGNALS_ROUTES),
-      },
-      {
-        path: 'users',
-        title: 'Usuários',
-        loadChildren: () => import('../../../pages/users/users-routes').then(r => r.USERS_ROUTES),
       },
       {
         path: 'access-denied',

@@ -1,0 +1,27 @@
+<form>
+  <po-input
+    [(ngModel)]="name"
+    name="name"
+    p-label="Nome"
+    p-placeholder="Ex: Luke"
+    p-help="Informe o nome de um personagem do Star Wars"
+    [p-no-autocomplete]="true"
+    p-required
+    p-clean
+  />
+
+  <po-button p-label="Pesquisar" p-kind="primary" (p-click)="onClickSearch()" />
+</form>
+
+@if (isLoading) {
+  <po-loading-overlay />
+}
+
+<po-modal>
+  @if (people) {
+    <po-info p-label="Nome" [p-value]="people.name" />
+    <po-info p-label="Genero" [p-value]="people.gender" />
+    <po-info p-label="Peso (massa)" [p-value]="people.height" />
+    <po-info p-label="Altura" [p-value]="people.mass" />
+  }
+</po-modal>

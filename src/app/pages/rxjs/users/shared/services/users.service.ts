@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable, shareReplay } from 'rxjs';
 import { UserAPIResponse } from '../interface/user.interface';
 
-import { BASE_API } from '../../../../app.constraints';
+import { BASE_API } from '../../../../../app.constraints';
 
 @Injectable({
   providedIn: 'root',

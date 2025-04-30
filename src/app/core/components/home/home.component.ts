@@ -115,16 +115,28 @@ export class HomeComponent {
       ],
     },
     {
+      label: 'RxJs',
+      icon: 'an an-play',
+      shortLabel: 'RxJs',
+      subItems: [
+        {
+          label: 'Cache | ShareReplay',
+          link: 'rxjs/replay',
+          shortLabel: 'Replay'
+        },
+        {
+          label: 'Usuários | Async',
+          link: 'rxjs/users',
+          shortLabel: 'Usuários',
+          icon: 'an an-user',
+        },
+      ]
+    },
+    {
       label: 'Pokédex | Master & Detail',
       link: 'pokedex',
       shortLabel: 'Pokédex',
       icon: 'an an-poker-chip',
-    },
-    {
-      label: 'Usuários',
-      link: 'users',
-      shortLabel: 'Usuários',
-      icon: 'an an-user',
     },
   ];
 }
