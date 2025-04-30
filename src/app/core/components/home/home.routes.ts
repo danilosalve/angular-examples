@@ -44,7 +44,7 @@ export const HOME_ROUTES: Routes = [
       {
         path: 'rxjs',
         title: 'Exemplos RXJS',
-        loadChildren: () => import('../../../pages/rxjs/rxjs.routes').then(r => r.RXJS_ROUTES)
+        loadChildren: () => import('../../../pages/rxjs/rxjs.routes').then(r => r.RXJS_ROUTES),
       },
       {
         path: 'signals',

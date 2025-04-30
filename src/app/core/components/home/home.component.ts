@@ -122,7 +122,7 @@ export class HomeComponent {
         {
           label: 'Cache | ShareReplay',
           link: 'rxjs/replay',
-          shortLabel: 'Replay'
+          shortLabel: 'Replay',
         },
         {
           label: 'Usuários | Async',
@@ -130,7 +130,7 @@ export class HomeComponent {
           shortLabel: 'Usuários',
           icon: 'an an-user',
         },
-      ]
+      ],
     },
     {
       label: 'Pokédex | Master & Detail',
