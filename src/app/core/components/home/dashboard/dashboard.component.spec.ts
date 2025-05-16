@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashboardComponent } from './dashboard.component';
+import { By } from '@angular/platform-browser';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -7,7 +8,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DashboardComponent]
+      imports: [DashboardComponent],
     });
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
@@ -19,7 +20,7 @@ describe('DashboardComponent', () => {
   });
 
   it('deve exibir o título principal correto', () => {
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('po-page-default').textContent).toContain('Página Inicial');
+    const container = fixture.debugElement.query(By.css('po-page-default'));
+    expect(container.attributes['p-title']).toBe('Página Inicial');
   });
 });
