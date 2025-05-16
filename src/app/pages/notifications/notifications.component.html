@@ -1,23 +1,25 @@
 <po-page-default p-title="Notificações" p-subtitle="Exemplo de uso do ng-event-bus">
   <div class="po-row">
+    <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2">
+      <form>
+        <po-textarea
+          p-label="Mensagem"
+          [(ngModel)]="message"
+          name="message"
+          p-help="Insira a mensagem que deseja notificar o usuario"
+          p-placeholder="Insira a sua mensagem aqui..."
+        />
 
-  <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2">
-    <form>
-      <po-textarea p-label="Mensagem" [(ngModel)]="message" name="message"
-        p-help="Insira a mensagem que deseja notificar o usuario" p-placeholder="Insira a sua mensagem aqui..." />
+        <po-button p-label="Enviar" p-kind="primary" (p-click)="sendMessage()" />
+      </form>
+    </po-container>
 
-      <po-button p-label="Enviar" p-kind="primary" (p-click)="sendMessage()" />
-    </form>
-  </po-container>
-
-  <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12">
-    @for (notification of notifications; track notification.message) {
-    <div class="po-font-text">
-      {{ notification.message }} ({{ notification.timestamp | date:'shortTime' }})
-    </div>
-    } @empty {
-      <p> Nenhuma mensagem encontrada.</p>
-    }
-  </po-container>
+    <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12">
+      @for (notification of notifications; track notification.message) {
+        <div class="po-font-text">{{ notification.message }} ({{ notification.timestamp | date: 'shortTime' }})</div>
+      } @empty {
+        <p>Nenhuma mensagem encontrada.</p>
+      }
+    </po-container>
   </div>
 </po-page-default>

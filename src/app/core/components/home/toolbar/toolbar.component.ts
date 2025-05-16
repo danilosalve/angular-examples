@@ -49,7 +49,7 @@ export class ToolbarComponent implements OnInit {
       label: 'Mais notificações',
       icon: 'an an-bell',
       url: '/notifications',
-    }
+    },
   ];
 
   private readonly eventBus = inject(NgEventBus);

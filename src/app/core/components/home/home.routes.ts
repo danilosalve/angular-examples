@@ -38,7 +38,8 @@ export const HOME_ROUTES: Routes = [
       {
         path: 'notifications',
         title: 'Notificações',
-        loadComponent: () => import('../../../pages/notifications/notifications.component').then(c => c.NotificationsComponent),
+        loadComponent: () =>
+          import('../../../pages/notifications/notifications.component').then(c => c.NotificationsComponent),
       },
       {
         path: 'resources-api',
