@@ -1,0 +1,1 @@
+import"./chunk-4CLCTAJ7.js";var t=[{path:"products",title:"Produtos",loadChildren:()=>import("./chunk-RG4G5SIL.js").then(o=>o.PRODUCT_ROUTES)},{path:"persons",title:"Rick & Morty | Personagens",loadComponent:()=>import("./chunk-TGZB2SRP.js").then(o=>o.PersonsComponent)}];export{t as RESOURCES_API_ROUTES};
