@@ -96,6 +96,12 @@ export class HomeComponent {
       ],
     },
     {
+      label: 'Notificações',
+      link: 'notifications',
+      shortLabel: 'Notificações',
+      icon: 'an an-bell',
+    },
+    {
       label: 'Resources API',
       icon: 'an an-angular-logo',
       shortLabel: 'Resources',

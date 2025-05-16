@@ -10,6 +10,7 @@ import {
 
 import { UserAccessesComponent } from './user-accesses/user-accesses.component';
 import { ThemeService } from './shared/services/theme.service';
+import { MetaData, NgEventBus } from 'ng-event-bus';
 
 @Component({
   selector: 'app-toolbar',
@@ -43,6 +44,17 @@ export class ToolbarComponent implements OnInit {
     { icon: 'an an-user-gear', label: 'Restrições de acesso', action: () => this.openModalUserAccess() },
     { icon: 'an an-info', label: 'Sobre', action: () => this.openModalAbout() },
   ];
+  readonly notificationActions: PoToolbarAction[] = [
+    {
+      label: 'Mais notificações',
+      icon: 'an an-bell',
+      url: '/notifications',
+    }
+  ];
+
+  private readonly eventBus = inject(NgEventBus);
+
+  notificationNumber = 0;
 
   iconTheme = signal<string>('an an-sun');
   theme = inject(ThemeService);
@@ -50,6 +62,7 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
     const theme = this.theme.onInitTheme();
     this.changeTheme(theme, false);
+    this.listenNotifications();
   }
 
   changeTheme(type: PoThemeTypeEnum, changeTheme = true) {
@@ -65,5 +78,19 @@ export class ToolbarComponent implements OnInit {
 
   openModalAbout(): void {
     this.aboutModal().open();
+  }
+
+  listenNotifications(): void {
+    this.eventBus.on('notification').subscribe((event: MetaData) => {
+      this.notificationActions.push({
+        icon: 'an an-bell',
+        label: event.data.message,
+        action: () => {
+          this.notificationNumber--;
+          this.notificationActions.pop();
+        },
+      });
+      this.notificationNumber++;
+    });
   }
 }

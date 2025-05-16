@@ -36,6 +36,11 @@ export const HOME_ROUTES: Routes = [
         loadChildren: () => import('../../../pages/pokedex/pokedex.routes').then(r => r.POKEDEX_ROUTES),
       },
       {
+        path: 'notifications',
+        title: 'Notificações',
+        loadComponent: () => import('../../../pages/notifications/notifications.component').then(c => c.NotificationsComponent),
+      },
+      {
         path: 'resources-api',
         title: 'API de recursos Angular',
         loadChildren: () =>

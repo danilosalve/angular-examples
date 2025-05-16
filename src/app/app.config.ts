@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { APP_ROUTES } from './app.routes';
 import { loadFeatureFlagsFn } from './core/feature-flag/shared/helpers/loadFeatureFlags';
+import { NgEventBus } from 'ng-event-bus';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,5 +16,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     importProvidersFrom([BrowserAnimationsModule, PoHttpRequestModule, BrowserModule]),
     provideAppInitializer(loadFeatureFlagsFn),
+    NgEventBus
   ],
 };
