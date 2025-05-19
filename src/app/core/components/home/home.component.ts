@@ -122,7 +122,7 @@ export class HomeComponent {
     },
     {
       label: 'RxJs',
-      icon: 'an an-play',
+      icon: 'an an-fish',
       shortLabel: 'RxJs',
       subItems: [
         {
