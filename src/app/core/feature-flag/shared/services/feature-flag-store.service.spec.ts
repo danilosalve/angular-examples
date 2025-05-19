@@ -1,3 +1,5 @@
+import { TestBed } from '@angular/core/testing';
+
 import { FeatureFlagStoreService } from './feature-flag-store.service';
 import { FeatureFlag } from '../interfaces/feature-flag';
 
@@ -12,7 +14,11 @@ describe('FeatureFlagStoreService', () => {
   };
 
   beforeEach(() => {
-    service = new FeatureFlagStoreService();
+    TestBed.configureTestingModule({
+      providers: [FeatureFlagStoreService]
+    });
+
+    service = TestBed.inject(FeatureFlagStoreService);
   });
 
   it('deve emitir os flags ao chamar setStore', done => {
