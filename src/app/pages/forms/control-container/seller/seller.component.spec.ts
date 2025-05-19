@@ -8,7 +8,7 @@ describe('SellerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SellerComponent, ReactiveFormsModule],
+      imports: [SellerComponent, ReactiveFormsModule]
     });
     fixture = TestBed.createComponent(SellerComponent);
     component = fixture.componentInstance;
@@ -34,7 +34,7 @@ describe('SellerComponent', () => {
       city: 'Anytown',
       state: 'CA',
       zipCode: '12345',
-      complement: 'Apt 1A',
+      complement: 'Apt 1A'
     });
     expect(component.form.valid).toBeTruthy();
   });

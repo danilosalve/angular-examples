@@ -11,13 +11,13 @@ describe('AccessDeniedComponent', () => {
 
   beforeEach(() => {
     routerMock = {
-      navigate: jest.fn(),
+      navigate: jest.fn()
     } as unknown as jest.Mocked<Router>;
 
     TestBed.configureTestingModule({
       imports: [AccessDeniedComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA], // Ignora componentes externos como po-container, po-button
-      providers: [{ provide: Router, useValue: routerMock }],
+      providers: [{ provide: Router, useValue: routerMock }]
     });
     fixture = TestBed.createComponent(AccessDeniedComponent);
     component = fixture.componentInstance;

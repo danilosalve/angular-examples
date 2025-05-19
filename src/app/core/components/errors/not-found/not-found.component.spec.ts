@@ -10,12 +10,12 @@ describe('NotFoundComponent', () => {
 
   beforeEach(() => {
     routerMock = {
-      navigate: jest.fn(),
+      navigate: jest.fn()
     } as unknown as jest.Mocked<Router>;
 
     TestBed.configureTestingModule({
       imports: [NotFoundComponent],
-      providers: [{ provide: Router, useValue: routerMock }],
+      providers: [{ provide: Router, useValue: routerMock }]
     });
     fixture = TestBed.createComponent(NotFoundComponent);
     component = fixture.componentInstance;

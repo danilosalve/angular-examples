@@ -15,7 +15,7 @@ describe('FeatureFlagStoreService', () => {
     service = new FeatureFlagStoreService();
   });
 
-  it('deve emitir os flags ao chamar setStore', (done) => {
+  it('deve emitir os flags ao chamar setStore', done => {
     service.flags$.subscribe(flags => {
       if (flags) {
         expect(flags).toEqual(mockFlags);

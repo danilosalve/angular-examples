@@ -8,7 +8,7 @@ describe('PersonComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [PersonComponent, ReactiveFormsModule],
+      imports: [PersonComponent, ReactiveFormsModule]
     });
     fixture = TestBed.createComponent(PersonComponent);
     component = fixture.componentInstance;
@@ -34,7 +34,7 @@ describe('PersonComponent', () => {
       city: 'Anytown',
       state: 'CA',
       zipCode: '12345',
-      complement: 'Apt 1A',
+      complement: 'Apt 1A'
     });
     expect(component.form.valid).toBeTruthy();
   });
