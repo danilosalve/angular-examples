@@ -8,7 +8,7 @@ import { Person } from '../shared/interfaces/person';
   selector: 'app-persons-list',
   imports: [PoTableModule],
   templateUrl: './persons-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonsListComponent implements AfterViewInit {
   persons = input.required<Person[]>();
@@ -25,13 +25,13 @@ export class PersonsListComponent implements AfterViewInit {
       label: 'Compartilhar',
       action: this.viewDetail.bind(this),
       icon: 'an an-share',
-      disabled: true,
+      disabled: true
     },
     {
       label: 'Detalhes',
       action: this.viewDetail.bind(this),
-      icon: 'an an-arrow-square-in',
-    },
+      icon: 'an an-arrow-square-in'
+    }
   ];
 
   @HostListener('window:resize')

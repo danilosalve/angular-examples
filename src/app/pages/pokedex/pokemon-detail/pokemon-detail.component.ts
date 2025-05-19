@@ -8,7 +8,7 @@ import {
   PoContainerModule,
   PoImageModule,
   PoInfoModule,
-  PoPageModule,
+  PoPageModule
 } from '@po-ui/ng-components';
 
 import { BaseDetailComponent } from '../../../shared/components/base/base-detail.component';
@@ -33,9 +33,9 @@ import { DeviceService } from '../../../shared/services/device.service';
     AbilityOfPokemonComponent,
     HeightPokemonPipe,
     WeightPokemonPipe,
-    IdPokemonPipe,
+    IdPokemonPipe
   ],
-  templateUrl: './pokemon-detail.component.html',
+  templateUrl: './pokemon-detail.component.html'
 })
 export class PokemonDetailComponent extends BaseDetailComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
@@ -47,7 +47,7 @@ export class PokemonDetailComponent extends BaseDetailComponent implements OnIni
     { label: 'Defesa', data: [0], type: PoChartType.Column },
     { label: 'Ataque Especial', data: [0], type: PoChartType.Column },
     { label: 'Defesa Especial', data: [0], type: PoChartType.Column },
-    { label: 'Velocidade', data: [0], type: PoChartType.Column },
+    { label: 'Velocidade', data: [0], type: PoChartType.Column }
   ];
   imgHeight = this.getImageHeight();
 

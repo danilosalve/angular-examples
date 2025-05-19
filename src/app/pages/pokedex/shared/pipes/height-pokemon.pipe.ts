@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'heightPokemon',
+  name: 'heightPokemon'
 })
 export class HeightPokemonPipe implements PipeTransform {
   transform(value: number): string {

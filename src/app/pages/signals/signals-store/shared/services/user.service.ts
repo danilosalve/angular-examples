@@ -4,7 +4,7 @@ import { map, Observable } from 'rxjs';
 import { User } from '../interface/user';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class UserService {
   private readonly http = inject(HttpClient);

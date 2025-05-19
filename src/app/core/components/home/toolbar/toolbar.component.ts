@@ -5,7 +5,7 @@ import {
   PoThemeTypeEnum,
   PoToolbarAction,
   PoToolbarModule,
-  PoToolbarProfile,
+  PoToolbarProfile
 } from '@po-ui/ng-components';
 
 import { UserAccessesComponent } from './user-accesses/user-accesses.component';
@@ -15,7 +15,7 @@ import { MetaData, NgEventBus } from 'ng-event-bus';
 @Component({
   selector: 'app-toolbar',
   imports: [PoToolbarModule, PoModalModule, UserAccessesComponent],
-  templateUrl: './toolbar.component.html',
+  templateUrl: './toolbar.component.html'
 })
 export class ToolbarComponent implements OnInit {
   readonly aboutModal = viewChild.required('about', { read: PoModalComponent });
@@ -26,30 +26,30 @@ export class ToolbarComponent implements OnInit {
       icon: 'an an-sun',
       label: 'Tema claro',
       action: () => this.changeTheme(PoThemeTypeEnum.light),
-      disabled: () => this.iconTheme() === 'an an-sun',
+      disabled: () => this.iconTheme() === 'an an-sun'
     },
     {
       icon: 'an an-moon',
       label: 'Tema escuro',
       action: () => this.changeTheme(PoThemeTypeEnum.dark),
-      disabled: () => this.iconTheme() === 'an an-moon',
-    },
+      disabled: () => this.iconTheme() === 'an an-moon'
+    }
   ];
   readonly profile: PoToolbarProfile = {
     avatar: 'https://avatars.githubusercontent.com/u/42416870?s=96&v=4',
     subtitle: 'github.com/danilosalve',
-    title: 'Danilo Salve',
+    title: 'Danilo Salve'
   };
   readonly profileActions: PoToolbarAction[] = [
     { icon: 'an an-user-gear', label: 'Restrições de acesso', action: () => this.openModalUserAccess() },
-    { icon: 'an an-info', label: 'Sobre', action: () => this.openModalAbout() },
+    { icon: 'an an-info', label: 'Sobre', action: () => this.openModalAbout() }
   ];
   readonly notificationActions: PoToolbarAction[] = [
     {
       label: 'Mais notificações',
       icon: 'an an-bell',
-      url: '/notifications',
-    },
+      url: '/notifications'
+    }
   ];
 
   private readonly eventBus = inject(NgEventBus);
@@ -88,7 +88,7 @@ export class ToolbarComponent implements OnInit {
         action: () => {
           this.notificationNumber--;
           this.notificationActions.pop();
-        },
+        }
       });
       this.notificationNumber++;
     });

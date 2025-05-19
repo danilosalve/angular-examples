@@ -7,7 +7,7 @@ import { PoButtonModule, PoContainerModule } from '@po-ui/ng-components';
   selector: 'app-not-found',
   imports: [PoContainerModule, PoButtonModule, NgOptimizedImage],
   templateUrl: './not-found.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotFoundComponent {
   private readonly router: Router = inject(Router);

@@ -7,7 +7,7 @@ import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
 @Component({
   selector: 'app-list-of-pokemons-cards',
   imports: [PoContainerModule, PoLoadingModule, PokemonCardComponent, PoButtonModule],
-  templateUrl: './list-of-pokemons-cards.component.html',
+  templateUrl: './list-of-pokemons-cards.component.html'
 })
 export class ListOfPokemonsCardsComponent {
   pokemons = input.required<ListOfPokemonWithDetail | null>();

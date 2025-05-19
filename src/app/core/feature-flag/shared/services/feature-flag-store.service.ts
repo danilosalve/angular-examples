@@ -5,7 +5,7 @@ import { coerceArray } from '@angular/cdk/coercion';
 import { FeatureFlag } from '../interfaces/feature-flag';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class FeatureFlagStoreService {
   private storeSubject$ = new BehaviorSubject<FeatureFlag | null>(null);

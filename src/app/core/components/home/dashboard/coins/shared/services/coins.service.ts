@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class CoinsService {
   private sockets$: WebSocketSubject<unknown>;

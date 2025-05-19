@@ -7,7 +7,7 @@ import { FeatureFlagStoreService } from './feature-flag-store.service';
 import { DEFAULT_FLAGS } from '../helpers/feature-flags-default';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class FeatureFlagService {
   private readonly http = inject(HttpClient);
@@ -17,7 +17,7 @@ export class FeatureFlagService {
 
   getFlags(): Observable<FeatureFlag> {
     const headers: HttpHeaders = new HttpHeaders({
-      'Content-Type': 'application/json; charset=UTF-8',
+      'Content-Type': 'application/json; charset=UTF-8'
     });
     return this.http.get<FeatureFlag>(this.apiUrl, { headers }).pipe(
       catchError(() => of(DEFAULT_FLAGS)),

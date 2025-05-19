@@ -6,7 +6,7 @@ import { ListOfPokemonWithDetail, ListPokemon } from '../interfaces/list-pokemon
 import { Pokemon } from '../interfaces/pokemon';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class PokemonService {
   private readonly apiUrl = 'https://pokeapi.co/api/v2/pokemon';
@@ -14,7 +14,7 @@ export class PokemonService {
 
   getById(id: string): Observable<Pokemon> {
     const headers: HttpHeaders = new HttpHeaders({
-      'X-PO-Screen-Lock': 'true',
+      'X-PO-Screen-Lock': 'true'
     });
     return this.http.get<Pokemon>(`${this.apiUrl}/${id}`, { headers });
   }
@@ -29,7 +29,7 @@ export class PokemonService {
         count: 1,
         next: null,
         previous: null,
-        results: [results],
+        results: [results]
       }))
     );
   }
@@ -49,7 +49,7 @@ export class PokemonService {
             count,
             next,
             previous,
-            results: detailsPokemon,
+            results: detailsPokemon
           }))
         );
       })

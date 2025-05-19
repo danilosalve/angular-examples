@@ -16,6 +16,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     importProvidersFrom([BrowserAnimationsModule, PoHttpRequestModule, BrowserModule]),
     provideAppInitializer(loadFeatureFlagsFn),
-    NgEventBus,
-  ],
+    NgEventBus
+  ]
 };

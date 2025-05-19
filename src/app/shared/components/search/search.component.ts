@@ -6,7 +6,7 @@ import { debounceTime, distinctUntilChanged, filter, map, Subscription } from 'r
 @Component({
   selector: 'app-search',
   imports: [PoFieldModule, ReactiveFormsModule],
-  templateUrl: './search.component.html',
+  templateUrl: './search.component.html'
 })
 export class SearchComponent implements OnInit, OnDestroy {
   private readonly fb = inject(FormBuilder);
@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   changeInValue = output<string>();
   form = this.fb.group({
-    search: [''],
+    search: ['']
   });
   search$ = new Subscription();
 
@@ -36,7 +36,7 @@ export class SearchComponent implements OnInit, OnDestroy {
       )
       .subscribe({
         next: value => this.changeInValue.emit(value || ''),
-        error: () => this.notifcation.error('Falha executar filtro'),
+        error: () => this.notifcation.error('Falha executar filtro')
       });
   }
 }

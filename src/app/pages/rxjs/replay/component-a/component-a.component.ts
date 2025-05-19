@@ -7,7 +7,7 @@ import { PeopleStarWarsService } from '../shared/services/people-star-wars.servi
 @Component({
   selector: 'app-component-a',
   imports: [PoFieldModule, PoButtonModule, PoLoadingModule, FormsModule],
-  templateUrl: './component-a.component.html',
+  templateUrl: './component-a.component.html'
 })
 export class ComponentAComponent {
   name = model<string>('Luke');
@@ -23,7 +23,7 @@ export class ComponentAComponent {
       .pipe(finalize(() => (this.isLoading = false)))
       .subscribe({
         next: () => this.poNotification.success('Sucesso'),
-        error: () => this.poNotification.success('Falha ao tentar buscar pessoa'),
+        error: () => this.poNotification.success('Falha ao tentar buscar pessoa')
       });
   }
 }

@@ -6,6 +6,6 @@ import { BaseDeferComponent } from '../base-defer.component';
 @Component({
   selector: 'app-timer',
   imports: [PoWidgetModule],
-  templateUrl: './timer.component.html',
+  templateUrl: './timer.component.html'
 })
 export class TimerComponent extends BaseDeferComponent {}

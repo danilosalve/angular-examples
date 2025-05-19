@@ -5,7 +5,7 @@ import { Product } from '../interfaces/product';
 import { shareReplay } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ProductsService {
   private readonly apiUrl = 'https://fakestoreapi.com/products';
@@ -16,7 +16,7 @@ export class ProductsService {
     request: this.limit,
     loader: ({ request: limit }) => {
       return this.http.get<Product[]>(`${this.apiUrl}?limit=${limit}`).pipe(shareReplay(1));
-    },
+    }
   });
 
   updateLimit(limit: number): void {

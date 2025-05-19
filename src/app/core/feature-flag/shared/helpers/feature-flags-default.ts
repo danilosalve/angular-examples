@@ -9,6 +9,6 @@ export const DEFAULT_FLAGS: FeatureFlag = {
   featureFlags: {
     users: false,
     darkMode: true,
-    isAdmin: true,
-  },
+    isAdmin: true
+  }
 };

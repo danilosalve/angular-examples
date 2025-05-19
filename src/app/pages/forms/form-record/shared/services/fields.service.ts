@@ -3,7 +3,7 @@ import { Field } from '../interfaces/field';
 import { PoCheckboxGroupOption } from '@po-ui/ng-components';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class FieldsService {
   getFields(): Field[] {
@@ -13,39 +13,39 @@ export class FieldsService {
         name: 'name',
         label: 'Nome',
         placeHolder: 'Informe seu nome',
-        required: 'true',
+        required: 'true'
       },
       {
         type: 'email',
         name: 'email',
         label: 'E-Mail',
-        placeHolder: 'Informe o seu e-mail',
+        placeHolder: 'Informe o seu e-mail'
       },
       {
         type: 'number',
         name: 'age',
         label: 'Idade',
         placeHolder: '0',
-        required: 'true',
+        required: 'true'
       },
       {
         type: 'string',
         name: 'department',
         label: 'Departamento',
-        placeHolder: 'Informe o seu Departamento',
+        placeHolder: 'Informe o seu Departamento'
       },
       {
         type: 'string',
         name: 'position',
         label: 'Cargo',
-        placeHolder: 'Informe o seu Cargo',
+        placeHolder: 'Informe o seu Cargo'
       },
       {
         type: 'number',
         name: 'cellphone',
         label: 'Nº Celular',
-        placeHolder: '(99) 99999-9999',
-      },
+        placeHolder: '(99) 99999-9999'
+      }
     ];
   }
 
@@ -54,33 +54,33 @@ export class FieldsService {
       {
         label: 'Nome',
         value: 'name',
-        disabled: false,
+        disabled: false
       },
       {
         label: 'E-mail',
         value: 'email',
-        disabled: false,
+        disabled: false
       },
       {
         label: 'Idade',
         value: 'age',
-        disabled: false,
+        disabled: false
       },
       {
         label: 'Departamento',
         value: 'department',
-        disabled: false,
+        disabled: false
       },
       {
         label: 'Cargo',
         value: 'position',
-        disabled: false,
+        disabled: false
       },
       {
         label: 'Nº Celular',
         value: 'cellphone',
-        disabled: false,
-      },
+        disabled: false
+      }
     ];
   }
 }

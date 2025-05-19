@@ -7,13 +7,13 @@ import {
   PoIconModule,
   PoNotificationService,
   PoSelectComponent,
-  PoTooltipModule,
+  PoTooltipModule
 } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-linked',
   imports: [PoContainerModule, PoButtonModule, PoFieldModule, FormsModule, PoIconModule, PoTooltipModule],
-  templateUrl: './linked.component.html',
+  templateUrl: './linked.component.html'
 })
 export class LinkedComponent implements OnInit {
   readonly poSelect = viewChild.required(PoSelectComponent);
@@ -21,18 +21,18 @@ export class LinkedComponent implements OnInit {
     {
       value: 'BEGINNERS',
       label: 'Angular para Iniciantes',
-      defaultQuantity: 10,
+      defaultQuantity: 10
     },
     {
       value: 'SIGNALS',
       label: 'Angular | Se aprofundando em Signals',
-      defaultQuantity: 20,
+      defaultQuantity: 20
     },
     {
       value: 'SSR',
       label: 'Angular | Se aprofundando em SSR',
-      defaultQuantity: 30,
-    },
+      defaultQuantity: 30
+    }
   ];
   selectedCourse = signal<string | null>('BEGINNERS');
   quantity = linkedSignal({
@@ -44,7 +44,7 @@ export class LinkedComponent implements OnInit {
      */
     computation: source => {
       return this.courses.find(c => c.value === source.courseCode())?.defaultQuantity ?? 1;
-    },
+    }
   });
 
   private readonly poNotificationService: PoNotificationService = inject(PoNotificationService);

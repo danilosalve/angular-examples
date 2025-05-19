@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { NgEventBus } from 'ng-event-bus';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class NotificationService {
   private readonly eventBus = inject(NgEventBus);

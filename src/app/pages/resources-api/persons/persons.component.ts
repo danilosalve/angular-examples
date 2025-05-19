@@ -8,7 +8,7 @@ import { PersonsService } from './shared/services/persons.service';
 @Component({
   selector: 'app-persons',
   imports: [PoPageModule, PoModalModule, PersonsListComponent, PersonDetailComponent],
-  templateUrl: './persons.component.html',
+  templateUrl: './persons.component.html'
 })
 export class PersonsComponent {
   modal = viewChild.required(PoModalComponent);

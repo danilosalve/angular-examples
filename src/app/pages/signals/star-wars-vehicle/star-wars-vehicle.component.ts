@@ -9,7 +9,7 @@ import { VehicleService } from './shared/services/vehicle.service';
 @Component({
   selector: 'app-star-wars-vehicle',
   imports: [PoPageModule, PoContainerModule, PoFieldModule, PoTagModule, FormsModule, CommonModule, CurrencyPipe],
-  templateUrl: './star-wars-vehicle.component.html',
+  templateUrl: './star-wars-vehicle.component.html'
 })
 export class StarWarsVehicleComponent extends BaseDetailComponent {
   private vehicleService = inject(VehicleService);

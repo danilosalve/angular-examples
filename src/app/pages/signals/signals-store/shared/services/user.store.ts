@@ -16,16 +16,16 @@ const initialState: State = {
   users: [],
   isLoading: false,
   query: '',
-  error: null as string | null,
+  error: null as string | null
 };
 
 export const UserStore = signalStore(
   withState(initialState),
   withProps(() => ({
-    userService: inject(UserService),
+    userService: inject(UserService)
   })),
   withComputed(({ users }) => ({
-    userCount: computed(() => users().length),
+    userCount: computed(() => users().length)
   })),
   withMethods(store => ({
     updateQuery(query: string) {
@@ -37,7 +37,7 @@ export const UserStore = signalStore(
           store.userService.getUsers().pipe(
             tap({
               next: users => patchState(store, { users, isLoading: false, error: null }),
-              error: () => patchState(store, { error: 'Falha ao carregar usuários', isLoading: false }),
+              error: () => patchState(store, { error: 'Falha ao carregar usuários', isLoading: false })
             })
           )
         )
@@ -52,17 +52,17 @@ export const UserStore = signalStore(
           store.userService.getUsers(query).pipe(
             tapResponse({
               next: users => patchState(store, { users }),
-              error: () => patchState(store, { isLoading: false, error: 'Falha ao carregar usuários' }),
+              error: () => patchState(store, { isLoading: false, error: 'Falha ao carregar usuários' })
             }),
             finalize(() => patchState(store, { isLoading: false }))
           )
         )
       )
-    ),
+    )
   })),
   withHooks({
     onInit({ loadByQuery, query }) {
       loadByQuery(query);
-    },
+    }
   })
 );

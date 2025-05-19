@@ -6,7 +6,7 @@ import {
   poThemeDefaultActionsDark,
   poThemeDefaultFeedbackDark,
   poThemeDefaultDarkValues,
-  PoThemeTypeEnum,
+  PoThemeTypeEnum
 } from '@po-ui/ng-components';
 
 /**
@@ -27,37 +27,37 @@ export const TOKEN_THEME_DEFAULT = {
             base: '#753399',
             dark: '#5b1c7d',
             darker: '#400e58',
-            darkest: '#260538',
+            darkest: '#260538'
           },
           '02': {
-            base: '#b92f72',
+            base: '#b92f72'
           },
           '03': {
-            base: '#ffd464',
-          },
+            base: '#ffd464'
+          }
         },
         action: {
           ...poThemeDefaultActions,
-          disabled: 'var(--color-neutral-mid-40)',
+          disabled: 'var(--color-neutral-mid-40)'
         },
         feedback: {
           ...poThemeDefaultFeedback,
           info: {
             ...poThemeDefaultFeedback.info,
-            base: '#0079b8',
-          },
+            base: '#0079b8'
+          }
         },
         neutral: {
-          ...poThemeDefaultNeutrals,
-        },
+          ...poThemeDefaultNeutrals
+        }
       },
       onRoot: {
         ...poThemeDefaultLightValues.onRoot,
-        '--color-page-background-color-page': 'var(--color-neutral-light-05)',
+        '--color-page-background-color-page': 'var(--color-neutral-light-05)'
       },
       perComponent: {
-        ...poThemeDefaultLightValues.perComponent,
-      },
+        ...poThemeDefaultLightValues.perComponent
+      }
     },
     dark: {
       color: {
@@ -69,25 +69,25 @@ export const TOKEN_THEME_DEFAULT = {
             base: '#753399',
             light: '#5b1c7d',
             lighter: '#400e58',
-            lightest: '#260538',
+            lightest: '#260538'
           },
           '02': {
-            base: '#b92f72',
+            base: '#b92f72'
           },
           '03': {
-            base: '#ffd464',
-          },
+            base: '#ffd464'
+          }
         },
         action: {
           ...poThemeDefaultActionsDark,
-          disabled: 'var(--color-neutral-mid-40)',
+          disabled: 'var(--color-neutral-mid-40)'
         },
         feedback: {
           ...poThemeDefaultFeedbackDark,
           info: {
             ...poThemeDefaultFeedbackDark.info,
-            base: '#0079b8',
-          },
+            base: '#0079b8'
+          }
         },
         neutral: {
           light: {
@@ -95,28 +95,28 @@ export const TOKEN_THEME_DEFAULT = {
             '05': '#202020',
             '10': '#2b2b2b',
             '20': '#3b3b3b',
-            '30': '#5a5a5a',
+            '30': '#5a5a5a'
           },
           mid: {
             '40': '#7c7c7c',
-            '60': '#a1a1a1',
+            '60': '#a1a1a1'
           },
           dark: {
             '70': '#c1c1c1',
             '80': '#d9d9d9',
             '90': '#eeeeee',
-            '95': '#fbfbfb',
-          },
-        },
+            '95': '#fbfbfb'
+          }
+        }
       },
       onRoot: {
         ...poThemeDefaultDarkValues.onRoot,
-        '--color-page-background-color-page': 'var(--color-neutral-light-05)',
+        '--color-page-background-color-page': 'var(--color-neutral-light-05)'
       },
       perComponent: {
-        ...poThemeDefaultDarkValues.perComponent,
-      },
-    },
+        ...poThemeDefaultDarkValues.perComponent
+      }
+    }
   },
-  active: PoThemeTypeEnum.light,
+  active: PoThemeTypeEnum.light
 };

@@ -8,7 +8,7 @@ import { DeviceService } from '../../../shared/services/device.service';
 @Component({
   selector: 'app-signals-form-simple',
   imports: [PoPageModule, ChildFormComponent, PoContainerModule],
-  templateUrl: './signals-form-simple.component.html',
+  templateUrl: './signals-form-simple.component.html'
 })
 export class SignalsFormSimpleComponent extends BaseDetailComponent {
   private readonly deviceService = inject(DeviceService);

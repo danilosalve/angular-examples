@@ -2,7 +2,7 @@ import { Directive, inject, input, isDevMode, OnInit } from '@angular/core';
 import { PoNotificationService } from '@po-ui/ng-components';
 
 @Directive({
-  selector: '[appIsDeveloperMode]',
+  selector: '[appIsDeveloperMode]'
 })
 export class IsDeveloperModeDirective implements OnInit {
   readonly resourceName = input.required<string>();

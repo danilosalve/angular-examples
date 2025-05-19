@@ -8,6 +8,6 @@ import { WeatherComponent } from '../weather/weather.component';
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule, PoPageModule, PoContainerModule, CoinsComponent, WeatherComponent],
-  templateUrl: './dashboard.component.html',
+  templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {}

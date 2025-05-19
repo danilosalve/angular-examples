@@ -7,7 +7,7 @@ import {
   PoInfoModule,
   PoLoadingModule,
   PoNotificationService,
-  PoTooltipModule,
+  PoTooltipModule
 } from '@po-ui/ng-components';
 
 import { Address } from '../shared/interface/address.interface';
@@ -21,9 +21,9 @@ import { Address } from '../shared/interface/address.interface';
     PoInfoModule,
     PoLoadingModule,
     PoIconModule,
-    PoTooltipModule,
+    PoTooltipModule
   ],
-  templateUrl: './effect.component.html',
+  templateUrl: './effect.component.html'
 })
 export class EffectComponent {
   private readonly notification = inject(PoNotificationService);
@@ -40,7 +40,7 @@ export class EffectComponent {
         address => address.json() as unknown as Address
       );
       // return Promise.resolve(ADDRESS_DEFAULT)
-    },
+    }
   });
 
   constructor() {

@@ -7,7 +7,7 @@ import { FeatureFlagStoreService } from './../../../../feature-flag/shared/servi
 @Component({
   selector: 'app-user-accesses',
   imports: [PoCheckboxModule, PoContainerModule, FormsModule],
-  templateUrl: './user-accesses.component.html',
+  templateUrl: './user-accesses.component.html'
 })
 export class UserAccessesComponent implements OnInit {
   canAccessUsers = signal<boolean>(false);
@@ -35,8 +35,8 @@ export class UserAccessesComponent implements OnInit {
       featureFlags: {
         users: this.canAccessUsers(),
         darkMode: this.canUserDarkMode(),
-        isAdmin: this.isAdmin(),
-      },
+        isAdmin: this.isAdmin()
+      }
     });
   }
 }

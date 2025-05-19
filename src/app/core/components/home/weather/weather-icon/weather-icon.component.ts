@@ -8,12 +8,12 @@ const WEATHER_ICON = {
   rain: 'an an-cloud-rain',
   'light rain': 'an an-cloud-rain',
   snow: 'an an-snowflake',
-  'patchy rain nearby': 'an an-cloud-rain',
+  'patchy rain nearby': 'an an-cloud-rain'
 };
 
 @Component({
   selector: 'app-weather-icon',
-  templateUrl: './weather-icon.component.html',
+  templateUrl: './weather-icon.component.html'
 })
 export class WeatherIconComponent {
   description = input.required<string>();

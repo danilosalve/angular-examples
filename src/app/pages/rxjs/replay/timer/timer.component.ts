@@ -5,7 +5,7 @@ import { PeopleStarWarsService } from '../shared/services/people-star-wars.servi
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TimerComponent {
   timeLeft = signal(0);

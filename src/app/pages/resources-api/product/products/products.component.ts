@@ -6,7 +6,7 @@ import {
   PoPageModule,
   PoSearchModule,
   PoSelectComponent,
-  PoSelectOption,
+  PoSelectOption
 } from '@po-ui/ng-components';
 import { FormsModule } from '@angular/forms';
 
@@ -24,9 +24,9 @@ import { ProductsSearchPipe } from '../shared/pipe/products-search.pipe';
     PoSearchModule,
     ProductCardComponent,
     FormsModule,
-    ProductsSearchPipe,
+    ProductsSearchPipe
   ],
-  templateUrl: './products.component.html',
+  templateUrl: './products.component.html'
 })
 export class ProductsComponent implements AfterContentInit {
   readonly filter = signal<string>('');
@@ -38,16 +38,16 @@ export class ProductsComponent implements AfterContentInit {
   readonly optionsLimit: PoSelectOption[] = [
     {
       label: '10',
-      value: 10,
+      value: 10
     },
     {
       label: '15',
-      value: 15,
+      value: 15
     },
     {
       label: '30',
-      value: 30,
-    },
+      value: 30
+    }
   ];
 
   ngAfterContentInit(): void {

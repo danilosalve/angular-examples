@@ -6,7 +6,7 @@ import { PoContainerModule, PoButtonModule, PoPageModule } from '@po-ui/ng-compo
 @Component({
   selector: 'app-access-denied',
   imports: [PoContainerModule, PoButtonModule, NgOptimizedImage, PoPageModule],
-  templateUrl: './access-denied.component.html',
+  templateUrl: './access-denied.component.html'
 })
 export class AccessDeniedComponent {
   private readonly router: Router = inject(Router);

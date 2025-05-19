@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform, ResourceStatus } from '@angular/core';
 
 @Pipe({
-  name: 'resourceStatus',
+  name: 'resourceStatus'
 })
 export class ResourceStatusPipe implements PipeTransform {
   transform(status: ResourceStatus): unknown {

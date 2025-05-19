@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { PaymentBaseService } from '../../../../../shared/services/payment-base.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class PaypalService extends PaymentBaseService {
   override pay(): void {

@@ -3,7 +3,7 @@ import { Weather } from '../interfaces/weather';
 import { Injectable, resource, ResourceRef, signal } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class WeatherService {
   private readonly apiUrl = 'https://goweather.herokuapp.com/weather';
@@ -18,7 +18,7 @@ export class WeatherService {
       } catch (err) {
         this.handleError(err);
       }
-    },
+    }
   });
 
   updateCity(city: string): void {

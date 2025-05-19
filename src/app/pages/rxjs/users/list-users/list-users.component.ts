@@ -20,10 +20,10 @@ import { IsDeveloperModeDirective } from '../../../../shared/directives/is-devel
     FilterByDescriptionPipe,
     UserComponent,
     PoSearchModule,
-    IsDeveloperModeDirective,
+    IsDeveloperModeDirective
   ],
   templateUrl: './list-users.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListUsersComponent implements OnInit {
   protected filter = '';
@@ -34,7 +34,7 @@ export class ListUsersComponent implements OnInit {
   private usersService: UsersService = inject(UsersService);
   protected readonly filterSelect = [
     { label: 'Usuário', value: 'id' },
-    { label: 'Nome', value: 'displayName' },
+    { label: 'Nome', value: 'displayName' }
   ];
 
   ngOnInit(): void {

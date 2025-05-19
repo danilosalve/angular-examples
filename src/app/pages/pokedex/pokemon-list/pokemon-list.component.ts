@@ -21,9 +21,9 @@ import { ListOfPokemonsCardsComponent } from './list-of-pokemons-cards/list-of-p
     PoButtonModule,
     SearchComponent,
     PokemonResultsComponent,
-    ListOfPokemonsCardsComponent,
+    ListOfPokemonsCardsComponent
   ],
-  templateUrl: './pokemon-list.component.html',
+  templateUrl: './pokemon-list.component.html'
 })
 export class PokemonListComponent implements OnInit {
   private readonly pokemonService = inject(PokemonService);
@@ -54,7 +54,7 @@ export class PokemonListComponent implements OnInit {
             count,
             next,
             previous,
-            results: this.results,
+            results: this.results
           }))
         );
       }),

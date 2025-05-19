@@ -14,14 +14,14 @@ import { BaseDetailComponent } from '../../../shared/components/base/base-detail
     PoContainerModule,
     ReactiveFormsModule,
     JsonPipe,
-    CommonModule,
+    CommonModule
   ],
-  templateUrl: './dynamic-forms.component.html',
+  templateUrl: './dynamic-forms.component.html'
 })
 export class DynamicFormsComponent extends BaseDetailComponent {
   private readonly fb = inject(FormBuilder);
   form: FormGroup = this.fb.group({
-    dynamicFields: this.fb.array([]), // Initialize form array
+    dynamicFields: this.fb.array([]) // Initialize form array
   });
   submitted = false;
 
@@ -35,7 +35,7 @@ export class DynamicFormsComponent extends BaseDetailComponent {
 
   addField() {
     const fieldGroup = this.fb.group({
-      value: ['', Validators.required], // Add validation
+      value: ['', Validators.required] // Add validation
     });
     this.dynamicFields.push(fieldGroup); // Add field to the array
     this.submitted = false;

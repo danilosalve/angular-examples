@@ -3,7 +3,7 @@ import { User } from '../interface/user.interface';
 
 @Pipe({
   name: 'filterByDescription',
-  standalone: true,
+  standalone: true
 })
 export class FilterByDescriptionPipe implements PipeTransform {
   transform(users: User[], args: { type: string; query: string }): User[] {

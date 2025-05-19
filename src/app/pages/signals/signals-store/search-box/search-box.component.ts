@@ -6,7 +6,7 @@ import { PoFieldModule } from '@po-ui/ng-components';
   selector: 'app-search-box',
   imports: [FormsModule, PoFieldModule],
   templateUrl: './search-box.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchBoxComponent {
   query = model<string>('');

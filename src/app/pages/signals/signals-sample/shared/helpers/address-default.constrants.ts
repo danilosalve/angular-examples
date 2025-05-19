@@ -13,5 +13,5 @@ export const ADDRESS_DEFAULT: Address = {
   ibge: '',
   gia: '',
   ddd: '',
-  siafi: '',
+  siafi: ''
 };

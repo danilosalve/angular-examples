@@ -4,11 +4,11 @@ export const RESOURCES_API_ROUTES: Routes = [
   {
     path: 'products',
     title: 'Produtos',
-    loadChildren: () => import('./product/product.routes').then(r => r.PRODUCT_ROUTES),
+    loadChildren: () => import('./product/product.routes').then(r => r.PRODUCT_ROUTES)
   },
   {
     path: 'persons',
     title: 'Rick & Morty | Personagens',
-    loadComponent: () => import('./persons/persons.component').then(c => c.PersonsComponent),
-  },
+    loadComponent: () => import('./persons/persons.component').then(c => c.PersonsComponent)
+  }
 ];

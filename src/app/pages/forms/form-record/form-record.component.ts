@@ -10,7 +10,7 @@ import { FieldsService } from './shared/services/fields.service';
 @Component({
   selector: 'app-form-record',
   imports: [PoContainerModule, PoPageModule, PoFieldModule, ReactiveFormsModule, JsonPipe],
-  templateUrl: './form-record.component.html',
+  templateUrl: './form-record.component.html'
 })
 export class FormRecordComponent extends BaseDetailComponent {
   private readonly fieldsService = inject(FieldsService);

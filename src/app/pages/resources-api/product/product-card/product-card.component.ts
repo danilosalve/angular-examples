@@ -7,7 +7,7 @@ import {
   input,
   OnInit,
   signal,
-  viewChild,
+  viewChild
 } from '@angular/core';
 import { PoImageModule, PoInfoModule, PoPopoverModule, PoTagModule, PoWidgetModule } from '@po-ui/ng-components';
 
@@ -20,7 +20,7 @@ import { RatingComponent } from '../../../../shared/components/rating/rating.com
   selector: 'app-product-card',
   imports: [PoWidgetModule, PoInfoModule, PoTagModule, RatingComponent, CurrencyPipe, PoImageModule, PoPopoverModule],
   templateUrl: './product-card.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductCardComponent implements OnInit {
   readonly poImageRef = viewChild.required('poImage', { read: ElementRef });

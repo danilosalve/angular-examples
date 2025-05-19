@@ -6,7 +6,7 @@ import { TitleCasePipe } from '@angular/common';
 @Component({
   selector: 'app-ability-of-pokemon',
   imports: [PoFieldModule, TitleCasePipe],
-  templateUrl: './ability-of-pokemon.component.html',
+  templateUrl: './ability-of-pokemon.component.html'
 })
 export class AbilityOfPokemonComponent implements AfterContentInit {
   readonly checkBox = viewChild.required(PoCheckboxComponent);

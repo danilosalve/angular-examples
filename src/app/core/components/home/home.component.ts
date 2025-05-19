@@ -8,7 +8,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 @Component({
   selector: 'app-home',
   imports: [CommonModule, PoMenuModule, PoPageModule, RouterOutlet, ToolbarComponent],
-  templateUrl: './home.component.html',
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
   readonly menus: PoMenuItem[] = [
@@ -16,7 +16,7 @@ export class HomeComponent {
       label: 'Página Inicial',
       link: './',
       shortLabel: 'Inicio',
-      icon: 'an an-house-line',
+      icon: 'an an-house-line'
     },
     {
       label: 'Formulários',
@@ -26,14 +26,14 @@ export class HomeComponent {
         {
           label: 'Reaproveitando Formulários',
           link: 'forms/container-form',
-          shortLabel: 'Container',
+          shortLabel: 'Container'
         },
         {
           label: 'Form. Record',
           link: 'forms/form-record',
-          shortLabel: 'Record',
-        },
-      ],
+          shortLabel: 'Record'
+        }
+      ]
     },
     {
       label: 'Signals',
@@ -43,35 +43,35 @@ export class HomeComponent {
         {
           label: 'Exemplos Signals',
           link: 'signals/samples',
-          shortLabel: 'Signals',
+          shortLabel: 'Signals'
         },
         {
           label: 'Formulários Signals',
           link: 'signals/form',
-          shortLabel: 'Formulários',
+          shortLabel: 'Formulários'
         },
         {
           label: 'Formulários Simples',
           link: 'signals/form-simple',
-          shortLabel: 'Form. Simples',
+          shortLabel: 'Form. Simples'
         },
         {
           label: 'Star Wars Veiculos',
           link: 'signals/vehicle',
-          shortLabel: 'Veiculos',
+          shortLabel: 'Veiculos'
         },
         {
           label: 'Signals | Store',
           link: 'signals/store',
-          shortLabel: 'Store',
-        },
-      ],
+          shortLabel: 'Store'
+        }
+      ]
     },
     {
       label: 'Carregamento adiado',
       link: 'defer',
       shortLabel: 'Defer',
-      icon: 'an an-timer',
+      icon: 'an an-timer'
     },
     {
       label: 'Componentes Dinâmicos',
@@ -81,25 +81,25 @@ export class HomeComponent {
         {
           label: 'Componentes',
           link: 'dynamic/components',
-          shortLabel: 'Componentes',
+          shortLabel: 'Componentes'
         },
         {
           label: 'Serviços',
           link: 'dynamic/services',
-          shortLabel: 'Serviços',
+          shortLabel: 'Serviços'
         },
         {
           label: 'Formulários',
           link: 'dynamic/forms',
-          shortLabel: 'Formulários',
-        },
-      ],
+          shortLabel: 'Formulários'
+        }
+      ]
     },
     {
       label: 'Notificações',
       link: 'notifications',
       shortLabel: 'Notificações',
-      icon: 'an an-bell',
+      icon: 'an an-bell'
     },
     {
       label: 'Resources API',
@@ -110,15 +110,15 @@ export class HomeComponent {
           label: 'Produtos | RxResource',
           link: 'resources-api/products',
           shortLabel: 'Produtos',
-          icon: 'an an-shopping-cart-simple',
+          icon: 'an an-shopping-cart-simple'
         },
         {
           label: 'Rick & Morty - Personagens | Resource',
           link: 'resources-api/persons',
           shortLabel: 'Personagens',
-          icon: 'an an-person',
-        },
-      ],
+          icon: 'an an-person'
+        }
+      ]
     },
     {
       label: 'RxJs',
@@ -128,21 +128,21 @@ export class HomeComponent {
         {
           label: 'Cache | ShareReplay',
           link: 'rxjs/replay',
-          shortLabel: 'Replay',
+          shortLabel: 'Replay'
         },
         {
           label: 'Usuários | Async',
           link: 'rxjs/users',
           shortLabel: 'Usuários',
-          icon: 'an an-user',
-        },
-      ],
+          icon: 'an an-user'
+        }
+      ]
     },
     {
       label: 'Pokédex | Master & Detail',
       link: 'pokedex',
       shortLabel: 'Pokédex',
-      icon: 'an an-poker-chip',
-    },
+      icon: 'an an-poker-chip'
+    }
   ];
 }

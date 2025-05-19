@@ -6,7 +6,7 @@ import { PoContainerModule, PoNotificationService, PoWidgetModule } from '@po-ui
 @Component({
   selector: 'app-heroes-card',
   imports: [PoContainerModule, PoWidgetModule],
-  templateUrl: './heroes-card.component.html',
+  templateUrl: './heroes-card.component.html'
 })
 export class HeroesCardComponent {
   heroes = input.required<TemplateRef<unknown>>();

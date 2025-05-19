@@ -18,9 +18,9 @@ import { WeatherIconComponent } from './weather-icon/weather-icon.component';
     ReactiveFormsModule,
     DailyWeatherForecastComponent,
     WeatherIconComponent,
-    NgxSkeletonLoaderModule,
+    NgxSkeletonLoaderModule
   ],
-  templateUrl: './weather.component.html',
+  templateUrl: './weather.component.html'
 })
 export class WeatherComponent {
   city: Signal<string | undefined>;
@@ -29,8 +29,8 @@ export class WeatherComponent {
   readonly form = new FormGroup({
     city: new FormControl('', {
       nonNullable: true,
-      validators: [Validators.required, Validators.min(3)],
-    }),
+      validators: [Validators.required, Validators.min(3)]
+    })
   });
 
   private readonly injector = inject(Injector);

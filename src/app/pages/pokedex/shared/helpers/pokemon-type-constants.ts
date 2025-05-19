@@ -19,5 +19,5 @@ export const POKEMON_TYPE = {
   steel: { label: 'Aço', color: '#9eb7b8' },
   stellar: { label: 'Estelar', color: '#a38c21' },
   unknown: { label: 'Desconhecido', color: '#' },
-  water: { label: 'Água', color: '#4592c4' },
+  water: { label: 'Água', color: '#4592c4' }
 };

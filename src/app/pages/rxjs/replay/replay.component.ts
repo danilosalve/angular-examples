@@ -8,6 +8,6 @@ import { TimerComponent } from './timer/timer.component';
 @Component({
   selector: 'app-replay',
   imports: [ComponentAComponent, ComponentBComponent, TimerComponent, PoPageModule, PoContainerModule],
-  templateUrl: './replay.component.html',
+  templateUrl: './replay.component.html'
 })
 export class ReplayComponent {}

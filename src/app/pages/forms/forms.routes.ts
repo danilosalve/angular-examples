@@ -10,13 +10,13 @@ export const FORMS_ROUTES: Routes = [
         pathMatch: 'full',
         title: 'Formulários | Control Container',
         loadComponent: () =>
-          import('./control-container/control-container.component').then(c => c.ControlContainerComponent),
+          import('./control-container/control-container.component').then(c => c.ControlContainerComponent)
       },
       {
         path: 'form-record',
         title: 'Formulários | Form Record',
-        loadComponent: () => import('./form-record/form-record.component').then(c => c.FormRecordComponent),
-      },
-    ],
-  },
+        loadComponent: () => import('./form-record/form-record.component').then(c => c.FormRecordComponent)
+      }
+    ]
+  }
 ];

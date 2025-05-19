@@ -8,7 +8,7 @@ import { User } from '../shared/interface/user.interface';
   selector: 'app-user',
   imports: [CommonModule, PoWidgetModule, PoInfoModule, PoTooltipModule],
   templateUrl: './user.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent {
   users: InputSignal<User[]> = input.required<User[]>();

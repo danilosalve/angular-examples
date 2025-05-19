@@ -5,7 +5,7 @@ import {
   PoContainerModule,
   PoFieldModule,
   PoNotificationService,
-  PoPageModule,
+  PoPageModule
 } from '@po-ui/ng-components';
 import { NotificationService } from '../../shared/services/notification.service';
 import { MetaData, NgEventBus } from 'ng-event-bus';
@@ -14,7 +14,7 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-notifications',
   imports: [PoPageModule, PoFieldModule, PoButtonModule, FormsModule, DatePipe, PoContainerModule],
-  templateUrl: './notifications.component.html',
+  templateUrl: './notifications.component.html'
 })
 export class NotificationsComponent implements OnInit {
   message = model<string>('');

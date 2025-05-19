@@ -3,7 +3,7 @@ import { PoThemeTypeEnum, PoThemeService } from '@po-ui/ng-components';
 import { TOKEN_THEME_DEFAULT } from '../helpers/token-theme-default.constants';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ThemeService {
   poTheme = inject(PoThemeService);

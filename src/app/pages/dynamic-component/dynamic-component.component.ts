@@ -8,7 +8,7 @@ import { HeroesCardComponent } from './heroes-card/heroes-card.component';
 @Component({
   selector: 'app-dynamic-component',
   imports: [CommonModule, PoPageModule, PoButtonModule, PoInfoModule],
-  templateUrl: './dynamic-component.component.html',
+  templateUrl: './dynamic-component.component.html'
 })
 export class DynamicComponentComponent {
   injector = inject(Injector);
@@ -18,7 +18,7 @@ export class DynamicComponentComponent {
 
   myInjector = Injector.create({
     providers: [{ provide: DataServiceToken, useValue: { data: { name: 'DataServiceToken Hi!' } } }],
-    parent: this.injector,
+    parent: this.injector
   });
 
   loadContent(): void {

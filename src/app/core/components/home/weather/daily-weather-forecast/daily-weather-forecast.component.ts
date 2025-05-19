@@ -7,7 +7,7 @@ import { DailyWeatherForecastTitlePipe } from '../shared/pipe/daily-weather-fore
   selector: 'app-daily-weather-forecast',
   imports: [PoWidgetModule, DailyWeatherForecastTitlePipe],
   templateUrl: './daily-weather-forecast.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DailyWeatherForecastComponent {
   weather = input.required<WeatherForecast>();

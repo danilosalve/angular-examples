@@ -4,6 +4,6 @@ export const PRODUCT_ROUTES: Routes = [
   {
     path: '',
     title: 'Produtos',
-    loadComponent: () => import('./products/products.component').then(c => c.ProductsComponent),
-  },
+    loadComponent: () => import('./products/products.component').then(c => c.ProductsComponent)
+  }
 ];

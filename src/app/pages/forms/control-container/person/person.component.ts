@@ -7,7 +7,7 @@ import { JsonPipe } from '@angular/common';
 @Component({
   selector: 'app-person',
   imports: [ReactiveFormsModule, PoContainerModule, PoFieldModule, PoTabsModule, AddressComponent, JsonPipe],
-  templateUrl: './person.component.html',
+  templateUrl: './person.component.html'
 })
 export class PersonComponent implements OnInit {
   form!: FormGroup;
@@ -26,7 +26,7 @@ export class PersonComponent implements OnInit {
       city: ['', Validators.required],
       state: ['', Validators.required],
       zipCode: ['', Validators.required],
-      complement: [''],
+      complement: ['']
     });
   }
 }

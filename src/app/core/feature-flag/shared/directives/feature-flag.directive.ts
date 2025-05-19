@@ -3,7 +3,7 @@ import { Directive, inject, input, OnInit, TemplateRef, ViewContainerRef } from 
 import { FeatureFlagStoreService } from '../services/feature-flag-store.service';
 
 @Directive({
-  selector: '[appFeatureFlag]',
+  selector: '[appFeatureFlag]'
 })
 export class FeatureFlagDirective implements OnInit {
   featureFlag = input<string | string[]>('');

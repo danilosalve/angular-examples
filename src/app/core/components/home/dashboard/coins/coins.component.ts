@@ -10,7 +10,7 @@ import { IsDeveloperModeDirective } from '../../../../../shared/directives/is-de
 @Component({
   selector: 'app-coins',
   imports: [CommonModule, PoWidgetModule, PoInfoModule, PoIconModule, PoTooltipModule, IsDeveloperModeDirective],
-  templateUrl: './coins.component.html',
+  templateUrl: './coins.component.html'
 })
 export class CoinsComponent implements OnInit, OnDestroy {
   protected readonly orientation: PoInfoOrientation = PoInfoOrientation.Horizontal;

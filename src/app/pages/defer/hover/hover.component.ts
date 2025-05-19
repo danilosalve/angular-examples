@@ -6,6 +6,6 @@ import { BaseDeferComponent } from '../base-defer.component';
 @Component({
   selector: 'app-hover',
   imports: [PoWidgetModule],
-  templateUrl: './hover.component.html',
+  templateUrl: './hover.component.html'
 })
 export class HoverComponent extends BaseDeferComponent {}

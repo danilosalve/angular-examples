@@ -3,7 +3,7 @@ import { PoTableColumn } from '@po-ui/ng-components';
 import { Person } from '../interfaces/person';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class PersonsService {
   private readonly apiUrl = 'https://rickandmortyapi.com/api/character';
@@ -28,7 +28,7 @@ export class PersonsService {
       } catch (err) {
         this.handleError(err);
       }
-    },
+    }
   });
 
   getColumns(): PoTableColumn[] {
@@ -37,13 +37,13 @@ export class PersonsService {
         property: 'id',
         label: 'Id',
         sortable: true,
-        type: 'number',
+        type: 'number'
       },
       {
         property: 'name',
         label: 'Nome',
         sortable: true,
-        type: 'string',
+        type: 'string'
       },
       {
         property: 'status',
@@ -55,26 +55,26 @@ export class PersonsService {
           {
             value: 'Alive',
             color: 'color-10',
-            label: 'Vivo',
+            label: 'Vivo'
           },
           {
             value: 'Dead',
             color: 'color-02',
-            label: 'Morto',
+            label: 'Morto'
           },
           {
             value: 'unknown',
             color: 'color-07',
-            label: 'Desconhecido',
-          },
-        ],
+            label: 'Desconhecido'
+          }
+        ]
       },
       {
         property: 'species',
         label: 'Espécie',
         sortable: true,
         type: 'string',
-        visible: this.IsColumnVisible(),
+        visible: this.IsColumnVisible()
       },
       {
         property: 'gender',
@@ -86,39 +86,39 @@ export class PersonsService {
           {
             value: 'Female',
             color: 'color-06',
-            label: 'Feminino',
+            label: 'Feminino'
           },
           {
             value: 'Male',
             color: 'color-02',
-            label: 'Masculino',
+            label: 'Masculino'
           },
           {
             value: 'Genderless',
             color: 'color-08',
-            label: 'Sem gênero',
+            label: 'Sem gênero'
           },
           {
             value: 'unknown',
             color: 'color-07',
-            label: 'Desconhecido',
-          },
-        ],
+            label: 'Desconhecido'
+          }
+        ]
       },
       {
         property: 'location.name',
         label: 'Localização',
         sortable: true,
         type: 'string',
-        visible: this.IsColumnVisible(),
+        visible: this.IsColumnVisible()
       },
       {
         property: 'type',
         label: 'Tipo',
         sortable: true,
         type: 'string',
-        visible: false,
-      },
+        visible: false
+      }
     ];
   }
 

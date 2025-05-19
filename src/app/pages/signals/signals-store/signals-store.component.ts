@@ -15,10 +15,10 @@ import { UserStore } from './shared/services/user.store';
     PoLoadingModule,
     PoListViewModule,
     PoInfoModule,
-    PoContainerModule,
+    PoContainerModule
   ],
   templateUrl: './signals-store.component.html',
-  providers: [UserStore],
+  providers: [UserStore]
 })
 export class SignalsStoreComponent extends BaseDetailComponent implements OnInit, AfterViewInit {
   readonly store = inject(UserStore);

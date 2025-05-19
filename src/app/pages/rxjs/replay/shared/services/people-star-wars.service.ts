@@ -4,7 +4,7 @@ import { Observable, shareReplay, Subscription, tap, timer } from 'rxjs';
 import { StarWarsPeopleList } from '../interface/star-wars-people-list';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class PeopleStarWarsService {
   private readonly http = inject(HttpClient);

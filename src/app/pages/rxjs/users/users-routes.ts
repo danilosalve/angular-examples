@@ -11,6 +11,6 @@ export const USERS_ROUTES: Routes = [
   {
     path: '',
     component: ListUsersComponent,
-    canActivate: [featureFlagGuard(['users'])],
-  },
+    canActivate: [featureFlagGuard(['users'])]
+  }
 ];

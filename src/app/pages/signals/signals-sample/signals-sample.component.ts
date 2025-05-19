@@ -8,6 +8,6 @@ import { EffectComponent } from './effect/effect.component';
 @Component({
   selector: 'app-signals-sample',
   imports: [PoPageModule, UntrackedComponent, LinkedComponent, EffectComponent],
-  templateUrl: './signals-sample.component.html',
+  templateUrl: './signals-sample.component.html'
 })
 export class SignalsSampleComponent {}

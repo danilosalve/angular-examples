@@ -5,7 +5,7 @@ import { PoContainerModule, PoFieldModule } from '@po-ui/ng-components';
 @Component({
   selector: 'app-address',
   imports: [ReactiveFormsModule, PoFieldModule, PoContainerModule],
-  templateUrl: './address.component.html',
+  templateUrl: './address.component.html'
 })
 export class AddressComponent implements OnInit {
   protected form!: UntypedFormGroup;

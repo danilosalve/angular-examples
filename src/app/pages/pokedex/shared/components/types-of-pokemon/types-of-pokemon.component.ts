@@ -7,7 +7,7 @@ import { POKEMON_TYPE } from '../../helpers/pokemon-type-constants';
 @Component({
   selector: 'app-types-of-pokemon',
   imports: [PoTagModule, TitleCasePipe],
-  templateUrl: './types-of-pokemon.component.html',
+  templateUrl: './types-of-pokemon.component.html'
 })
 export class TypesOfPokemonComponent {
   typeofPokemon = input.required<string>();

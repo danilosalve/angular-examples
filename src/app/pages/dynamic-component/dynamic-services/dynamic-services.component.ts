@@ -6,7 +6,7 @@ import {
   PoContainerModule,
   PoFieldModule,
   PoPageModule,
-  PoRadioGroupOption,
+  PoRadioGroupOption
 } from '@po-ui/ng-components';
 
 import { BaseDetailComponent } from '../../../shared/components/base/base-detail.component';
@@ -20,34 +20,34 @@ type PaymentType = 'paypal' | 'pag-seguro' | 'pix';
 @Component({
   selector: 'app-dynamic-services',
   imports: [CommonModule, PoPageModule, PoContainerModule, PoFieldModule, PoButtonModule, ReactiveFormsModule],
-  templateUrl: './dynamic-services.component.html',
+  templateUrl: './dynamic-services.component.html'
 })
 export class DynamicServicesComponent extends BaseDetailComponent {
   readonly injector = inject(Injector);
   readonly form = new FormGroup({
     amount: new FormControl(0, {
       nonNullable: true,
-      validators: [Validators.required, Validators.min(0)],
+      validators: [Validators.required, Validators.min(0)]
     }),
     address: new FormControl('', [Validators.required]),
     type: new FormControl<PaymentType>('pix', {
       nonNullable: true,
-      validators: [Validators.required],
-    }),
+      validators: [Validators.required]
+    })
   });
   readonly optionsPayment: PoRadioGroupOption[] = [
     {
       label: 'Pag Seguro',
-      value: 'pag-seguro',
+      value: 'pag-seguro'
     },
     {
       label: 'PayPal',
-      value: 'paypal',
+      value: 'paypal'
     },
     {
       label: 'Pix',
-      value: 'pix',
-    },
+      value: 'pix'
+    }
   ];
 
   constructor() {

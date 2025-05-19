@@ -10,7 +10,7 @@ import { IdPokemonPipe } from '../../shared/pipes/id-pokemon.pipe';
 @Component({
   selector: 'app-pokemon-card',
   imports: [PoWidgetModule, PoImageModule, TitleCasePipe, TypesOfPokemonComponent, IdPokemonPipe],
-  templateUrl: './pokemon-card.component.html',
+  templateUrl: './pokemon-card.component.html'
 })
 export class PokemonCardComponent {
   pokemon = input.required<Pokemon>();

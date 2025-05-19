@@ -7,7 +7,7 @@ import {
   PoModalComponent,
   PoModalModule,
   PoNotification,
-  PoNotificationService,
+  PoNotificationService
 } from '@po-ui/ng-components';
 import { finalize } from 'rxjs';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +19,7 @@ import { StarWarsPeople } from '../shared/interface/star-wars-people';
 @Component({
   selector: 'app-component-b',
   imports: [PoFieldModule, PoButtonModule, PoLoadingModule, PoModalModule, FormsModule, PoInfoModule],
-  templateUrl: './component-b.component.html',
+  templateUrl: './component-b.component.html'
 })
 export class ComponentBComponent {
   isLoading = false;
@@ -37,7 +37,7 @@ export class ComponentBComponent {
       .pipe(finalize(() => (this.isLoading = false)))
       .subscribe({
         next: res => this.onHandleResponse(res),
-        error: () => this.poNotification.success('Falha ao tentar buscar pessoa'),
+        error: () => this.poNotification.success('Falha ao tentar buscar pessoa')
       });
   }
 
@@ -48,7 +48,7 @@ export class ComponentBComponent {
         message: this.people?.name || '',
         actionLabel: 'Detalhes',
         supportMessage: 'Pesquisa concluída com sucesso',
-        action: () => this.modal().open(),
+        action: () => this.modal().open()
       };
       this.poNotification.success(notification);
     } else {
