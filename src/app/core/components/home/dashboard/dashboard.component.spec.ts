@@ -11,7 +11,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DashboardComponent, MockComponents(CoinsComponent, WeatherComponent)],
+      imports: [DashboardComponent, MockComponents(CoinsComponent, WeatherComponent)]
     });
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;

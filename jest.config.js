@@ -9,4 +9,5 @@ module.exports = {
   transformIgnorePatterns: [
     '/node_modules/(?!flat)/', // Exclude modules except 'flat' from transformation
   ],
+  testEnvironment: '@happy-dom/jest-environment'
 };
