@@ -17,7 +17,7 @@
     "prepare": "husky install",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "concurrently \"ng s\" \"cypress run\""
   },
   "private": true,
   "dependencies": {
@@ -52,6 +52,8 @@
     "@types/jest": "^29.5.14",
     "angular-cli-ghpages": "^2.0.3",
     "angular-eslint": "19.0.2",
+    "concurrently": "^9.1.2",
+    "cypress": "latest",
     "eslint": "^9.16.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
@@ -63,7 +65,6 @@
     "ng-mocks": "^14.13.4",
     "prettier": "^3.4.2",
     "typescript": "~5.6.3",
-    "typescript-eslint": "8.18.0",
-    "cypress": "latest"
+    "typescript-eslint": "8.18.0"
   }
 }
