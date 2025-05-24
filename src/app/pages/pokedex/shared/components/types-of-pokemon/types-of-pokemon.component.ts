@@ -13,10 +13,10 @@ export class TypesOfPokemonComponent {
   typeofPokemon = input.required<string>();
 
   getColor(type: string): string {
-    return POKEMON_TYPE[type as keyof typeof POKEMON_TYPE].color || '';
+    return POKEMON_TYPE[type as keyof typeof POKEMON_TYPE]?.color || '';
   }
 
   translateLabel(type: string): string {
-    return POKEMON_TYPE[type as keyof typeof POKEMON_TYPE].label || '';
+    return POKEMON_TYPE[type as keyof typeof POKEMON_TYPE]?.label || '';
   }
 }
