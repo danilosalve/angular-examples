@@ -7,5 +7,5 @@ import { ListOfPokemonWithDetail } from '../../shared/interfaces/list-pokemon';
   templateUrl: './pokemon-results.component.html'
 })
 export class PokemonResultsComponent {
-  pokemons = input.required<ListOfPokemonWithDetail | null>();
+  readonly pokemons = input.required<ListOfPokemonWithDetail | null>();
 }

@@ -10,7 +10,7 @@ import { TitleCasePipe } from '@angular/common';
 })
 export class AbilityOfPokemonComponent implements AfterContentInit {
   readonly checkBox = viewChild.required(PoCheckboxComponent);
-  ability = input.required<PokemonAbility>();
+  readonly ability = input.required<PokemonAbility>();
 
   ngAfterContentInit(): void {
     this.checkBox().checkboxValue = this.ability().is_hidden;

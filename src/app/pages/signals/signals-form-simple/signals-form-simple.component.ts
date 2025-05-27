@@ -13,9 +13,9 @@ import { DeviceService } from '../../../shared/services/device.service';
 export class SignalsFormSimpleComponent extends BaseDetailComponent {
   private readonly deviceService = inject(DeviceService);
 
-  firstName = model<string>('');
-  lastName = model<string>('');
-  age = model<number>(0);
+  readonly firstName = model<string>('');
+  readonly lastName = model<string>('');
+  readonly age = model<number>(0);
   containerHeight = this.deviceService.isSmartPhone() || this.deviceService.isTable() ? 0 : 340;
 
   constructor() {

@@ -10,7 +10,7 @@ import { POKEMON_TYPE } from '../../helpers/pokemon-type-constants';
   templateUrl: './types-of-pokemon.component.html'
 })
 export class TypesOfPokemonComponent {
-  typeofPokemon = input.required<string>();
+  readonly typeofPokemon = input.required<string>();
 
   getColor(type: string): string {
     return POKEMON_TYPE[type as keyof typeof POKEMON_TYPE]?.color || '';

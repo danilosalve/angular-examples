@@ -10,7 +10,7 @@ import { PeopleStarWarsService } from '../shared/services/people-star-wars.servi
   templateUrl: './component-a.component.html'
 })
 export class ComponentAComponent {
-  name = model<string>('Luke');
+  readonly name = model<string>('Luke');
   isLoading = false;
 
   private readonly peopleStarWarsService = inject(PeopleStarWarsService);

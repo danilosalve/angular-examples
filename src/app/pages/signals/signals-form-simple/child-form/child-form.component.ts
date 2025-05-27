@@ -8,7 +8,7 @@ import { PoFieldModule } from '@po-ui/ng-components';
   templateUrl: './child-form.component.html'
 })
 export class ChildFormComponent {
-  firstName = model.required<string>();
-  lastName = model.required<string>();
-  age = model.required<number>();
+  readonly firstName = model.required<string>();
+  readonly lastName = model.required<string>();
+  readonly age = model.required<number>();
 }

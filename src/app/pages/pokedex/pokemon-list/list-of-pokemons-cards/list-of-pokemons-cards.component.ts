@@ -10,9 +10,9 @@ import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
   templateUrl: './list-of-pokemons-cards.component.html'
 })
 export class ListOfPokemonsCardsComponent {
-  pokemons = input.required<ListOfPokemonWithDetail | null>();
-  isLoadShowMore = input<boolean>(false);
-  isHideLoading = input<boolean>(false);
+  readonly pokemons = input.required<ListOfPokemonWithDetail | null>();
+  readonly isLoadShowMore = input<boolean>(false);
+  readonly isHideLoading = input<boolean>(false);
   showMore = output();
 
   onShowMore(): void {

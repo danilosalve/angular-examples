@@ -11,11 +11,11 @@ import { PersonsService } from './shared/services/persons.service';
   templateUrl: './persons.component.html'
 })
 export class PersonsComponent {
-  modal = viewChild.required(PoModalComponent);
-  page = signal(1);
-  personsService = inject(PersonsService);
-  personsResource = this.personsService.getPersons;
-  person = signal<Person | undefined>(undefined);
+  readonly modal = viewChild.required(PoModalComponent);
+  readonly page = signal(1);
+  readonly personsService = inject(PersonsService);
+  readonly personsResource = this.personsService.getPersons;
+  readonly person = signal<Person | undefined>(undefined);
 
   loadPersons(): void {
     this.page.update(page => page + 1);

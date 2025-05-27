@@ -6,8 +6,8 @@ import { FeatureFlagStoreService } from '../services/feature-flag-store.service'
   selector: '[appFeatureFlag]'
 })
 export class FeatureFlagDirective implements OnInit {
-  featureFlag = input<string | string[]>('');
-  featureFlagOr = input<string>('');
+  readonly featureFlag = input<string | string[]>('');
+  readonly featureFlagOr = input<string>('');
 
   private vcr = inject(ViewContainerRef);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

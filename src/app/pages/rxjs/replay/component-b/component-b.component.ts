@@ -23,8 +23,8 @@ import { StarWarsPeople } from '../shared/interface/star-wars-people';
 })
 export class ComponentBComponent {
   isLoading = false;
-  name = model<string>('Luke');
-  modal = viewChild.required(PoModalComponent);
+  readonly name = model<string>('Luke');
+  readonly modal = viewChild.required(PoModalComponent);
   people!: StarWarsPeople;
 
   private readonly peopleStarWarsService = inject(PeopleStarWarsService);

@@ -24,10 +24,10 @@ import { RatingComponent } from '../../../../shared/components/rating/rating.com
 })
 export class ProductCardComponent implements OnInit {
   readonly poImageRef = viewChild.required('poImage', { read: ElementRef });
-  product = input.required<Product>();
-  height = signal<number>(280);
-  image = signal(40);
-  imageHeight = computed(() => this.height() - this.image());
+  readonly product = input.required<Product>();
+  readonly height = signal<number>(280);
+  readonly image = signal(40);
+  readonly imageHeight = computed(() => this.height() - this.image());
 
   private readonly device = inject(DeviceService);
 

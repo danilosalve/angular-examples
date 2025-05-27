@@ -16,8 +16,8 @@ const WEATHER_ICON = {
   templateUrl: './weather-icon.component.html'
 })
 export class WeatherIconComponent {
-  description = input.required<string>();
-  icon = computed(() => this.transformDescriptionIntoIcon(this.description()));
+  readonly description = input.required<string>();
+  readonly icon = computed(() => this.transformDescriptionIntoIcon(this.description()));
 
   transformDescriptionIntoIcon(description: string): string {
     description = (description || '').toLocaleLowerCase();

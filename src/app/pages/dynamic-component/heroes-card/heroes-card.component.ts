@@ -9,7 +9,7 @@ import { PoContainerModule, PoNotificationService, PoWidgetModule } from '@po-ui
   templateUrl: './heroes-card.component.html'
 })
 export class HeroesCardComponent {
-  heroes = input.required<TemplateRef<unknown>>();
+  readonly heroes = input.required<TemplateRef<unknown>>();
   poNotificationService = inject(PoNotificationService);
   dataService = inject(DataService);
 

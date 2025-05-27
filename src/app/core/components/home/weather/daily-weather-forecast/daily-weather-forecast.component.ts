@@ -10,5 +10,5 @@ import { DailyWeatherForecastTitlePipe } from '../shared/pipe/daily-weather-fore
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DailyWeatherForecastComponent {
-  weather = input.required<WeatherForecast>();
+  readonly weather = input.required<WeatherForecast>();
 }

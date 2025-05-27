@@ -14,7 +14,7 @@ import { IsDeveloperModeDirective } from '../../../../../shared/directives/is-de
 })
 export class CoinsComponent implements OnInit, OnDestroy {
   protected readonly orientation: PoInfoOrientation = PoInfoOrientation.Horizontal;
-  stocks = signal<any>(null);
+  readonly stocks = signal<any>(null);
   unsub$ = new Subject();
   coinsService: CoinsService = inject(CoinsService);
 

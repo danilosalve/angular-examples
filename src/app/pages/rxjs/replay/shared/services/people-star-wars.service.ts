@@ -12,7 +12,7 @@ export class PeopleStarWarsService {
   private data$!: Observable<StarWarsPeopleList>;
   private cacheTimer$!: Subscription;
   private currentSearch = '';
-  #timer: WritableSignal<number> = signal<number>(0);
+  readonly #timer: WritableSignal<number> = signal<number>(0);
 
   get timer(): WritableSignal<number> {
     return this.#timer;

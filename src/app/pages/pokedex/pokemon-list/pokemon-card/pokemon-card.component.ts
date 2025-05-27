@@ -13,7 +13,7 @@ import { IdPokemonPipe } from '../../shared/pipes/id-pokemon.pipe';
   templateUrl: './pokemon-card.component.html'
 })
 export class PokemonCardComponent {
-  pokemon = input.required<Pokemon>();
+  readonly pokemon = input.required<Pokemon>();
   private readonly router = inject(Router);
 
   onClick(): void {
