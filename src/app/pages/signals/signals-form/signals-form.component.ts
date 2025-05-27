@@ -88,7 +88,7 @@ export class SignalsFormComponent extends BaseDetailComponent {
       .join(', ');
   }
   // Computed Signal approach
-  fullAddressSignal = computed(() => {
+  readonly fullAddressSignal = computed(() => {
     this.signalCallCount++;
     return [
       this.buildingName?.(),

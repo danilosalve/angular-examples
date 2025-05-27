@@ -30,7 +30,8 @@ module.exports = tseslint.config(
           style: "kebab-case",
         },
       ],
-      "no-console": "error"
+      "no-console": "error",
+      "@angular-eslint/prefer-signals": "error"
     },
   },
   {

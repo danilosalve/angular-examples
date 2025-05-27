@@ -9,6 +9,6 @@ import { JsonPipe } from '@angular/common';
   templateUrl: './user-card.component.html'
 })
 export class UserCardComponent {
-  userLabel = input.required<TemplateRef<unknown>>();
+  readonly userLabel = input.required<TemplateRef<unknown>>();
   dataService = inject(DataService);
 }

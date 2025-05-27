@@ -11,8 +11,8 @@ import { Person } from '../shared/interfaces/person';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonsListComponent implements AfterViewInit {
-  persons = input.required<Person[]>();
-  isLoading = input<boolean>(false);
+  readonly persons = input.required<Person[]>();
+  readonly isLoading = input<boolean>(false);
   viewDetailPerson = output<Person>();
   loadMorePersons = output();
 
@@ -52,7 +52,7 @@ export class PersonsListComponent implements AfterViewInit {
   }
 
   setHeight(): void {
-    const elements = [];
+    const elements: number[] = [];
     elements.push(this.getElementHeightById('.po-page-header'));
     elements.push(this.getElementHeightById('.po-row po-table-footer-show-more ng-star-inserted'));
     this.height = this.calculateHeight(elements) - 145;

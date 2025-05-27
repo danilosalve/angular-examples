@@ -56,7 +56,7 @@ export class ToolbarComponent implements OnInit {
 
   notificationNumber = 0;
 
-  iconTheme = signal<string>('an an-sun');
+  readonly iconTheme = signal<string>('an an-sun');
   theme = inject(ThemeService);
 
   ngOnInit(): void {

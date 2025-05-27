@@ -6,9 +6,9 @@ import { Component, input, OnInit } from '@angular/core';
   templateUrl: './rating.component.html'
 })
 export class RatingComponent implements OnInit {
-  rating = input.required<number>();
-  max = input.required<number>();
-  count = input<number>(0);
+  readonly rating = input.required<number>();
+  readonly max = input.required<number>();
+  readonly count = input<number>(0);
   stars: number[] = [];
 
   ngOnInit(): void {

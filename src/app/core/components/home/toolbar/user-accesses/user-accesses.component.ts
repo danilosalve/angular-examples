@@ -10,9 +10,9 @@ import { FeatureFlagStoreService } from './../../../../feature-flag/shared/servi
   templateUrl: './user-accesses.component.html'
 })
 export class UserAccessesComponent implements OnInit {
-  canAccessUsers = signal<boolean>(false);
-  canUserDarkMode = signal<boolean>(false);
-  isAdmin = signal<boolean>(false);
+  readonly canAccessUsers = signal<boolean>(false);
+  readonly canUserDarkMode = signal<boolean>(false);
+  readonly isAdmin = signal<boolean>(false);
 
   private readonly featureFlagStore = inject(FeatureFlagStoreService);
 

@@ -34,7 +34,7 @@ export class LinkedComponent implements OnInit {
       defaultQuantity: 30
     }
   ];
-  selectedCourse = signal<string | null>('BEGINNERS');
+  readonly selectedCourse = signal<string | null>('BEGINNERS');
   quantity = linkedSignal({
     source: () => ({ courseCode: this.selectedCourse }),
     /**

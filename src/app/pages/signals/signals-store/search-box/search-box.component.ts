@@ -9,6 +9,6 @@ import { PoFieldModule } from '@po-ui/ng-components';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchBoxComponent {
-  query = model<string>('');
+  readonly query = model<string>('');
   queryChange = output<string>();
 }

@@ -17,7 +17,7 @@ import { DatePipe } from '@angular/common';
   templateUrl: './notifications.component.html'
 })
 export class NotificationsComponent implements OnInit {
-  message = model<string>('');
+  readonly message = model<string>('');
   notifications: { message: string; timestamp: Date }[] = [];
 
   private readonly notificationService = inject(NotificationService);
