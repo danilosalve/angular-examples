@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "user": "usuario.xisto",
+      "firstName": "usuario",
+      "lastName": "xisto",
+      "password": "1234"
+    },
+    {
+      "user": "XISTO.TESTE",
+      "firstName": "XISTO",
+      "lastName": "TESTE",
+      "password": "1234@teste"
+    },
+    {
+      "user": "usuario.xpto",
+      "firstName": "Usuario@",
+      "lastName": "Teste#",
+      "password": "xpto123"
+    },
+    {
+      "user": "usuario.xpto",
+      "firstName": "Usuario Xisto",
+      "lastName": "Xpto Usuario",
+      "password": "xpto123"
+    }
+  ]
+}

@@ -2,6 +2,7 @@
   <po-input
     [(ngModel)]="firstName"
     name="firstName"
+    data-cy="input-firstName"
     p-label="Nome"
     p-placeholder="Informe o nome"
     p-pattern="^[A-Z][a-z]+$"
@@ -14,6 +15,7 @@
   <po-input
     [(ngModel)]="lastName"
     name="lastName"
+    data-cy="input-lastName"
     p-label="Sobrenome"
     p-placeholder="Informe o Sobrenome"
     p-pattern="^[A-Z][a-z]+$"
@@ -26,10 +28,12 @@
   <po-number
     [(ngModel)]="age"
     name="age"
+    data-cy="input-age"
     p-label="Idade"
     [p-min]="0"
     p-placeholder="0"
     [p-no-autocomplete]="true"
     p-clean
+    p-error-pattern="Informe somente números positivos"
   />
 </form>
