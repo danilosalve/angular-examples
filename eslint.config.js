@@ -31,7 +31,8 @@ module.exports = tseslint.config(
         },
       ],
       "no-console": "error",
-      "@angular-eslint/prefer-signals": "error"
+      "@angular-eslint/prefer-signals": "error",
+      "@angular-eslint/prefer-standalone": "error"
     },
   },
   {
@@ -41,7 +42,8 @@ module.exports = tseslint.config(
       ...angular.configs.templateAccessibility,
     ],
     rules: {
-      "@angular-eslint/template/prefer-control-flow": ["error"]
+      "@angular-eslint/template/prefer-control-flow": ["error"],
+      "@angular-eslint/template/prefer-self-closing-tags": "warn"
     },
   }
 );

@@ -13,7 +13,7 @@
       [p-disabled]="pokemons()?.next === null"
       (p-click)="onShowMore()"
       [p-loading]="!isHideLoading()"
-    ></po-button>
+    />
   </po-container>
 } @else {
   @if (isLoadShowMore()) {
