@@ -32,7 +32,8 @@ module.exports = tseslint.config(
       ],
       "no-console": "error",
       "@angular-eslint/prefer-signals": "error",
-      "@angular-eslint/prefer-standalone": "error"
+      "@angular-eslint/prefer-standalone": "error",
+      "prefer-template": "error"
     },
   },
   {
