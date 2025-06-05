@@ -16,6 +16,8 @@
   }
 
   <po-modal [p-title]="person()?.name || 'Detalhes'" p-size="lg">
-    <app-person-detail [person]="person()!" />
+    @defer (when !(modal().isHidden)) {
+      <app-person-detail [person]="person()!" />
+    }
   </po-modal>
 </po-page-default>
