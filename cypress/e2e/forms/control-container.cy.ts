@@ -1,7 +1,7 @@
 describe('ControlContainer', () => {
   beforeEach(() => cy.visit('/forms/container-form'));
 
-  describe('Aba de Pessoas - Formulário', () => {
+  context('Aba de Pessoas - Formulário', () => {
     it('deve exibir o título e as abas corretamente', () => {
       cy.contains('Pessoas').should('be.visible');
       cy.contains('Dados Gerais').should('be.visible');
@@ -41,7 +41,8 @@ describe('ControlContainer', () => {
       cy.get('app-address').should('exist');
     });
   });
-  describe('Aba de Vendedores - Formulário', () => {
+
+  context('Aba de Vendedores - Formulário', () => {
     beforeEach(() => {
       cy.contains('Pessoas').click();
       cy.contains('Vendedores').click()
@@ -85,5 +86,11 @@ describe('ControlContainer', () => {
       cy.contains('Endereço').click();
       cy.get('app-address').should('exist');
     });
+  });
+
+  it('deve navegar para a página inicial ao clicar em voltar', () => {
+    cy.contains('button', 'Voltar').should('exist').click({ force: true });
+    cy.location('pathname').should('equal', '/');
+    cy.contains('Cripto Moedas').should('exist').should('be.visible');
   });
 });

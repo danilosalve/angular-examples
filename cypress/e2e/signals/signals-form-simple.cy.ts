@@ -32,10 +32,10 @@ describe('signals-form-simple', () => {
   });
 
   it('deve navegar para a página Signals ao clicar em voltar', () => {
-    cy.contains('button', 'Voltar').click({ force: true });
-    cy.url().should('include', '/signals/sample');
+    cy.contains('button', 'Voltar').should('exist').click({ force: true });
+    cy.location('pathname').should('equal', '/signals/samples');
     // Opcional: verificar se algum conteúdo da página /signals está visível
-    cy.contains('Exemplo Untracked').should('be.visible');
+    cy.contains('Exemplo Untracked').should('exist').should('be.visible');
   });
 
   it('deve exibir mensagem de erro ao digitar os dados do formulário inválidos', () => {
