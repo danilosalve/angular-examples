@@ -29,6 +29,11 @@ export class HomeComponent {
           shortLabel: 'Container'
         },
         {
+          label: 'Form. Control Value Accessor',
+          link: 'forms/control-value-accessor',
+          shortLabel: 'C.V.A.'
+        },
+        {
           label: 'Form. Record',
           link: 'forms/form-record',
           shortLabel: 'Record'

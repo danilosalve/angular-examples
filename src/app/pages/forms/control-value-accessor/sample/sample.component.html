@@ -1,0 +1,8 @@
+<po-page-detail p-title="Formulários" p-subtitle="Control Value Accessor" (p-back)="onBack()">
+  <form [formGroup]="form">
+    <app-custom-input label="Nome" formControlName="name" />
+    <app-custom-input label="Descrição" formControlName="description" />
+  </form>
+
+  <p>Valor do Form: {{ form.value | json }}</p>
+</po-page-detail>
