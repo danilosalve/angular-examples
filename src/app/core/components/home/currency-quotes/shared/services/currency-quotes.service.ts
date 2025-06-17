@@ -1,3 +1,4 @@
+import { environment } from './../../../../../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,7 +12,7 @@ import { PoMultiselectOption } from '@po-ui/ng-components';
 export class CurrencyQuotesService {
   readonly apiUrl = 'https://economia.awesomeapi.com.br/json/last';
   readonly headers = new HttpHeaders({
-    'x-api-key': 'bb473bd526d14ff4d168d83cc33d1f8e79f003f668b5cfc2c6e245b269144b93'
+    'x-api-key': environment.AWESOMEAPI_APIKEY
   });
   private readonly http = inject(HttpClient);
 
