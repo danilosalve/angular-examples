@@ -26,7 +26,7 @@ jobs:
         run: npm run build
 
       - name: Start Angular app
-        run: npx http-server ./dist/angular-examples/browser -p 4200 &
+        run: npx http-server ./dist/angular-examples/browser -p 4200 -s &
         env:
           CI: true
 
