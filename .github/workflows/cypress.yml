@@ -4,8 +4,9 @@ name: Cypress Tests
 on:
   push:
     branches:
-    - master
-    - cypress
+      - master
+      - cypress
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -25,13 +26,16 @@ jobs:
       - name: Build Angular app
         run: npm run build
 
-      - name: Start Angular app
-        run: npx http-server ./dist/angular-examples/browser -p 4200 -s &
+      - name: Install serve
+        run: npm install -g serve
+
+      - name: Start Angular app using serve
+        run: serve -s ./dist/angular-examples/browser -l 4200 &
         env:
           CI: true
 
+      - name: Wait for app to be ready
+        run: npx wait-on http://localhost:4200
+
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
-        with:
-          start: npm start
-          wait-on: 'http://localhost:4200'
