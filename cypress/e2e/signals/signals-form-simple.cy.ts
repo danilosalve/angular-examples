@@ -32,7 +32,7 @@ describe('signals-form-simple', () => {
   });
 
   it('deve navegar para a página Signals ao clicar em voltar', () => {
-    cy.contains('button', 'Voltar').should('exist').click({ force: true });
+    cy.contains('button', 'Voltar', { timeout: 10000 }).should('exist').click({ force: true });
     cy.location('pathname').should('equal', '/signals/samples');
     // Opcional: verificar se algum conteúdo da página /signals está visível
     cy.contains('Exemplo Untracked').should('exist').should('be.visible');

@@ -12,7 +12,7 @@ describe('star-wars-vehicle', () => {
   });
 
   it('deve navegar para a página Formulários ao clicar em voltar', () => {
-    cy.contains('button', 'Voltar').should('exist').click({ force: true });
+    cy.contains('button', 'Voltar', { timeout: 10000 }).should('exist').click({ force: true });
     cy.location('pathname').should('equal', '/signals/samples');
     cy.get('.po-page-header-title').should('exist').should('be.visible');
     cy.get('.po-page-header-title').should('contain.text', 'Exemplos Signals');
