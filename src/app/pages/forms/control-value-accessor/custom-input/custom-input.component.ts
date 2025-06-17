@@ -16,7 +16,7 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
   ]
 })
 export class CustomInputComponent implements ControlValueAccessor {
-  label = input<string>('');
+  readonly label = input<string>('');
   value = '';
 
   // Funções que serão registradas pelo Angular
