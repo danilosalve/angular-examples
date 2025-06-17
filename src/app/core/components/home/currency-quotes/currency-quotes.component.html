@@ -1,0 +1,30 @@
+<po-widget
+  class="po-sm-12 po-md-12 po-lg-4 po-xl-3 po-mb-2"
+  p-title="Cotações"
+  p-primary-label="Obter Cotações"
+  (p-primary-action)="getCurrencyQuotes()"
+>
+  <form>
+    <po-multiselect
+      [(ngModel)]="currencyIds"
+      name="currencyIds"
+      p-label="Moedas"
+      p-placeholder="Selecione as Moedas"
+      p-placeholder-search="Selecione um ou mais moedas"
+      [p-options]="options"
+    />
+  </form>
+
+  <po-modal #infoModal p-title="Cotações">
+    <div class="po-row">
+      @if (currencyInfo.length > 0) {
+        @for (info of currencyInfo; track $index) {
+          <po-widget class="po-sm-12 po-md-12 po-lg-6 po-xl-4 po-mb-2" [p-title]="info.name">
+            <po-info p-label="Bid" [p-value]="info.bid" />
+            <po-info p-label="Ask" [p-value]="info.ask" />
+          </po-widget>
+        }
+      }
+    </div>
+  </po-modal>
+</po-widget>
