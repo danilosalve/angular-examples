@@ -13,7 +13,7 @@ export class FeatureFlagService {
   private readonly http = inject(HttpClient);
   private readonly featureFlagStore = inject(FeatureFlagStoreService);
   /* API fake gerada em https://designer.mocky.io/design -> Não é possivel modificar o valor do registro */
-  private readonly apiUrl = 'https://run.mocky.io/v3/8bf14630-5c64-4490-91cf-84e54cf204d0';
+  private readonly apiUrl = 'https://dummyjson.com/c/4c3d-6e55-48bb-9d04';
 
   getFlags(): Observable<FeatureFlag> {
     const headers: HttpHeaders = new HttpHeaders({
