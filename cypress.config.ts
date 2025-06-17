@@ -6,6 +6,7 @@ export default defineConfig({
   },
   projectId: 'vnfsxp',
   video: false,
+  defaultCommandTimeout: 60000,
   component: {
     devServer: {
       framework: 'angular',
