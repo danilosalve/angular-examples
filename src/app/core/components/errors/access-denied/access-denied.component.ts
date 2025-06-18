@@ -1,17 +1,12 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { PoContainerModule, PoButtonModule, PoPageModule } from '@po-ui/ng-components';
+
+import { ErrorBaseComponent } from '../error-base.component';
 
 @Component({
   selector: 'app-access-denied',
   imports: [PoContainerModule, PoButtonModule, NgOptimizedImage, PoPageModule],
   templateUrl: './access-denied.component.html'
 })
-export class AccessDeniedComponent {
-  private readonly router: Router = inject(Router);
-
-  navigateToHome(): void {
-    this.router.navigate(['']);
-  }
-}
+export class AccessDeniedComponent extends ErrorBaseComponent {}

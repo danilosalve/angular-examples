@@ -1,18 +1,12 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PoButtonModule, PoContainerModule } from '@po-ui/ng-components';
 
+import { ErrorBaseComponent } from '../error-base.component';
 @Component({
   selector: 'app-not-found',
   imports: [PoContainerModule, PoButtonModule, NgOptimizedImage],
   templateUrl: './not-found.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NotFoundComponent {
-  private readonly router: Router = inject(Router);
-
-  navigateToHome(): void {
-    this.router.navigate(['']);
-  }
-}
+export class NotFoundComponent extends ErrorBaseComponent {}
