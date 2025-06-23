@@ -1,5 +1,11 @@
 describe('signals-form-simple', () => {
-  beforeEach(() => cy.visit('/signals/form-simple'));
+  beforeEach(() => cy.visit('/signals/form-simple', {
+    onBeforeLoad (win) {
+      Object.defineProperty(win.navigator, 'language', {
+        value: 'pt-BR'
+      })
+    }
+  }));
 
   it('deve preencher os campos Nome, Sobrenome e Idade', () => {
     cy.get('[data-cy="input-firstName"] input').type('Joao').should('have.value', 'Joao');

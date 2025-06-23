@@ -1,5 +1,11 @@
 describe('signals-sample', () => {
-  beforeEach(() => cy.visit('/signals/samples'));
+  beforeEach(() => cy.visit('/signals/samples', {
+    onBeforeLoad (win) {
+      Object.defineProperty(win.navigator, 'language', {
+        value: 'pt-BR'
+      })
+    }
+  }));
 
   context('Untracked', () => {
     it('deve garantir que o campo nome está vazio ao carregar', () => {

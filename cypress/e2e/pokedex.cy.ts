@@ -1,5 +1,11 @@
 describe('pokedex', () => {
-  beforeEach(() => cy.visit('/pokedex'));
+    beforeEach(() => cy.visit('/pokedex', {
+    onBeforeLoad (win) {
+      Object.defineProperty(win.navigator, 'language', {
+        value: 'pt-BR'
+      })
+    }
+  }));
 
   context('A lista de Pokemons', () => {
     it('deve visitar a pagina pokedex', () => {

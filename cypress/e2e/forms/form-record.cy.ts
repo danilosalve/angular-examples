@@ -1,5 +1,11 @@
 describe('FormRecord', () => {
-  beforeEach(() => cy.visit('/forms/form-record'));
+  beforeEach(() => cy.visit('/forms/form-record', {
+    onBeforeLoad (win) {
+      Object.defineProperty(win.navigator, 'language', {
+        value: 'pt-BR'
+      })
+    }
+  }));
 
   it('deve acessar a página FormRecord', () => {
     cy.get('.po-page-header-title').should('exist').should('be.visible');

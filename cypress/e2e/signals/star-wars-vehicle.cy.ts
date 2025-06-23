@@ -1,5 +1,11 @@
 describe('star-wars-vehicle', () => {
-  beforeEach(() => cy.visit('/signals/vehicle'));
+  beforeEach(() => cy.visit('/signals/vehicle', {
+    onBeforeLoad (win) {
+      Object.defineProperty(win.navigator, 'language', {
+        value: 'pt-BR'
+      })
+    }
+  }));
 
   it('deve acessar a página Signals | Linked', () => {
     cy.get('.po-page-header-title').should('exist').should('be.visible');

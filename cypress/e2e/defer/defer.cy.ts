@@ -1,5 +1,11 @@
 describe('Defer', () => {
-  beforeEach(() => cy.visit('/defer'));
+  beforeEach(() => cy.visit('/defer', {
+    onBeforeLoad (win) {
+      Object.defineProperty(win.navigator, 'language', {
+        value: 'pt-BR'
+      })
+    }
+  }));
 
   context('Interaction', () => {
     beforeEach(() => cy.get('app-interaction').should('exist'));

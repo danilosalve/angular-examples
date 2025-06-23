@@ -1,5 +1,11 @@
 describe('ControlContainer', () => {
-  beforeEach(() => cy.visit('/forms/container-form'));
+  beforeEach(() => cy.visit('/forms/container-form', {
+    onBeforeLoad (win) {
+      Object.defineProperty(win.navigator, 'language', {
+        value: 'pt-BR'
+      })
+    }
+  }));
 
   context('Aba de Pessoas - Formulário', () => {
     it('deve exibir o título e as abas corretamente', () => {
