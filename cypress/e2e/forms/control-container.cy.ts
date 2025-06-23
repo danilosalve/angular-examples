@@ -89,7 +89,7 @@ describe('ControlContainer', () => {
   });
 
   it('deve navegar para a página inicial ao clicar em voltar', () => {
-    cy.contains('button', 'Voltar', { timeout: 10000 }).should('exist').click({ force: true });
+    cy.contains('button', 'Voltar', { timeout: 10000 }).scrollIntoView().should('be.visible').click();
     cy.location('pathname').should('equal', '/');
     cy.contains('Cripto Moedas').should('exist').should('be.visible');
   });

@@ -20,7 +20,7 @@ describe('FormRecord', () => {
   });
 
   it('deve navegar para a página Formulários ao clicar em voltar', () => {
-    cy.contains('button', 'Voltar', { timeout: 10000 }).should('exist').click({ force: true });
+    cy.contains('button', 'Voltar', { timeout: 10000 }).scrollIntoView().should('be.visible').click();
     cy.location('pathname').should('equal', '/forms/container-form');
     cy.contains('Control Container').should('exist').should('be.visible');
   });

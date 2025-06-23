@@ -38,4 +38,7 @@ jobs:
         run: npx wait-on http://localhost:4200
 
       - name: Run Cypress tests
+        env:
+          CYPRESS_VIEWPORT_HEIGHT: 720
+          CYPRESS_VIEWPORT_WIDTH: 1280
         uses: cypress-io/github-action@v6

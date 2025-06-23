@@ -58,7 +58,7 @@ describe('signals-sample', () => {
 
   context('Effect', () => {
     it('deve buscar por um CEP', () => {
-      cy.intercept('GET', 'http://viacep.com.br/ws/0/json/').as('stubGet');
+      cy.intercept('GET', /viacep\.com\.br\/ws\/.*\/json/).as('stubGet');
       cy.get('input[name="zipCode"]').type('01311200');
       cy.wait('@stubGet');
 
