@@ -42,3 +42,10 @@ jobs:
           CYPRESS_VIEWPORT_HEIGHT: 720
           CYPRESS_VIEWPORT_WIDTH: 1280
         uses: cypress-io/github-action@v6
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
