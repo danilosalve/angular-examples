@@ -71,17 +71,17 @@ describe('signals-sample', () => {
       cy.get('po-loading-overlay', { timeout: 10000 }).should('not.exist');
 
       cy.get('po-info[p-label="Logradouro"]').should('exist');
-      cy.contains('po-info', 'Avenida Paulista', { timeout: 10000 }).should('be.visible').should('exist');
+      cy.contains('po-info', 'Avenida Paulista', { timeout: 10000 }).should('be.visible').and('exist');
       cy.get('po-info[p-label="Bairro"]').should('exist');
-      cy.contains('po-info', 'Bela Vista', { timeout: 10000 }).should('be.visible').should('exist');
+      cy.contains('po-info', 'Bela Vista', { timeout: 10000 }).should('be.visible').and('exist');
       cy.get('po-info[p-label="Cidade"]').should('exist');
-      cy.contains('po-info', 'São Paulo', { timeout: 10000 }).should('be.visible').should('exist');
+      cy.contains('po-info', 'São Paulo', { timeout: 10000 }).should('be.visible').and('exist');
       cy.get('po-info[p-label="Estado"]').should('exist');
-      cy.contains('po-info', 'São Paulo', { timeout: 10000 }).should('be.visible').should('exist');
+      cy.contains('po-info', 'São Paulo', { timeout: 10000 }).should('be.visible').and('exist');
       cy.get('po-info[p-label="Região"]').should('exist');
-      cy.contains('po-info', 'Sudeste', { timeout: 10000 }).should('be.visible').should('exist');
-      cy.get('po-info[p-label="DDD"]').should('exist');
-      cy.contains('po-info', '11', { timeout: 10000 }).should('be.visible').should('exist');
+      cy.contains('po-info', 'Sudeste', { timeout: 10000 }).scrollIntoView().should('be.visible').and('exist');
+      cy.get('po-info[p-label="DDD"]').scrollIntoView().should('exist');
+      cy.contains('po-info', '11', { timeout: 10000 }).scrollIntoView().should('be.visible').and('exist');
     });
   });
 });
