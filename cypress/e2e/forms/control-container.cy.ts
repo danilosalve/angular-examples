@@ -17,17 +17,17 @@ describe('ControlContainer', () => {
 
     it('deve preencher os campos do formulário', () => {
       cy.fixture('people').then(people => {
-        cy.get('[formControlName="name"]').type(people.name);
-        cy.get('[formControlName="document"]').type(people.cpf);
+        cy.get('app-person [formControlName="name"]').type(people.name);
+        cy.get('app-person [formControlName="document"]').type(people.cpf);
 
         cy.contains('Endereço').click();
 
-        cy.get('[formControlName="street"]').type(people.street);
-        cy.get('[formControlName="addressNumber"]').clear().type(people.addressNumber);
-        cy.get('[formControlName="city"]').type(people.city);
-        cy.get('[formControlName="state"]').type(people.state);
-        cy.get('[formControlName="zipCode"]').type(people.zipCode);
-        cy.get('[formControlName="complement"]').type(people.complement);
+        cy.get('app-person [formControlName="street"]').type(people.street);
+        cy.get('app-person [formControlName="addressNumber"]').clear().type(people.addressNumber);
+        cy.get('app-person [formControlName="city"]').type(people.city);
+        cy.get('app-person [formControlName="state"]').type(people.state);
+        cy.get('app-person [formControlName="zipCode"]').type(people.zipCode);
+        cy.get('app-person [formControlName="complement"]').type(people.complement);
 
         cy.contains('JSON').click();
 
@@ -53,6 +53,7 @@ describe('ControlContainer', () => {
       cy.contains('Pessoas').click();
       cy.contains('Vendedores').click()
     });
+
     it('deve exibir o título e as abas corretamente', () => {
       cy.contains('Pessoas').should('be.visible');
       cy.contains('Dados Gerais').should('be.visible');
@@ -61,19 +62,18 @@ describe('ControlContainer', () => {
     });
 
     it('deve preencher os campos do formulário', () => {
-
       cy.fixture('people').then(people => {
-        cy.get('[formControlName="name"]').clear().type(people.name);
-        cy.get('[formControlName="document"]').clear().type(people.cnpj);
+        cy.get('app-seller [formControlName="name"]').type(people.name);
+        cy.get('app-seller [formControlName="document"]').type(people.cnpj);
 
         cy.contains('Endereço').click();
 
-        cy.get('[formControlName="street"]').type(people.street);
-        cy.get('[formControlName="addressNumber"]').type(people.addressNumber);
-        cy.get('[formControlName="city"]').type(people.city);
-        cy.get('[formControlName="state"]').type(people.state);
-        cy.get('[formControlName="zipCode"]').type(people.zipCode);
-        cy.get('[formControlName="complement"]').type(people.complement);
+        cy.get('app-seller [formControlName="street"]').type(people.street);
+        cy.get('app-seller [formControlName="addressNumber"]').type(people.addressNumber);
+        cy.get('app-seller [formControlName="city"]').type(people.city);
+        cy.get('app-seller [formControlName="state"]').type(people.state);
+        cy.get('app-seller [formControlName="zipCode"]').type(people.zipCode);
+        cy.get('app-seller [formControlName="complement"]').type(people.complement);
 
         cy.contains('JSON').click();
 
