@@ -3,6 +3,7 @@
 ![GitHub deployments](https://img.shields.io/github/deployments/danilosalve/angular-examples/github-pages)
 ![GitHub top language](https://img.shields.io/github/languages/top/danilosalve/angular-examples)
 ![GitHub language count](https://img.shields.io/github/languages/count/danilosalve/angular-examples)
+[![Cypress Tests](https://github.com/danilosalve/angular-examples/actions/workflows/cypress.yml/badge.svg)](https://github.com/danilosalve/angular-examples/actions/workflows/cypress.yml)
 
 Este projeto foi desenvolvido para testar e explorar novas funcionalidades do Angular, utilizando componentes Standalone. Ele inclui exemplos práticos e interativos para desenvolvedores que desejam aprender ou se aprofundar nas novas features do framework.
 
