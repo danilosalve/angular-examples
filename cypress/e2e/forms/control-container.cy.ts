@@ -68,12 +68,12 @@ describe('ControlContainer', () => {
 
         cy.contains('Endereço').click();
 
-        cy.get('[formControlName="street"]').clear().type(people.street);
-        cy.get('[formControlName="addressNumber"]').clear().type(people.addressNumber);
-        cy.get('[formControlName="city"]').clear().type(people.city);
-        cy.get('[formControlName="state"]').clear().type(people.state);
-        cy.get('[formControlName="zipCode"]').clear().type(people.zipCode);
-        cy.get('[formControlName="complement"]').clear().type(people.complement);
+        cy.get('[formControlName="street"]').type(people.street);
+        cy.get('[formControlName="addressNumber"]').type(people.addressNumber);
+        cy.get('[formControlName="city"]').type(people.city);
+        cy.get('[formControlName="state"]').type(people.state);
+        cy.get('[formControlName="zipCode"]').type(people.zipCode);
+        cy.get('[formControlName="complement"]').type(people.complement);
 
         cy.contains('JSON').click();
 

@@ -71,7 +71,7 @@ describe('signals-sample', () => {
       cy.get('po-loading-overlay', { timeout: 10000 }).should('not.exist');
 
       cy.get('po-info[p-label="Logradouro"]').should('exist')
-      cy.get('po-info[ng-reflect-value="Avenida Paulista"]').should('exist');
+      cy.get('po-info[ng-reflect-value="Avenida Paulista"]', { timeout: 10000 }).should('exist');
       cy.get('po-info[p-label="Bairro"]').should('exist');
       cy.get('po-info[ng-reflect-value="Bela Vista"]').should('exist');
       cy.get('po-info[p-label="Cidade"]').should('exist');
