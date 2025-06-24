@@ -9,10 +9,10 @@ import { Person } from '../shared/interfaces/person';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonDetailComponent {
-  person = input.required<Person>();
+  readonly person = input.required<Person>();
 
-  episodes = computed(() => (this.person().episode || []).length);
-  image = computed(() => this.person().image || '');
-  species = computed(() => this.person().species || '');
-  type = computed(() => this.person().type || 'Não informado');
+  readonly episodes = computed(() => (this.person().episode || []).length);
+  readonly image = computed(() => this.person().image || '');
+  readonly species = computed(() => this.person().species || '');
+  readonly type = computed(() => this.person().type || 'Não informado');
 }

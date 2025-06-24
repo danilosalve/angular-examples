@@ -28,10 +28,10 @@ import { Address } from '../shared/interface/address.interface';
 export class EffectComponent {
   private readonly notification = inject(PoNotificationService);
   private readonly apiUrl = isDevMode() ? 'http://viacep.com.br/ws' : 'https://viacep.com.br/ws';
-  zipCode = signal<string>('');
-  enabled = signal(false);
-  currentZipCode = computed(() => (this.zipCode().length === 8 ? this.zipCode() : this.lastZipCode()));
-  lastZipCode = signal<string>('');
+  readonly zipCode = signal<string>('');
+  readonly enabled = signal(false);
+  readonly currentZipCode = computed(() => (this.zipCode().length === 8 ? this.zipCode() : this.lastZipCode()));
+  readonly lastZipCode = signal<string>('');
 
   addressResource = resource({
     request: this.currentZipCode,

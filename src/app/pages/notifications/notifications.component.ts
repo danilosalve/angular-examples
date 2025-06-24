@@ -1,4 +1,4 @@
-import { Component, inject, model, OnInit } from '@angular/core';
+import { Component, inject, model, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   PoButtonModule,
@@ -10,14 +10,16 @@ import {
 import { NotificationService } from '../../shared/services/notification.service';
 import { MetaData, NgEventBus } from 'ng-event-bus';
 import { DatePipe } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-notifications',
   imports: [PoPageModule, PoFieldModule, PoButtonModule, FormsModule, DatePipe, PoContainerModule],
   templateUrl: './notifications.component.html'
 })
-export class NotificationsComponent implements OnInit {
-  message = model<string>('');
+export class NotificationsComponent implements OnInit, OnDestroy {
+  readonly message = model<string>('');
+  eventBus$ = new Subscription();
   notifications: { message: string; timestamp: Date }[] = [];
 
   private readonly notificationService = inject(NotificationService);
@@ -35,8 +37,12 @@ export class NotificationsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.eventBus.on('notification').subscribe((event: MetaData) => {
+    this.eventBus$ = this.eventBus.on('notification').subscribe((event: MetaData) => {
       this.notifications.push(event.data);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.eventBus$.unsubscribe();
   }
 }

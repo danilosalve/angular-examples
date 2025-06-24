@@ -19,12 +19,12 @@ import { debounceTime, map } from 'rxjs';
   templateUrl: './untracked.component.html'
 })
 export class UntrackedComponent implements OnInit {
-  counter = signal(0);
+  readonly counter = signal(0);
   form: FormGroup;
-  info = computed(
+  readonly info = computed(
     () => `O nome agora é ${this.name()} e o valor do contador era ${untracked(this.counter)} quando o nome mudou`
   );
-  name = signal<string>('Nome não informado');
+  readonly name = signal<string>('Nome não informado');
   titleCasePipe = inject(TitleCasePipe);
 
   constructor(private fb: FormBuilder) {

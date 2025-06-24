@@ -2,5 +2,5 @@ import { Directive, input } from '@angular/core';
 
 @Directive()
 export abstract class BaseDeferComponent {
-  height = input.required<number>();
+  readonly height = input.required<number>();
 }

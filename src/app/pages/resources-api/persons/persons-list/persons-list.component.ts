@@ -1,26 +1,28 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener, inject, input, output } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { PoSearchFilterMode, PoTableAction, PoTableModule } from '@po-ui/ng-components';
 
 import { PersonsService } from './../shared/services/persons.service';
 import { Person } from '../shared/interfaces/person';
-
 @Component({
   selector: 'app-persons-list',
   imports: [PoTableModule],
   templateUrl: './persons-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '(window:resize)': 'onResize()'
+  }
 })
 export class PersonsListComponent implements AfterViewInit {
-  persons = input.required<Person[]>();
-  isLoading = input<boolean>(false);
-  viewDetailPerson = output<Person>();
-  loadMorePersons = output();
+  readonly persons = input.required<Person[]>();
+  readonly isLoading = input<boolean>(false);
+  readonly viewDetailPerson = output<Person>();
+  readonly loadMorePersons = output();
 
   private readonly personsService = inject(PersonsService);
   columns = this.personsService.getColumns();
   height = 400;
-  filterType = PoSearchFilterMode.contains;
-  actions: PoTableAction[] = [
+  readonly filterType = PoSearchFilterMode.contains;
+  readonly actions: PoTableAction[] = [
     {
       label: 'Compartilhar',
       action: this.viewDetail.bind(this),
@@ -34,7 +36,6 @@ export class PersonsListComponent implements AfterViewInit {
     }
   ];
 
-  @HostListener('window:resize')
   onResize(): void {
     setTimeout(() => this.setHeight(), 200);
   }
@@ -52,7 +53,7 @@ export class PersonsListComponent implements AfterViewInit {
   }
 
   setHeight(): void {
-    const elements = [];
+    const elements: number[] = [];
     elements.push(this.getElementHeightById('.po-page-header'));
     elements.push(this.getElementHeightById('.po-row po-table-footer-show-more ng-star-inserted'));
     this.height = this.calculateHeight(elements) - 145;

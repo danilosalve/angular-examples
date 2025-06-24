@@ -4,7 +4,7 @@
   <div class="po-row">
     <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-2">
       <app-search class="po-xl-3 po-lg-4 po-md-8 po-sm-12 po-mb-1" (changeInValue)="onChangeFilter($event)" />
-      <app-pokemon-results [pokemons]="pokemons" />
+      <app-pokemon-results data-cy="app-results" [pokemons]="pokemons" />
     </po-container>
 
     <app-list-of-pokemons-cards

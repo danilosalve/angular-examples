@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal, viewChild } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal, viewChild } from '@angular/core';
 import {
   PoModalComponent,
   PoModalModule,
@@ -11,13 +11,15 @@ import {
 import { UserAccessesComponent } from './user-accesses/user-accesses.component';
 import { ThemeService } from './shared/services/theme.service';
 import { MetaData, NgEventBus } from 'ng-event-bus';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-toolbar',
   imports: [PoToolbarModule, PoModalModule, UserAccessesComponent],
   templateUrl: './toolbar.component.html'
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent implements OnInit, OnDestroy {
+  eventBus$ = new Subscription();
   readonly aboutModal = viewChild.required('about', { read: PoModalComponent });
   readonly userAccessModal = viewChild.required('userAccess', { read: PoModalComponent });
   readonly name: string = 'Exemplos Angular';
@@ -56,13 +58,17 @@ export class ToolbarComponent implements OnInit {
 
   notificationNumber = 0;
 
-  iconTheme = signal<string>('an an-sun');
+  readonly iconTheme = signal<string>('an an-sun');
   theme = inject(ThemeService);
 
   ngOnInit(): void {
     const theme = this.theme.onInitTheme();
     this.changeTheme(theme, false);
     this.listenNotifications();
+  }
+
+  ngOnDestroy(): void {
+    this.eventBus$.unsubscribe();
   }
 
   changeTheme(type: PoThemeTypeEnum, changeTheme = true) {
@@ -81,7 +87,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   listenNotifications(): void {
-    this.eventBus.on('notification').subscribe((event: MetaData) => {
+    this.eventBus$ = this.eventBus.on('notification').subscribe((event: MetaData) => {
       this.notificationActions.push({
         icon: 'an an-bell',
         label: event.data.message,

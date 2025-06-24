@@ -14,7 +14,7 @@ export class VehicleService {
   private readonly http: HttpClient = inject(HttpClient);
 
   // Signals managed by the service
-  selectedVehicle = signal<Vehicle | undefined>(undefined);
+  readonly selectedVehicle = signal<Vehicle | undefined>(undefined);
 
   // Reset the quantity when the vehicle changes
   quantity = linkedSignal({
@@ -37,19 +37,19 @@ export class VehicleService {
   });
 
   // Computed signals
-  total = computed(() => {
+  readonly total = computed(() => {
     const costInCredits = isNaN(this.selectedVehicle()?.cost_in_credits || 0)
       ? 0
       : (this.selectedVehicle()?.cost_in_credits ?? 0);
     return costInCredits * this.quantity();
   });
-  color = computed(() => (this.total() === 0 ? 'color-07' : this.total() > 50000 ? 'color-10' : 'color-02'));
+  readonly color = computed(() => (this.total() === 0 ? 'color-07' : this.total() > 50000 ? 'color-10' : 'color-02'));
 
   vehiclesResource = rxResource({
     loader: () => this.http.get<VehicleResponse>(this.vehicleUrl).pipe(map(vr => vr.results))
   });
-  vehicles = computed(() => this.vehiclesResource.value() ?? ([] as Vehicle[]));
-  options = computed(
+  readonly vehicles = computed(() => this.vehiclesResource.value() ?? ([] as Vehicle[]));
+  readonly options = computed(
     () =>
       this.vehiclesResource.value()?.map(v => ({ value: v.name, label: `${v.name} - ${v.passengers}` })) ??
       ([] as Vehicle[])

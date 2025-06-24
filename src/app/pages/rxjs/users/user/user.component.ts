@@ -11,5 +11,5 @@ import { User } from '../shared/interface/user.interface';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent {
-  users: InputSignal<User[]> = input.required<User[]>();
+  readonly users: InputSignal<User[]> = input.required<User[]>();
 }

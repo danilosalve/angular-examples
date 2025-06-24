@@ -1,0 +1,51 @@
+# .github/workflows/cypress.yml
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - master
+      - cypress
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: npm run build
+
+      - name: Install serve
+        run: npm install -g serve
+
+      - name: Start Angular app using serve
+        run: serve -s ./dist/angular-examples/browser -l 4200 &
+        env:
+          CI: true
+
+      - name: Wait for app to be ready
+        run: npx wait-on http://localhost:4200
+
+      - name: Run Cypress tests
+        env:
+          CYPRESS_VIEWPORT_HEIGHT: 720
+          CYPRESS_VIEWPORT_WIDTH: 1280
+        uses: cypress-io/github-action@v6
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots

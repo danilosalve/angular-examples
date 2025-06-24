@@ -3,6 +3,7 @@
     <form #f="ngForm">
       <po-combo
         name="options"
+        data-cy="cb-vehicle"
         p-label="Veiculo"
         (p-change)="onVehicleSelected($event)"
         p-placeholder="Selecione um veiculo"
@@ -14,6 +15,7 @@
 
       <po-number
         p-label="Quantidade"
+        data-cy="input-quantity"
         name="quantity"
         [(ngModel)]="quantity"
         [p-min]="1"

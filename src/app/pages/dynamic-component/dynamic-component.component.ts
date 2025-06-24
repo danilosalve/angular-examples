@@ -12,9 +12,9 @@ import { HeroesCardComponent } from './heroes-card/heroes-card.component';
 })
 export class DynamicComponentComponent {
   injector = inject(Injector);
-  componentSpot = viewChild.required('spot', { read: ViewContainerRef });
-  userLabel = viewChild.required('userLabel', { read: TemplateRef });
-  heroes = viewChild.required('heroes', { read: TemplateRef });
+  readonly componentSpot = viewChild.required('spot', { read: ViewContainerRef });
+  readonly userLabel = viewChild.required('userLabel', { read: TemplateRef });
+  readonly heroes = viewChild.required('heroes', { read: TemplateRef });
 
   myInjector = Injector.create({
     providers: [{ provide: DataServiceToken, useValue: { data: { name: 'DataServiceToken Hi!' } } }],

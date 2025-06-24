@@ -18,10 +18,12 @@
 }
 
 <po-modal>
-  @if (people) {
-    <po-info p-label="Nome" [p-value]="people.name" />
-    <po-info p-label="Genero" [p-value]="people.gender" />
-    <po-info p-label="Peso (massa)" [p-value]="people.height" />
-    <po-info p-label="Altura" [p-value]="people.mass" />
+  @defer (when !(modal().isHidden)) {
+    @if (people) {
+      <po-info p-label="Nome" [p-value]="people.name" />
+      <po-info p-label="Genero" [p-value]="people.gender" />
+      <po-info p-label="Peso (massa)" [p-value]="people.height" />
+      <po-info p-label="Altura" [p-value]="people.mass" />
+    }
   }
 </po-modal>

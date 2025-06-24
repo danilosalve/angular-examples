@@ -8,7 +8,7 @@ import { PeopleStarWarsService } from '../shared/services/people-star-wars.servi
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TimerComponent {
-  timeLeft = signal(0);
+  readonly timeLeft = signal(0);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   interval: any;
   private readonly peopleStarWarsService = inject(PeopleStarWarsService);
