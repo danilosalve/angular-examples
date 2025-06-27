@@ -12,8 +12,8 @@ export class TypeListButtonComponent {
   readonly changeTypeView = output<boolean>();
   readonly deviceService = inject(DeviceService);
   readonly isTableView = signal(!this.deviceService.isSmartPhone());
-  readonly icon = computed(() => this.isTableView() ? 'an an-list' : 'an an-cards');
-  readonly label = computed(() => this.isTableView() ? 'Tabela' : 'Lista');
+  readonly icon = computed(() => (this.isTableView() ? 'an an-list' : 'an an-cards'));
+  readonly label = computed(() => (this.isTableView() ? 'Tabela' : 'Lista'));
 
   onChangeTypeView(): void {
     this.isTableView.update(value => !value);
