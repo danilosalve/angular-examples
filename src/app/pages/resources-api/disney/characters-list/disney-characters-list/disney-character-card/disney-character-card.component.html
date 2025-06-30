@@ -1,0 +1,10 @@
+@if (item()) {
+  <po-widget
+    class="po-xl-2 po-lg-4 po-md-6 po-sm-12 po-mb-2"
+    (p-click)="onViewDetail()"
+    [p-title]="item().name"
+    (p-title-action)="onTitleAction()"
+  >
+    <po-image [p-src]="item().imageUrl || ''" p-loading="lazy" p-alt="Imagem do personagem da Disney" />
+  </po-widget>
+}

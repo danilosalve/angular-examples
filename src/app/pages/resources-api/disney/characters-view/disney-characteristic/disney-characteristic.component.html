@@ -1,0 +1,11 @@
+<div class="po-row">
+  <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mt-1">
+    <ul>
+      @for (item of items(); track $index) {
+        <li class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-ml-2">{{ item }}</li>
+      } @empty {
+        <p>Nenhum dado foi encontrado</p>
+      }
+    </ul>
+  </po-container>
+</div>

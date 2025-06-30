@@ -1,0 +1,70 @@
+<po-page-default p-title="Personagens | Disney" p-subtitle="RxResource - Paginação">
+  @let characters = disneyResource.value();
+  @let hasValue = disneyResource.hasValue();
+  @let isLoading = disneyResource.isLoading();
+  @let error = disneyResource.error();
+
+  <div class="po-row">
+    <app-type-list-button
+      class="po-xl-1 po-lg-2 po-md-6 po-sm-12 po-mt-1"
+      (changeTypeView)="onChangeTypeView($event)"
+    />
+    <app-search
+      class="po-offset-lg-6 po-offset-xl-8 po-xl-3 po-lg-4 po-offset-lg-6 po-md-6 po-sm-12 po-mb-1"
+      (changeInValue)="onChangeFilter($event)"
+    />
+  </div>
+
+  @if (hasValue) {
+    @if (characters) {
+      <div class="po-row">
+        <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-1">
+          @if (isTableView()) {
+            <app-disney-characters-table
+              [items]="characters.data"
+              [isLoading]="isLoading"
+              (viewDetail)="onViewDetail($event)"
+            />
+          } @else {
+            <app-disney-characters-list
+              [items]="characters.data"
+              [isLoading]="isLoading"
+              (viewDetail)="onViewDetail($event)"
+            />
+          }
+        </po-container>
+
+        <div class="footer po-xl-12 po-lg-12 po-md-12 po-sm-12">
+          <po-button
+            class="po-offset-lg-4 po-offset-xl-4 po-xl-4 po-lg-4 po-md-6 po-sm-12 po-mt-4"
+            p-label="Carregar mais resultados"
+            p-kind="primary"
+            [p-disabled]="characters?.info?.nextPage === null"
+            (p-click)="onShowMore()"
+            [p-loading]="isLoading"
+          />
+
+          <po-select
+            class="po-offset-lg-2 po-offset-xl-2 po-sm-12 po-md-6 po-lg-2 po-xl-2"
+            p-label="Itens por página"
+            [p-options]="optionsSize"
+            (p-change)="onChangeSize($event)"
+            name="size"
+          />
+        </div>
+      </div>
+    }
+  } @else {
+    <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-1">
+      <p class="po-font-text-bold">Nenhum personagem foi encontrado</p>
+    </po-container>
+  }
+
+  @if (error) {
+    <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-1">
+      <p class="po-font-text-bold">Ops, ocorreu erro ao tentar listar os Personagens :(</p>
+    </po-container>
+  }
+
+  <po-loading-overlay [hidden]="!isLoading" p-text="Carregando personagens" />
+</po-page-default>

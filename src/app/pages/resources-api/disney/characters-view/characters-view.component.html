@@ -1,0 +1,45 @@
+@if (item) {
+  <po-page-detail [p-title]="item.name || '' | titlecase" (p-back)="onBack()">
+    <div class="po-row">
+      <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-5">
+        <div class="po-row">
+          <div class="po-sm-12 po-md-6 po-lg-8 po-xl-9">
+            <po-accordion class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2" [p-show-manager-accordion]="true">
+              <po-accordion-item class="po-sm-12 po-md-12 po-lg-12 po-xl-12" p-label="Filmes" #films>
+                <app-disney-characteristic title="Filmes" [items]="item.films" />
+              </po-accordion-item>
+              <po-accordion-item p-label="Curtas" #shortFilms>
+                <app-disney-characteristic title="Curtas" [items]="item.shortFilms" />
+              </po-accordion-item>
+              <po-accordion-item p-label="Programas de TV" #tvShows>
+                <app-disney-characteristic title="Programas de TV" [items]="item.tvShows" />
+              </po-accordion-item>
+              <po-accordion-item p-label="Jogos" #videoGames>
+                <app-disney-characteristic title="Jogos" [items]="item.videoGames" />
+              </po-accordion-item>
+              <po-accordion-item p-label="Atrações do parque (Disney)" #parkAttractions>
+                <app-disney-characteristic title="Atrações do parque (Disney)" [items]="item.parkAttractions" />
+              </po-accordion-item>
+              <po-accordion-item p-label="Aliados" #allies>
+                <app-disney-characteristic title="Aliados" [items]="item.allies" />
+              </po-accordion-item>
+              <po-accordion-item p-label="Inimigos" #enemies>
+                <app-disney-characteristic title="Inimigos" [items]="item.enemies" />
+              </po-accordion-item>
+            </po-accordion>
+          </div>
+
+          <po-image
+            class="po-sm-12 po-md-6 po-lg-4 po-xl-3 po-mb-2"
+            [p-src]="item.imageUrl || ''"
+            p-loading="lazy"
+            p-alt="Imagem do personagem da Disney"
+            [p-height]="imgHeight"
+          />
+        </div>
+      </po-container>
+    </div>
+  </po-page-detail>
+} @else {
+  <p class="po-font-text-bold">Ops, ocorreu erro ao tentar buscar o Personagem :(</p>
+}

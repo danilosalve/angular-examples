@@ -1,0 +1,7 @@
+@if (items()) {
+  @for (item of items(); track item._id) {
+    <app-disney-character-card [item]="item" (viewDetail)="onViewDetail($event)" />
+  } @empty {
+    <p class="po-font-text-bold">Nenhum dado encontrado</p>
+  }
+}

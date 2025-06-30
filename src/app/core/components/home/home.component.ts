@@ -118,6 +118,12 @@ export class HomeComponent {
           icon: 'an an-shopping-cart-simple'
         },
         {
+          label: 'Disney | RxResource',
+          link: 'resources-api/disney',
+          shortLabel: 'Disney',
+          icon: 'an an-castle-turret'
+        },
+        {
           label: 'Rick & Morty - Personagens | Resource',
           link: 'resources-api/persons',
           shortLabel: 'Personagens',
