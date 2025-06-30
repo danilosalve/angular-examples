@@ -1,0 +1,1 @@
+import{j as t}from"./chunk-7ROZRI2L.js";import{ia as r}from"./chunk-VHTPDAAZ.js";var o=class{constructor(c){this.router=r(t),this.backTo=c}onBack(){this.router.navigate([this.backTo])}};export{o as a};
