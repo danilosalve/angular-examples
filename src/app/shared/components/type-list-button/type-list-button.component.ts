@@ -1,6 +1,7 @@
-import { DeviceService } from './../../services/device.service';
-import { Component, computed, inject, output, signal } from '@angular/core';
+import { Component, computed, effect, inject, output, signal } from '@angular/core';
 import { PoButtonModule } from '@po-ui/ng-components';
+
+import { DeviceService } from './../../services/device.service';
 
 @Component({
   selector: 'app-type-list-button',
@@ -15,8 +16,11 @@ export class TypeListButtonComponent {
   readonly icon = computed(() => (this.isTableView() ? 'an an-list' : 'an an-cards'));
   readonly label = computed(() => (this.isTableView() ? 'Tabela' : 'Lista'));
 
+  constructor() {
+    effect(() => this.changeTypeView.emit(this.isTableView()));
+  }
+
   onChangeTypeView(): void {
     this.isTableView.update(value => !value);
-    this.changeTypeView.emit(this.isTableView());
   }
 }
