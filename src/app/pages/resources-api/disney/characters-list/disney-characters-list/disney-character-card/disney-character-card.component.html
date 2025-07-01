@@ -1,10 +1,13 @@
 @if (item()) {
+  @let name = item().name;
   <po-widget
     class="po-xl-2 po-lg-4 po-md-6 po-sm-12 po-mb-2"
     (p-click)="onViewDetail()"
-    [p-title]="item().name"
+    [p-title]="name.length > 30 ? (name | slice: 0 : 30) + '...' : name"
     (p-title-action)="onTitleAction()"
+    [p-height]="280"
   >
-    <po-image [p-src]="item().imageUrl || ''" p-loading="lazy" p-alt="Imagem do personagem da Disney" />
+    @let imageUrl = item().imageUrl || 'assets/img/not-found-image.jpg';
+    <po-image [p-src]="imageUrl" p-loading="lazy" p-alt="Imagem do personagem da Disney" />
   </po-widget>
 }

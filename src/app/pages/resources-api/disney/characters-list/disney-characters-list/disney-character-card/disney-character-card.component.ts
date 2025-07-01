@@ -1,10 +1,11 @@
 import { PoImageModule, PoWidgetModule } from '@po-ui/ng-components';
 import { Component, input, output } from '@angular/core';
 import { CharacterDisney } from '../../../shared/interfaces/character-disney';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-disney-character-card',
-  imports: [PoWidgetModule, PoImageModule],
+  imports: [CommonModule, PoWidgetModule, PoImageModule],
   templateUrl: './disney-character-card.component.html'
 })
 export class DisneyCharacterCardComponent {

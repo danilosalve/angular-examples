@@ -33,25 +33,6 @@
             />
           }
         </po-container>
-
-        <div class="footer po-xl-12 po-lg-12 po-md-12 po-sm-12">
-          <po-button
-            class="po-offset-lg-4 po-offset-xl-4 po-xl-4 po-lg-4 po-md-6 po-sm-12 po-mt-4"
-            p-label="Carregar mais resultados"
-            p-kind="primary"
-            [p-disabled]="characters?.info?.nextPage === null"
-            (p-click)="onShowMore()"
-            [p-loading]="isLoading"
-          />
-
-          <po-select
-            class="po-offset-lg-2 po-offset-xl-2 po-sm-12 po-md-6 po-lg-2 po-xl-2"
-            p-label="Itens por página"
-            [p-options]="optionsSize"
-            (p-change)="onChangeSize($event)"
-            name="size"
-          />
-        </div>
       </div>
     }
   } @else {
@@ -59,6 +40,25 @@
       <p class="po-font-text-bold">Nenhum personagem foi encontrado</p>
     </po-container>
   }
+
+  <div class="footer po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-lg-3">
+    <po-button
+      class="po-offset-lg-4 po-offset-xl-4 po-xl-4 po-lg-4 po-md-6 po-sm-12 po-mt-4"
+      p-label="Carregar mais resultados"
+      p-kind="primary"
+      [p-disabled]="characters?.info?.nextPage === null"
+      (p-click)="onShowMore()"
+      [p-loading]="isLoading"
+    />
+
+    <po-select
+      class="po-offset-lg-2 po-offset-xl-2 po-sm-12 po-md-6 po-lg-2 po-xl-2"
+      p-label="Itens por página"
+      [p-options]="optionsSize"
+      (p-change)="onChangeSize($event)"
+      name="size"
+    />
+  </div>
 
   @if (error) {
     <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-1">

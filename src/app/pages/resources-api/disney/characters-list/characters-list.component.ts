@@ -52,13 +52,13 @@ export class CharactersListComponent implements AfterContentInit {
     }
   ];
   readonly page = signal<number>(1);
-  readonly poSelect = viewChild.required(PoSelectComponent);
+  readonly poSelect = viewChild(PoSelectComponent);
   readonly size = signal<number>(12);
 
   private router = inject(Router);
 
   ngAfterContentInit(): void {
-    this.poSelect().modelValue = this.size();
+    this.poSelect()!.modelValue = this.size();
   }
 
   onChangeSize(limit: number): void {
