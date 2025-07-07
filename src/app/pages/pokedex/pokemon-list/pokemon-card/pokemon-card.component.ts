@@ -17,6 +17,6 @@ export class PokemonCardComponent {
   private readonly router = inject(Router);
 
   onClick(): void {
-    this.router.navigate([`/pokedex/detail/${this.pokemon().id}`]);
+    this.router.navigate([`sample/pokedex/detail/${this.pokemon().id}`]);
   }
 }

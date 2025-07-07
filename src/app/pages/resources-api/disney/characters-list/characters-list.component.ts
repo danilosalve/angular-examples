@@ -80,6 +80,6 @@ export class CharactersListComponent implements AfterContentInit {
   }
 
   onViewDetail(character: CharacterDisney): void {
-    this.router.navigate([`/resources-api/disney/detail/${character._id}`]);
+    this.router.navigate([`sample/resources-api/disney/detail/${character._id}`]);
   }
 }

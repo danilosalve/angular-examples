@@ -6,7 +6,7 @@ export abstract class BaseDetailComponent {
   private readonly router: Router = inject(Router);
 
   constructor(backTo: string) {
-    this.backTo = backTo;
+    this.backTo = backTo ? `sample/${backTo}` : '';
   }
 
   onBack(): void {

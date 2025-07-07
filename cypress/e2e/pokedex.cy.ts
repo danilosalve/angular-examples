@@ -1,5 +1,5 @@
 describe('pokedex', () => {
-    beforeEach(() => cy.visit('/pokedex', {
+    beforeEach(() => cy.visit('sample/pokedex', {
     onBeforeLoad (win) {
       Object.defineProperty(win.navigator, 'language', {
         value: 'pt-BR'
@@ -27,7 +27,7 @@ describe('pokedex', () => {
       cy.intercept('https://pokeapi.co/api/v2/pokemon/butterfree').as('stubGetButterfree');
       cy.wait('@stubGetButterfree');
       cy.contains('Bulbasaur').should('exist').click();
-      cy.location('pathname').should('eq', '/pokedex/detail/1');
+      cy.location('pathname').should('eq', '/sample/pokedex/detail/1');
 
       cy.contains('Bulbasaur').should('be.visible');
       cy.contains('Nº 0001').should('be.visible');

@@ -1,5 +1,5 @@
 describe('signals-form-simple', () => {
-  beforeEach(() => cy.visit('/signals/form-simple', {
+  beforeEach(() => cy.visit('sample/signals/form-simple', {
     onBeforeLoad (win) {
       Object.defineProperty(win.navigator, 'language', {
         value: 'pt-BR'
@@ -39,7 +39,7 @@ describe('signals-form-simple', () => {
 
   it('deve navegar para a página Signals ao clicar em voltar', () => {
     cy.contains('button', 'Voltar', { timeout: 10000 }).scrollIntoView().should('be.visible').click();
-    cy.location('pathname').should('equal', '/signals/samples');
+    cy.location('pathname').should('equal', '/sample/signals/samples');
     // Opcional: verificar se algum conteúdo da página /signals está visível
     cy.contains('Exemplo Untracked').should('exist').should('be.visible');
   });

@@ -1,5 +1,5 @@
 describe('ControlContainer', () => {
-  beforeEach(() => cy.visit('/forms/container-form', {
+  beforeEach(() => cy.visit('sample/forms/container-form', {
     onBeforeLoad (win) {
       Object.defineProperty(win.navigator, 'language', {
         value: 'pt-BR'

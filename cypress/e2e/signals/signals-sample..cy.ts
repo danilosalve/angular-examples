@@ -1,5 +1,5 @@
 describe('signals-sample', () => {
-  beforeEach(() => cy.visit('/signals/samples', {
+  beforeEach(() => cy.visit('sample/signals/samples', {
     onBeforeLoad (win) {
       Object.defineProperty(win.navigator, 'language', {
         value: 'pt-BR'

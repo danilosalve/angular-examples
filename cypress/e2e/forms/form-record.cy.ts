@@ -1,5 +1,5 @@
 describe('FormRecord', () => {
-  beforeEach(() => cy.visit('/forms/form-record', {
+  beforeEach(() => cy.visit('sample/forms/form-record', {
     onBeforeLoad (win) {
       Object.defineProperty(win.navigator, 'language', {
         value: 'pt-BR'
@@ -27,7 +27,7 @@ describe('FormRecord', () => {
 
   it('deve navegar para a página Formulários ao clicar em voltar', () => {
     cy.contains('button', 'Voltar', { timeout: 10000 }).scrollIntoView().should('be.visible').click();
-    cy.location('pathname').should('equal', '/forms/container-form');
+    cy.location('pathname').should('equal', '/sample/forms/container-form');
     cy.contains('Control Container').should('exist').should('be.visible');
   });
 

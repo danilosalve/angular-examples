@@ -1,5 +1,5 @@
 describe('Defer', () => {
-  beforeEach(() => cy.visit('/defer', {
+  beforeEach(() => cy.visit('sample/defer', {
     onBeforeLoad (win) {
       Object.defineProperty(win.navigator, 'language', {
         value: 'pt-BR'

@@ -1,5 +1,5 @@
 describe('star-wars-vehicle', () => {
-  beforeEach(() => cy.visit('/signals/vehicle', {
+  beforeEach(() => cy.visit('sample/signals/vehicle', {
     onBeforeLoad (win) {
       Object.defineProperty(win.navigator, 'language', {
         value: 'pt-BR'
@@ -19,7 +19,7 @@ describe('star-wars-vehicle', () => {
 
   it('deve navegar para a página Formulários ao clicar em voltar', () => {
     cy.contains('button', 'Voltar', { timeout: 10000 }).scrollIntoView().should('be.visible').click();
-    cy.location('pathname').should('equal', '/signals/samples');
+    cy.location('pathname').should('equal', '/sample/signals/samples');
     cy.get('.po-page-header-title').should('exist').should('be.visible');
     cy.get('.po-page-header-title').should('contain.text', 'Exemplos Signals');
   });
