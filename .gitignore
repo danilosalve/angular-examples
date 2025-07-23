@@ -44,5 +44,4 @@ Thumbs.db
 # Environment files
 src/environments/environment.*.ts
 cypress/screenshots/
-src/environments/environment.ts
-src/environments/environment.development.ts
+src/assets/helpers/env.variables.ts

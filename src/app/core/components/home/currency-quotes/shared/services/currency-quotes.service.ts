@@ -1,10 +1,10 @@
-import { environment } from './../../../../../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { PoMultiselectOption } from '@po-ui/ng-components';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { CurrencyQuotes } from '../interfaces/currency-quotes';
-import { PoMultiselectOption } from '@po-ui/ng-components';
+import { environment } from '../../../../../../../assets/helpers/env.variables';
 
 @Injectable({
   providedIn: 'root'
