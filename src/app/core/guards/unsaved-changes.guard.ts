@@ -19,9 +19,8 @@ export const unsavedChangesGuard: CanDeactivateFn<UnsavedChanges> = component =>
           take(1)
         )
         .subscribe(() => (confirmationShown = false));
-
-      return of(confirmationShown);
     }
+    return of(confirmationShown);
   }
 
   return of(true);
