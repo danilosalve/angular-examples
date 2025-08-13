@@ -25,7 +25,13 @@ jobs:
 
       - name: Criar arquivo de variáveis de ambiente
         run: |
-          echo "export const enviroment = { AWESOMEAPI_APIKEY: '' }" > src/assets/helpers/env.variables.ts
+          mkdir -p src/app/core/components/home/currency-quotes/shared/helpers
+          echo "export const AWESOMEAPI_APIKEY = '';" > src/app/core/components/home/currency-quotes/shared/helpers/currency.constants.ts
+
+      - name: Verificar arquivo criado
+        run: |
+          cat src/app/core/components/home/currency-quotes/shared/helpers/currency.constants.ts
+          ls -la src/app/core/components/home/currency-quotes/shared/helpers/
 
       - name: Build Angular app
         run: npm run build

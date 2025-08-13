@@ -4,15 +4,14 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { CurrencyQuotes } from '../interfaces/currency-quotes';
-import { environment } from '../../../../../../../assets/helpers/env.variables';
-
+import { AWESOMEAPI_APIKEY } from '../helpers/currency.constants';
 @Injectable({
   providedIn: 'root'
 })
 export class CurrencyQuotesService {
   readonly apiUrl = 'https://economia.awesomeapi.com.br/json/last';
   readonly headers = new HttpHeaders({
-    'x-api-key': environment.AWESOMEAPI_APIKEY
+    'x-api-key': AWESOMEAPI_APIKEY
   });
   private readonly http = inject(HttpClient);
 

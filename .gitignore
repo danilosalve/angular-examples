@@ -44,4 +44,4 @@ Thumbs.db
 # Environment files
 src/environments/environment.*.ts
 cypress/screenshots/
-src/assets/helpers/env.variables.ts
+src/app/core/components/home/currency-quotes/shared/helpers/currency.constants.ts
