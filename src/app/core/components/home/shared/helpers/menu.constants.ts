@@ -29,6 +29,11 @@ export const MENU_ITEMS: PoMenuItem[] = [
         label: 'Form. Record',
         link: 'sample/forms/form-record',
         shortLabel: 'Record'
+      },
+      {
+        label: 'Verificar Form. não salvo',
+        link: 'sample/forms/form-unsaved',
+        shortLabel: 'Form. não salvo'
       }
     ]
   },

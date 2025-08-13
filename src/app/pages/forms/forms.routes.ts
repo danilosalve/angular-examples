@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { unsavedChangesGuard } from '../../core/guards/unsaved-changes.guard';
 
 export const FORMS_ROUTES: Routes = [
   {
@@ -21,6 +22,12 @@ export const FORMS_ROUTES: Routes = [
         path: 'form-record',
         title: 'Formulários | Form Record',
         loadComponent: () => import('./form-record/form-record.component').then(c => c.FormRecordComponent)
+      },
+      {
+        path: 'form-unsaved',
+        title: 'Formulários | Form Unsaved',
+        loadComponent: () => import('./form-unsaved/form-unsaved.component').then(c => c.FormUnsavedComponent),
+        canDeactivate: [unsavedChangesGuard]
       }
     ]
   }
