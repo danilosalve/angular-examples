@@ -24,7 +24,8 @@ jobs:
         run: npm install
 
       - name: Criar arquivo de variáveis de ambiente
-        run: echo "export const enviroment = { AWESOMEAPI_APIKEY: '' }" > src/assets/helpers/env.variables.ts
+        run: |
+          echo "export const enviroment = { AWESOMEAPI_APIKEY: '' }" > src/assets/helpers/env.variables.ts
 
       - name: Build Angular app
         run: npm run build
