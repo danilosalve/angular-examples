@@ -50,7 +50,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     {
       label: 'Mais notificações',
       icon: 'an an-bell',
-      url: '/notifications'
+      url: 'sample/notifications'
     }
   ];
 
