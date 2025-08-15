@@ -1,5 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { PoThemeTypeEnum, PoThemeService } from '@po-ui/ng-components';
+
 import { TOKEN_THEME_DEFAULT } from '../helpers/token-theme-default.constants';
 
 @Injectable({
@@ -20,7 +21,7 @@ export class ThemeService {
   }
 
   onInitTheme(): PoThemeTypeEnum {
-    const themeTypeStorage: string = this.getThemeTypeInStorage() || 'po-theme-default';
+    const themeTypeStorage: string = this.getThemeTypeInStorage() || this.getPrefersColorsSchema();
     const theme = themeTypeStorage === 'po-theme-default' ? PoThemeTypeEnum.light : PoThemeTypeEnum.dark;
     this.changeTheme(theme);
     return theme;
@@ -28,6 +29,13 @@ export class ThemeService {
 
   private changeThemeTypeInStorage(theme: string): void {
     localStorage.setItem('po-ui-theme', theme);
+  }
+
+  private getPrefersColorsSchema(): string {
+    const query = globalThis.matchMedia('(prefers-color-scheme: dark)');
+    const isDark = query?.matches || false;
+
+    return isDark ? 'po-theme-dark' : 'po-theme-default';
   }
 
   private getThemeTypeInStorage(): string | null {
