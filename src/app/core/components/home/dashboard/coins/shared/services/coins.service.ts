@@ -9,7 +9,7 @@ export class CoinsService {
   private sockets$: WebSocketSubject<unknown>;
 
   constructor() {
-    const url = 'wss://wss.coincap.io/prices?assets=ethereum,bitcoin';
+    const url = 'wss://wss.coincap.io/prices?assets=ethereum,bitcoin,dogecoin,maker,solana';
     this.sockets$ = webSocket(url);
   }
 

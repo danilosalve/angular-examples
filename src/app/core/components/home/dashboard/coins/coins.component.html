@@ -3,8 +3,12 @@
   resourceName="'Informações de Cripto Moedas'"
   class="po-sm-12 po-md-12 po-lg-4 po-xl-3 po-mb-2"
   p-title="Cripto Moedas"
+  [p-height]="220"
 >
   <po-info p-label="Bitcoin" [p-value]="stocks()?.bitcoin ?? 0" [p-orientation]="orientation" />
+  <po-info p-label="DogeCoin" [p-value]="stocks()?.dogecoin ?? 0" [p-orientation]="orientation" />
   <po-info p-label="Ethereum" [p-value]="stocks()?.ethereum ?? 0" [p-orientation]="orientation" />
+  <po-info p-label="Maker" [p-value]="stocks()?.maker ?? 0" [p-orientation]="orientation" />
+  <po-info p-label="Solana" [p-value]="stocks()?.solana ?? 0" [p-orientation]="orientation" />
   <po-icon p-icon="an an-question" #target class="po-clickable" p-tooltip="Exemplo de uso de um WebSocket" />
 </po-widget>
