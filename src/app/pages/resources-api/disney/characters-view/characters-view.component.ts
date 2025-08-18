@@ -1,3 +1,4 @@
+import { ZoomOnHoverDirective } from './../../../../shared/directives/zoom-on-hover.directive';
 import { TitleCasePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -16,7 +17,8 @@ import { DisneyCharacteristicComponent } from './disney-characteristic/disney-ch
     PoImageModule,
     PoInfoModule,
     DisneyCharacteristicComponent,
-    PoAccordionModule
+    PoAccordionModule,
+    ZoomOnHoverDirective
   ],
   templateUrl: './characters-view.component.html'
 })

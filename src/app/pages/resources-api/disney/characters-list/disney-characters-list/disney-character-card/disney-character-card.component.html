@@ -6,8 +6,9 @@
     [p-title]="name.length > 30 ? (name | slice: 0 : 30) + '...' : name"
     (p-title-action)="onTitleAction()"
     [p-height]="280"
+    appZoomOnHover
   >
     @let imageUrl = item().imageUrl || 'assets/img/not-found-image.jpg';
-    <po-image [p-src]="imageUrl" p-loading="lazy" p-alt="Imagem do personagem da Disney" [p-height]="200" />
+    <po-image [p-src]="imageUrl" p-loading="lazy" p-alt="Imagem do personagem da Disney" [p-height]="200"/>
   </po-widget>
 }

@@ -10,8 +10,8 @@ import {
   viewChild
 } from '@angular/core';
 import { PoImageModule, PoInfoModule, PoPopoverModule, PoTagModule, PoWidgetModule } from '@po-ui/ng-components';
-
 import { CurrencyPipe } from '@angular/common';
+
 import { DeviceService } from '../../../../shared/services/device.service';
 import { Product } from '../shared/interfaces/product';
 import { RatingComponent } from '../../../../shared/components/rating/rating.component';

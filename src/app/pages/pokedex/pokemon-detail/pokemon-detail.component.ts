@@ -19,6 +19,7 @@ import { HeightPokemonPipe } from '../shared/pipes/height-pokemon.pipe';
 import { WeightPokemonPipe } from '../shared/pipes/weight-pokemon.pipe';
 import { IdPokemonPipe } from '../shared/pipes/id-pokemon.pipe';
 import { DeviceService } from '../../../shared/services/device.service';
+import { ZoomOnHoverDirective } from './../../../shared/directives/zoom-on-hover.directive';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -33,7 +34,8 @@ import { DeviceService } from '../../../shared/services/device.service';
     AbilityOfPokemonComponent,
     HeightPokemonPipe,
     WeightPokemonPipe,
-    IdPokemonPipe
+    IdPokemonPipe,
+    ZoomOnHoverDirective
   ],
   templateUrl: './pokemon-detail.component.html'
 })

@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { PoContainerModule, PoImageModule, PoInfoModule } from '@po-ui/ng-components';
+
 import { Person } from '../shared/interfaces/person';
+import { ZoomOnHoverDirective } from './../../../../shared/directives/zoom-on-hover.directive';
 
 @Component({
   selector: 'app-person-detail',
-  imports: [PoImageModule, PoContainerModule, PoInfoModule],
+  imports: [PoImageModule, PoContainerModule, PoInfoModule, ZoomOnHoverDirective],
   templateUrl: './person-detail.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
