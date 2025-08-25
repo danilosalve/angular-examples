@@ -37,10 +37,11 @@
       }
     } @else {
       @if (isLoading) {
-        <ngx-skeleton-loader class="h-3" count="1" appearance="line" />
+        <ngx-skeleton-loader class="h-3" count="1" appearance="line" [animation]="animation" />
         <ngx-skeleton-loader
           count="3"
           appearance="circle"
+          [animation]="animation"
           [theme]="{
             width: '70px',
             height: '70px',

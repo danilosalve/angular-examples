@@ -20,6 +20,12 @@ export class ThemeService {
     }
   }
 
+  isThemeDark(): boolean {
+    const themeTypeStorage: string = this.getThemeTypeInStorage() || this.getPrefersColorsSchema();
+    const theme = themeTypeStorage === 'po-theme-default' ? PoThemeTypeEnum.light : PoThemeTypeEnum.dark;
+    return theme === PoThemeTypeEnum.dark;
+  }
+
   onInitTheme(): PoThemeTypeEnum {
     const themeTypeStorage: string = this.getThemeTypeInStorage() || this.getPrefersColorsSchema();
     const theme = themeTypeStorage === 'po-theme-default' ? PoThemeTypeEnum.light : PoThemeTypeEnum.dark;

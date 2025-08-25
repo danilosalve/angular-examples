@@ -8,6 +8,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { WeatherService } from './shared/services/weather.service';
 import { DailyWeatherForecastComponent } from './daily-weather-forecast/daily-weather-forecast.component';
 import { WeatherIconComponent } from './weather-icon/weather-icon.component';
+import { ThemeService } from '../toolbar/shared/services/theme.service';
 
 @Component({
   selector: 'app-weather',
@@ -23,6 +24,7 @@ import { WeatherIconComponent } from './weather-icon/weather-icon.component';
 })
 export class WeatherComponent {
   readonly city: Signal<string | undefined> = signal(undefined);
+  animation: 'progress' | 'progress-dark' | 'pulse' | 'false' | false = 'progress';
   wheatherService = inject(WeatherService);
   wheatherResource = this.wheatherService.getWeather;
   readonly form = new FormGroup({
@@ -33,11 +35,12 @@ export class WeatherComponent {
   });
 
   private readonly injector = inject(Injector);
+  private readonly themeService = inject(ThemeService);
 
   constructor() {
     this.city = toSignal(this.form.controls.city.valueChanges ?? of(undefined), { injector: this.injector });
-
     this.form.patchValue({ city: 'São Paulo' });
+    this.animation = this.themeService.isThemeDark() ? 'progress-dark' : 'progress';
   }
 
   onChangeCity(): void {
