@@ -1,6 +1,6 @@
-import { Component, inject, Injector, Signal } from '@angular/core';
+import { Component, inject, Injector, signal, Signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PoContainerModule, PoFieldModule, PoLoadingModule } from '@po-ui/ng-components';
+import { PoContainerModule, PoFieldModule } from '@po-ui/ng-components';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { of } from 'rxjs';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -14,7 +14,6 @@ import { WeatherIconComponent } from './weather-icon/weather-icon.component';
   imports: [
     PoContainerModule,
     PoFieldModule,
-    PoLoadingModule,
     ReactiveFormsModule,
     DailyWeatherForecastComponent,
     WeatherIconComponent,
@@ -23,7 +22,7 @@ import { WeatherIconComponent } from './weather-icon/weather-icon.component';
   templateUrl: './weather.component.html'
 })
 export class WeatherComponent {
-  readonly city: Signal<string | undefined>;
+  readonly city: Signal<string | undefined> = signal(undefined) ;
   wheatherService = inject(WeatherService);
   wheatherResource = this.wheatherService.getWeather;
   readonly form = new FormGroup({
@@ -37,11 +36,12 @@ export class WeatherComponent {
 
   constructor() {
     this.city = toSignal(this.form.controls.city.valueChanges ?? of(undefined), { injector: this.injector });
+
     this.form.patchValue({ city: 'São Paulo' });
   }
 
   onChangeCity(): void {
-    if (this.city()) {
+    if (this.city() && this.form.valid) {
       this.wheatherService.updateCity(this.city()!);
     }
   }

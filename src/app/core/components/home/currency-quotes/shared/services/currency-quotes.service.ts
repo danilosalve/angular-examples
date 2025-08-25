@@ -16,7 +16,7 @@ export class CurrencyQuotesService {
   private readonly http = inject(HttpClient);
 
   getByCurrencyIds(currencyIds: string[]): Observable<CurrencyQuotes> {
-    return this.http.get<CurrencyQuotes>(`${this.apiUrl}/${currencyIds.join(',')}`);
+    return this.http.get<CurrencyQuotes>(`${this.apiUrl}/${currencyIds.join(',')}`, { headers: this.headers });
   }
 
   getCurrencyOptions(): PoMultiselectOption[] {

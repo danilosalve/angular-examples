@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { PoContainerModule, PoPageModule } from '@po-ui/ng-components';
 
@@ -8,7 +7,7 @@ import { CurrencyQuotesComponent } from '../currency-quotes/currency-quotes.comp
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, PoPageModule, PoContainerModule, CoinsComponent, WeatherComponent, CurrencyQuotesComponent],
+  imports: [PoPageModule, PoContainerModule, CoinsComponent, WeatherComponent, CurrencyQuotesComponent],
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {}

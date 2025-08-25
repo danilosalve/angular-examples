@@ -6,7 +6,7 @@ import {
   PoNotificationService,
   PoWidgetModule
 } from '@po-ui/ng-components';
-import { Component, inject, signal, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { map, take } from 'rxjs';
 
@@ -17,7 +17,8 @@ import { CurrencyQuotes } from './shared/interfaces/currency-quotes';
 @Component({
   selector: 'app-currency-quotes',
   imports: [PoFieldModule, PoWidgetModule, FormsModule, PoInfoModule, PoModalModule],
-  templateUrl: './currency-quotes.component.html'
+  templateUrl: './currency-quotes.component.html',
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class CurrencyQuotesComponent {
   readonly infoModal = viewChild.required('infoModal', { read: PoModalComponent });

@@ -36,18 +36,18 @@
         <app-daily-weather-forecast [weather]="dailyWeather" />
       }
     } @else {
-      <ngx-skeleton-loader class="h-3" count="1" appearance="line" />
-      <ngx-skeleton-loader
-        count="3"
-        appearance="circle"
-        [theme]="{
-          width: '70px',
-          height: '70px',
-          'border-radius': '10px'
-        }"
-      />
+      @if (isLoading) {
+        <ngx-skeleton-loader class="h-3" count="1" appearance="line" />
+        <ngx-skeleton-loader
+          count="3"
+          appearance="circle"
+          [theme]="{
+            width: '70px',
+            height: '70px',
+            'border-radius': '10px'
+          }"
+        />
+      }
     }
   }
-
-  <po-loading-overlay [hidden]="!isLoading" p-text="Buscando Previsão do Tempo " />
 </po-container>
