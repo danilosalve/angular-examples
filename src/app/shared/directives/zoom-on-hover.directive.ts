@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener, inject, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appZoomOnHover]',
+  selector: '[appZoomOnHover]'
 })
 export class ZoomOnHoverDirective {
   private readonly el = inject(ElementRef);
