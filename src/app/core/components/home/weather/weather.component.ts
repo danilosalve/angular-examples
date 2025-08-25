@@ -22,7 +22,7 @@ import { WeatherIconComponent } from './weather-icon/weather-icon.component';
   templateUrl: './weather.component.html'
 })
 export class WeatherComponent {
-  readonly city: Signal<string | undefined> = signal(undefined) ;
+  readonly city: Signal<string | undefined> = signal(undefined);
   wheatherService = inject(WeatherService);
   wheatherResource = this.wheatherService.getWeather;
   readonly form = new FormGroup({
