@@ -1,10 +1,18 @@
 <po-page-default p-title="Página Inicial">
   <div class="po-row">
-    <po-container class="po-mb-2 po-sm-12 po-md-12 po-lg-12 po-xl-12" p-title="Finanças">
+    <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12" p-title="Exemplos">
+      @for (sample of samples; track sample.title) {
+        <app-samples
+          [title]="sample.title"
+          [url]="sample.url"
+          [description]="sample.description"
+          [help]="sample.help"
+        />
+      }
+    </po-container>
+    <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12" p-title="Aplicativos">
       <app-coins />
       <app-currency-quotes />
-    </po-container>
-    <po-container class="po-mb-2 po-sm-12 po-md-12 po-lg-12 po-xl-12">
       <app-weather />
     </po-container>
   </div>

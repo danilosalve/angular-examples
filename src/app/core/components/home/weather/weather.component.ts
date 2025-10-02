@@ -1,6 +1,6 @@
 import { Component, inject, Injector, signal, Signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PoContainerModule, PoFieldModule } from '@po-ui/ng-components';
+import { PoContainerModule, PoFieldModule, PoWidgetModule } from '@po-ui/ng-components';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { of } from 'rxjs';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -18,14 +18,15 @@ import { ThemeService } from '../toolbar/shared/services/theme.service';
     ReactiveFormsModule,
     DailyWeatherForecastComponent,
     WeatherIconComponent,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    PoWidgetModule
   ],
   templateUrl: './weather.component.html'
 })
 export class WeatherComponent {
   readonly city: Signal<string | undefined> = signal(undefined);
   animation: 'progress' | 'progress-dark' | 'pulse' | 'false' | false = 'progress';
-  wheatherService = inject(WeatherService);
+  private readonly wheatherService = inject(WeatherService);
   wheatherResource = this.wheatherService.getWeather;
   readonly form = new FormGroup({
     city: new FormControl('', {
