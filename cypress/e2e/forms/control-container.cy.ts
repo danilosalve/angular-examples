@@ -97,6 +97,6 @@ describe('ControlContainer', () => {
   it('deve navegar para a página inicial ao clicar em voltar', () => {
     cy.contains('button', 'Voltar', { timeout: 10000 }).scrollIntoView().should('be.visible').click();
     cy.location('pathname').should('equal', '/');
-    cy.contains('Cripto Moedas').should('exist').should('be.visible');
+    cy.contains('Exemplos de utilização @defer').should('exist').should('be.visible');
   });
 });
