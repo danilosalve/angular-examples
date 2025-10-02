@@ -8,9 +8,6 @@
   "semi": true,
   "bracketSpacing": true,
   "quoteProps": "preserve",
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
   "overrides": [
     {
       "files": "*.html",
