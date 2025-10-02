@@ -17,7 +17,7 @@ export class VehicleService {
   readonly selectedVehicle = signal<Vehicle | undefined>(undefined);
 
   // Reset the quantity when the vehicle changes
-  quantity = linkedSignal({
+  readonly quantity = linkedSignal({
     source: this.selectedVehicle,
     computation: v => {
       if (v) {
@@ -26,7 +26,7 @@ export class VehicleService {
       return 0;
     }
   });
-  costInCredits = linkedSignal({
+  readonly costInCredits = linkedSignal({
     source: this.selectedVehicle,
     computation: v => {
       if (v) {

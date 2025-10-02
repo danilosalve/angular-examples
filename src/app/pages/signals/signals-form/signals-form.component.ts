@@ -38,8 +38,9 @@ export class SignalsFormComponent extends BaseDetailComponent {
   signalCallCount = 0;
 
   private injector = inject(Injector);
+  private readonly fb = inject(FormBuilder);
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
     super('signals/samples');
 
     this.form = this.fb.group({

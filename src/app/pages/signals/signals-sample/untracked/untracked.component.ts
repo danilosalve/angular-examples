@@ -25,9 +25,10 @@ export class UntrackedComponent implements OnInit {
     () => `O nome agora é ${this.name()} e o valor do contador era ${untracked(this.counter)} quando o nome mudou`
   );
   readonly name = signal<string>('Nome não informado');
-  titleCasePipe = inject(TitleCasePipe);
+  private readonly titleCasePipe = inject(TitleCasePipe);
+  private readonly fb = inject(FormBuilder);
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
     this.form = this.fb.group({
       name: ['', Validators.required]
     });
