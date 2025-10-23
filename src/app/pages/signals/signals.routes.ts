@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { featureFlagGuard } from '../../core/feature-flag/guards/feature-flags.guard';
 
 export const SIGNALS_ROUTES: Routes = [
   {
@@ -25,8 +24,7 @@ export const SIGNALS_ROUTES: Routes = [
       {
         path: 'store',
         title: 'Signals | Store',
-        loadComponent: () => import('./signals-store/signals-store.component').then(c => c.SignalsStoreComponent),
-        canActivate: [featureFlagGuard(['users'])]
+        loadComponent: () => import('./signals-store/signals-store.component').then(c => c.SignalsStoreComponent)
       },
       {
         path: 'vehicle',

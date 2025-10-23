@@ -17,7 +17,8 @@ export class UserService {
         return users.filter(
           user =>
             user.name.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
-            user.nickname.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+            user.nickname.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
+            user.email.toLocaleLowerCase().includes(query.toLocaleLowerCase())
         );
       })
     );

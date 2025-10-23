@@ -63,7 +63,7 @@ export const MENU_ITEMS: PoMenuItem[] = [
         shortLabel: 'Veiculos'
       },
       {
-        label: 'Signals | Store',
+        label: 'X-Men - Signals | Store',
         link: 'sample/signals/store',
         shortLabel: 'Store'
       }
