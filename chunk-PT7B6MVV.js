@@ -1,1 +1,0 @@
-import{Fa as n}from"./chunk-WCLJ7DBJ.js";function c(r,t=0){return e(r)?Number(r):arguments.length===2?t:0}function e(r){return!isNaN(parseFloat(r))&&!isNaN(Number(r))}function i(r){return Array.isArray(r)?r:[r]}function s(r){return r==null?"":typeof r=="string"?r:`${r}px`}function u(r){return r instanceof n?r.nativeElement:r}export{c as a,i as b,s as c,u as d};

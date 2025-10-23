@@ -1,1 +1,0 @@
-import{a as t}from"./chunk-IFIE4WU5.js";import{E as e}from"./chunk-X3GKO6FF.js";import{ia as r}from"./chunk-WCLJ7DBJ.js";function l(a){return()=>{let o=r(t),s=r(e);return o.hasFlags(a)||s.createUrlTree(["access-denied"])}}export{l as a};
