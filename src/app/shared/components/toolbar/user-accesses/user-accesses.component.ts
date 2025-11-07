@@ -2,7 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PoCheckboxModule, PoContainerModule } from '@po-ui/ng-components';
 
-import { FeatureFlagStoreService } from './../../../../feature-flag/shared/services/feature-flag-store.service';
+import { FeatureFlagStoreService } from '../../../../core/feature-flag/shared/services/feature-flag-store.service';
 
 @Component({
   selector: 'app-user-accesses',

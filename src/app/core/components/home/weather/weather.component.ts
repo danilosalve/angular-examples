@@ -8,7 +8,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { WeatherService } from './shared/services/weather.service';
 import { DailyWeatherForecastComponent } from './daily-weather-forecast/daily-weather-forecast.component';
 import { WeatherIconComponent } from './weather-icon/weather-icon.component';
-import { ThemeService } from '../toolbar/shared/services/theme.service';
+import { ThemeService } from '../../../../shared/components/toolbar/shared/services/theme.service';
 
 @Component({
   selector: 'app-weather',

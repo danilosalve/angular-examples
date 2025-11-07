@@ -7,7 +7,8 @@ import {
   PoAvatarModule,
   PoPopupAction
 } from '@po-ui/ng-components';
-import { UserAccessesComponent } from '../../../../core/components/home/toolbar/user-accesses/user-accesses.component';
+
+import { UserAccessesComponent } from '../user-accesses/user-accesses.component';
 
 @Component({
   selector: 'app-profile-menu',

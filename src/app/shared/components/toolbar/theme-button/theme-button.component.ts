@@ -1,7 +1,7 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { PoIconModule, PoThemeTypeEnum, PoTooltipModule } from '@po-ui/ng-components';
 
-import { ThemeService } from '../../../../core/components/home/toolbar/shared/services/theme.service';
+import { ThemeService } from '../shared/services/theme.service';
 
 @Component({
   selector: 'app-theme-button',
