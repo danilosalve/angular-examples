@@ -21,19 +21,19 @@ export const TOKEN_THEME_DEFAULT = {
       color: {
         brand: {
           '01': {
-            lightest: '#f2eaf6',
-            lighter: '#d9c2e5',
-            light: '#bd94d1',
-            base: '#753399',
-            dark: '#5b1c7d',
-            darker: '#400e58',
-            darkest: '#260538'
+            lightest: '#E3E9F7',
+            lighter: '#B0C1E8',
+            light: '#7996D7',
+            base: '#23489F',
+            dark: '#173782',
+            darker: '#0F2557',
+            darkest: '#081536'
           },
           '02': {
-            base: '#b92f72'
+            base: '#32517c'
           },
           '03': {
-            base: '#ffd464'
+            base: '#16d9d9'
           }
         },
         action: {
@@ -63,19 +63,19 @@ export const TOKEN_THEME_DEFAULT = {
       color: {
         brand: {
           '01': {
-            darkest: '#f2eaf6',
-            darker: '#d9c2e5',
-            dark: '#bd94d1',
-            base: '#753399',
-            light: '#5b1c7d',
-            lighter: '#400e58',
-            lightest: '#260538'
+            lightest: '#6714d0',
+            lighter: '#721ad6',
+            light: '#8943e3',
+            base: '#a166f0',
+            dark: '#be93f9',
+            darker: '#d8bffb',
+            darkest: '#f1e5fe'
           },
           '02': {
-            base: '#b92f72'
+            base: '#BD93F9'
           },
           '03': {
-            base: '#ffd464'
+            base: '#FF5555'
           }
         },
         action: {
@@ -105,7 +105,7 @@ export const TOKEN_THEME_DEFAULT = {
             '70': '#c1c1c1',
             '80': '#d9d9d9',
             '90': '#eeeeee',
-            '95': '#fbfbfb'
+            '95': '#f8f8f2'
           }
         }
       },
