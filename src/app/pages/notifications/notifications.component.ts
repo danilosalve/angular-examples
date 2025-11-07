@@ -7,10 +7,13 @@ import {
   PoNotificationService,
   PoPageModule
 } from '@po-ui/ng-components';
-import { NotificationService } from '../../shared/services/notification.service';
 import { MetaData, NgEventBus } from 'ng-event-bus';
 import { DatePipe } from '@angular/common';
 import { Subscription } from 'rxjs';
+
+import { NotificationService } from '../../shared/services/notification.service';
+
+const NOTIFICATION_STORAGE_KEY = 'NOTIFICATIONS';
 
 @Component({
   selector: 'app-notifications',
@@ -37,12 +40,28 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.getNotificationsBySessionStorage();
     this.eventBus$ = this.eventBus.on('notification').subscribe((event: MetaData) => {
       this.notifications.push(event.data);
+      sessionStorage.setItem(NOTIFICATION_STORAGE_KEY, JSON.stringify(this.notifications));
     });
   }
 
   ngOnDestroy(): void {
     this.eventBus$.unsubscribe();
+  }
+
+  getNotificationsBySessionStorage(): void {
+    const session = sessionStorage.getItem(NOTIFICATION_STORAGE_KEY) || '';
+
+    try {
+      if (session) {
+        const notifications = JSON.parse(session);
+        this.notifications = notifications;
+      }
+    } catch {
+      // Não existem notificacações
+      return;
+    }
   }
 }
