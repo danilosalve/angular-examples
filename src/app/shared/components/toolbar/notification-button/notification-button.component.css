@@ -1,0 +1,11 @@
+.badge {
+  position: absolute;
+  top: 0px;
+  right: -15px; /* padrão para telas grandes */
+}
+
+@media (max-width: 900px) {
+  .badge {
+    right: -13px; /* ajuste para telas pequenas */
+  }
+}

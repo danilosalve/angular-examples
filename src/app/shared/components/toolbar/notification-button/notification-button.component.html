@@ -1,0 +1,25 @@
+<div #notificationElement>
+  <div style="display: flex; align-items: center; position: relative">
+    <po-icon class="po-toolbar-icon" [p-icon]="icon()" (click)="popup.toggle()" [p-tooltip]="tooltip()" />
+    @if (notificationNumber()) {
+      <po-badge
+        class="badge"
+        [p-value]="notificationNumber()"
+        [p-aria-label]="notificationNumber().toString()"
+        p-color="color-07"
+        p-size="small"
+        [p-show-border]="false"
+        p-type="button"
+      />
+    }
+  </div>
+</div>
+
+<po-popup
+  #popup
+  p-size="medium"
+  [p-actions]="actions"
+  [p-target]="notificationElement"
+  [p-hide-arrow]="true"
+  p-position="botton"
+/>

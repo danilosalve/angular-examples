@@ -3,8 +3,8 @@ import { PoMenuItem, PoMenuModule, PoPageModule } from '@po-ui/ng-components';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
-import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MENU_ITEMS } from './shared/helpers/menu.constants';
+import { ToolbarComponent } from '../../../shared/components/toolbar/toolbar.component';
 
 @Component({
   selector: 'app-home',

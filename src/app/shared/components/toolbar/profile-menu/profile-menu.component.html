@@ -1,13 +1,26 @@
-<po-toolbar
-  [p-title]="name"
-  [p-profile]="profile"
-  [p-profile-actions]="profileActions"
-  [p-show-notification]="true"
-  [p-notification-number]="notificationNumber"
-  [p-notification-actions]="notificationActions"
-  [p-actions-icon]="iconTheme()"
-  [p-actions]="actions"
-/>
+<div #profileElement>
+  <po-avatar
+    #target
+    p-size="xs"
+    p-src="https://avatars.githubusercontent.com/u/42416870?s=96&v=4"
+    (click)="popup.toggle()"
+  />
+</div>
+
+<po-popup #popup [p-actions]="actions" [p-target]="profileElement" [p-hide-arrow]="true" p-size="medium">
+  <div p-popup-header-template class="po-toolbar-profile-item-header">
+    <po-avatar
+      class="po-toolbar-profile-item-avatar"
+      p-size="sm"
+      p-src="https://avatars.githubusercontent.com/u/42416870?s=96&v=4"
+    />
+    <div>
+      <div class="po-toolbar-profile-item-header-title">Danilo Salve</div>
+
+      <div class="po-toolbar-profile-item-header-subtitle">github.com/danilosalve</div>
+    </div>
+  </div>
+</po-popup>
 
 <po-modal #userAccess p-title="Acessos do Usuário">
   <app-user-accesses />
