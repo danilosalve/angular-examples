@@ -12,7 +12,7 @@ export class TypeListButtonComponent {
   /** Se tipo de visualização é tabela retorna verdadeiro*/
   readonly changeTypeView = output<boolean>();
   readonly deviceService = inject(DeviceService);
-  readonly isTableView = signal(!this.deviceService.isSmartPhone());
+  readonly isTableView = signal(false);
   readonly icon = computed(() => (this.isTableView() ? 'an an-list' : 'an an-cards'));
   readonly label = computed(() => (this.isTableView() ? 'Tabela' : 'Lista'));
 
