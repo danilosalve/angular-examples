@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { PoWidgetModule, PoImageModule, PoBadgeModule, PoTagModule } from '@po-ui/ng-components';
 
 import { Character } from './../../../shared/interfaces/character-rick-and-morty';
 import { ZoomOnHoverDirective } from '../../../../../../shared/directives/zoom-on-hover.directive';
+import { DeviceService } from '../../../../../../shared/services/device.service';
 
 const GENDER_COLOR = {
   Female: 'color-06',
@@ -24,8 +25,17 @@ const GENDER_VALUE = {
   imports: [CommonModule, PoBadgeModule, PoImageModule, PoTagModule, PoWidgetModule, ZoomOnHoverDirective],
   templateUrl: './character-card.component.html'
 })
-export class CharacterCardComponent {
+export class CharacterCardComponent implements OnInit {
   readonly item = input.required<Character>();
+  readonly height = signal<number>(250);
+
+  private readonly device = inject(DeviceService);
+
+  ngOnInit(): void {
+    if (this.device.isSmartPhone()) {
+      this.height.set(0);
+    }
+  }
 
   getGenderColor(gender: string): string {
     return GENDER_COLOR[gender as keyof typeof GENDER_COLOR];
