@@ -1,0 +1,35 @@
+@if (item()) {
+  <po-widget class="po-xl-4 po-lg-6 po-md-12 po-sm-12 po-mb-2" [p-height]="250" appZoomOnHover>
+    <div class="po-row">
+      <div class="po-md-5 po-lg-5">
+        @let image = item().image || 'assets/img/not-found-image.jpg';
+        <po-image [p-src]="image" p-loading="lazy" p-alt="Imagem do personagem da Disney" [p-height]="200" />
+      </div>
+      <div class="po-md-7 po-lg-7">
+        <p class="po-font-subtitle po-xl-12 po-lg-12 po-md-12 po-sm-12">{{ item().name }}</p>
+
+        <div>
+          @let status = item().status === 'Alive' ? 'positive' : item().status === 'Dead' ? 'negative' : 'disabled';
+          <div style="display: flex; align-items: center; position: relative">
+            <po-badge [p-status]="status" p-size="small" style="top: -10px;" />
+          </div>
+
+          <p class="po-font-text-large po-xl-7 po-lg-7 po-md-7 po-sm-7">
+            {{ item().status }} - {{ item().species }}
+          </p>
+          <po-tag [p-color]="getGenderColor(item().gender)" [p-value]="getGenderValue(item().gender)" />
+        </div>
+
+        <div class="po-xl-12 po-lg-12 po-md-12 po-sm-12">
+          <p class="po-font-text-bold po-mt-2">Última localização registrada:</p>
+          <p class="po-font-text">{{ item().location.name }}</p>
+        </div>
+
+        <div class="po-xl-12 po-lg-12 po-md-12 po-sm-12">
+          <p class="po-font-text-bold po-mt-2">Origem:</p>
+          <p class="po-font-text">{{ item().origin.name }}</p>
+        </div>
+      </div>
+    </div>
+  </po-widget>
+}

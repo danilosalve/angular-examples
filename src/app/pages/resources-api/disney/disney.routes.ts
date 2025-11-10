@@ -5,7 +5,7 @@ import { disneyCharacterResolver } from './shared/resolvers/disney-character.res
 export const DISNEY_ROUTES: Routes = [
   {
     path: '',
-    title: 'Disney | Personagens',
+    title: 'Disney | Lista de personagens',
     loadComponent: () => import('./characters-list/characters-list.component').then(c => c.CharactersListComponent)
   },
   {

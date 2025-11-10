@@ -1,23 +1,23 @@
-export interface Person {
+export interface Character {
   id: number;
   name: string;
   status: 'Alive' | 'Dead' | 'unknown';
   species: string;
   type: string;
   gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
-  origin: PersonOrigin;
-  location: PersonLocation;
+  origin: CharacterOrigin;
+  location: CharacterLocation;
   image: string;
   episode: string[];
   url: string;
   created: string;
 }
 
-export interface PersonOrigin {
+export interface CharacterOrigin {
   name: string;
   url: string;
 }
-export interface PersonLocation {
+export interface CharacterLocation {
   name: string;
   url: string;
 }

@@ -1,35 +1,28 @@
-import { Injectable, resource, ResourceRef, signal } from '@angular/core';
-import { PoTableColumn } from '@po-ui/ng-components';
-import { Person } from '../interfaces/person';
+import { AfterViewInit, Component, input } from '@angular/core';
+import { PoTableColumn, PoTableModule } from '@po-ui/ng-components';
 
-@Injectable({
-  providedIn: 'root'
+import { Character } from '../../shared/interfaces/character-rick-and-morty';
+import { BaseTableComponent } from '../../../../../shared/components/base/base-table.component';
+
+@Component({
+  selector: 'app-characters-table',
+  imports: [PoTableModule],
+  templateUrl: './characters-table.component.html'
 })
-export class PersonsService {
-  private readonly apiUrl = 'https://rickandmortyapi.com/api/character';
-  private readonly page = signal(1);
-  private persons: Person[] = [];
+export class CharactersTableComponent extends BaseTableComponent implements AfterViewInit {
+  readonly items = input.required<Character[]>();
+  readonly isLoading = input<boolean>(false);
 
-  readonly getPersons: ResourceRef<Person[]> = resource({
-    request: this.page,
-    loader: async ({ request: page, abortSignal }) => {
-      try {
-        let response = await (await fetch(`${this.apiUrl}/?page=${page}`, { signal: abortSignal })).json();
+  protected readonly columns: PoTableColumn[] = this.getColumns();
 
-        if (this.persons.length > 0) {
-          this.persons = this.persons.concat(response.results);
-        } else {
-          this.persons = response.results;
-        }
+  constructor() {
+    const elements = ['.po-page-header', '.po-table-actions', '.app-search', '.footer'];
+    super(400, elements);
+  }
 
-        response = this.persons;
-
-        return response;
-      } catch (err) {
-        this.handleError(err);
-      }
-    }
-  });
+  ngAfterViewInit(): void {
+    this.onResize();
+  }
 
   getColumns(): PoTableColumn[] {
     return [
@@ -120,14 +113,6 @@ export class PersonsService {
         visible: false
       }
     ];
-  }
-
-  updatePage(page: number): void {
-    this.page.set(page);
-  }
-
-  private handleError(error: unknown) {
-    throw error;
   }
 
   private IsColumnVisible(): boolean {

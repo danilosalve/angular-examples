@@ -122,7 +122,7 @@ export const MENU_ITEMS: PoMenuItem[] = [
       },
       {
         label: 'Rick & Morty - Personagens | Resource',
-        link: 'sample/resources-api/persons',
+        link: 'sample/resources-api/rick-and-morty',
         shortLabel: 'Personagens',
         icon: 'an an-person'
       }

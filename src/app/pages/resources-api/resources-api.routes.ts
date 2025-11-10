@@ -7,13 +7,13 @@ export const RESOURCES_API_ROUTES: Routes = [
     loadChildren: () => import('./product/product.routes').then(r => r.PRODUCT_ROUTES)
   },
   {
-    path: 'persons',
+    path: 'rick-and-morty',
     title: 'Rick & Morty | Personagens',
-    loadComponent: () => import('./persons/persons.component').then(c => c.PersonsComponent)
+    loadChildren: () => import('./rick-and-morty/rick-and-morty.routes').then(r => r.RICK_AND_MORTY_ROUTES)
   },
   {
     path: 'disney',
-    title: 'Disney - Personagens',
+    title: 'Disney | Personagens',
     loadChildren: () => import('./disney/disney.routes').then(r => r.DISNEY_ROUTES)
   }
 ];
