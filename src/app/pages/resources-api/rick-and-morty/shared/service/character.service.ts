@@ -12,9 +12,9 @@ export class CharacterService {
   private characters: Character[] = [];
 
   readonly getCharacters: ResourceRef<Character[]> = resource({
-    request: () => ({page: this.page(), name: this.name()}),
+    request: () => ({ page: this.page(), name: this.name() }),
     loader: async ({ request, abortSignal }) => {
-      const {page, name} = request;
+      const { page, name } = request;
       try {
         let response = await (await fetch(`${this.apiUrl}/?page=${page}&name=${name}`, { signal: abortSignal })).json();
 

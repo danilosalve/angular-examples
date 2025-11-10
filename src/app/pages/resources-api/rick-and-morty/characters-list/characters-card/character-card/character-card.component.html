@@ -11,12 +11,10 @@
         <div>
           @let status = item().status === 'Alive' ? 'positive' : item().status === 'Dead' ? 'negative' : 'disabled';
           <div style="display: flex; align-items: center; position: relative">
-            <po-badge [p-status]="status" p-size="small" style="top: -10px;" />
+            <po-badge [p-status]="status" p-size="small" style="top: -10px" />
           </div>
 
-          <p class="po-font-text-large po-xl-7 po-lg-7 po-md-7 po-sm-7">
-            {{ item().status }} - {{ item().species }}
-          </p>
+          <p class="po-font-text-large po-xl-7 po-lg-7 po-md-7 po-sm-7">{{ item().status }} - {{ item().species }}</p>
           <po-tag [p-color]="getGenderColor(item().gender)" [p-value]="getGenderValue(item().gender)" />
         </div>
 
