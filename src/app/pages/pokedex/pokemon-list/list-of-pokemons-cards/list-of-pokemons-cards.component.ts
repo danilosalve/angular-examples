@@ -1,12 +1,13 @@
 import { Component, input, output } from '@angular/core';
-import { PoButtonModule, PoContainerModule, PoLoadingModule } from '@po-ui/ng-components';
+import { PoContainerModule, PoLoadingModule } from '@po-ui/ng-components';
 
-import { ListOfPokemonWithDetail } from '../../shared/interfaces/list-pokemon';
 import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
+import { ListOfPokemonWithDetail } from '../../shared/interfaces/list-pokemon';
+import { ShowMoreButtonComponent } from './../../../../shared/components/show-more-button/show-more-button.component';
 
 @Component({
   selector: 'app-list-of-pokemons-cards',
-  imports: [PoContainerModule, PoLoadingModule, PokemonCardComponent, PoButtonModule],
+  imports: [PoContainerModule, PoLoadingModule, PokemonCardComponent, ShowMoreButtonComponent],
   templateUrl: './list-of-pokemons-cards.component.html'
 })
 export class ListOfPokemonsCardsComponent {

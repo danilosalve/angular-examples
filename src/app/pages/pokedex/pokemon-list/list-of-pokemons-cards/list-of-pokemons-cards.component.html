@@ -6,13 +6,10 @@
   </po-container>
 
   <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-4">
-    <po-button
-      class="po-offset-md-3 po-offset-lg-4 po-offset-xl-4 po-xl-4 po-lg-4 po-md-6 po-sm-12"
-      p-label="Carregar mais"
-      p-kind="primary"
-      [p-disabled]="pokemons()?.next === null"
-      (p-click)="onShowMore()"
-      [p-loading]="!isHideLoading()"
+    <app-show-more-button
+      (clickShowMore)="onShowMore()"
+      [isLoading]="!isHideLoading()"
+      [isDisabled]="pokemons()?.next === null"
     />
   </po-container>
 } @else {

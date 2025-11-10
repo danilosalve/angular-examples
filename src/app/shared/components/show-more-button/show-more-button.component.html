@@ -1,0 +1,10 @@
+<div class="po-row">
+  <po-button
+    class="po-offset-md-2 po-offset-lg-4 po-offset-xl-4 po-md-8 po-lg-4 po-xl-4 po-sm-12"
+    p-label="Carregar mais resultados"
+    p-kind="primary"
+    (p-click)="clickShowMore.emit()"
+    [p-loading]="isLoading()"
+    [p-disabled]="isDisabled()"
+  />
+</div>

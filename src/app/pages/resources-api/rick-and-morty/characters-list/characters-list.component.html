@@ -33,23 +33,9 @@
     </po-container>
   }
 
-  <div class="footer po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-lg-3">
-    <po-button
-      class="po-offset-lg-4 po-offset-xl-4 po-xl-4 po-lg-4 po-md-6 po-sm-12 po-mt-4"
-      p-label="Carregar mais resultados"
-      p-kind="primary"
-      (p-click)="onShowMore()"
-      [p-loading]="isLoading"
-    />
-    <!-- <po-button
-      class="po-offset-lg-4 po-offset-xl-4 po-xl-4 po-lg-4 po-md-6 po-sm-12 po-mt-4"
-      p-label="Carregar mais resultados"
-      p-kind="primary"
-      [p-disabled]="characters?.info?.nextPage === null"
-      (p-click)="onShowMore()"
-      [p-loading]="isLoading"
-    /> -->
-  </div>
+  <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-4">
+    <app-show-more-button (clickShowMore)="onShowMore()" [isLoading]="isLoading" />
+  </po-container>
 
   @if (error) {
     <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-1">
