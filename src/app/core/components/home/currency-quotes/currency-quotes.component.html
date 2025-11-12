@@ -1,5 +1,4 @@
 <po-widget
-  class="po-sm-12 po-md-12 po-lg-4 po-xl-3 po-mb-2"
   p-title="Cotações"
   p-primary-label="Obter Cotações"
   (p-primary-action)="getCurrencyQuotes()"
@@ -39,3 +38,5 @@
     </div>
   </po-modal>
 </po-widget>
+
+<po-loading-overlay p-text="Buscando Cotações" [hidden]="isHideLoading" />

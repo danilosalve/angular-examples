@@ -1,0 +1,34 @@
+<div #appElement>
+  <po-icon class="po-toolbar-icon" p-icon="an an-dots-nine" p-tooltip="Meus aplicativos" />
+</div>
+
+<po-popover p-trigger="click" [p-target]="appElement" [p-hide-arrow]="true">
+  @for (app of apps; track app.icon) {
+    <po-button
+      class="po-mr-2"
+      [p-icon]="app.icon"
+      (p-click)="app.action()"
+      [p-tooltip]="app.tooltip"
+      [p-aria-label]="app.label"
+    />
+  }
+</po-popover>
+
+<!-- Aplicativos -->
+<po-modal #coins p-title="Cripto Moedas">
+  @defer (when !(coinsModal().isHidden)) {
+    <app-coins />
+  }
+</po-modal>
+
+<po-modal #currencyQuotes p-title="Moedas">
+  @defer (when !(currencyModal().isHidden)) {
+    <app-currency-quotes />
+  }
+</po-modal>
+
+<po-modal #weather p-title="Previsão do tempo">
+  @defer (when !(weatherModal().isHidden)) {
+    <app-weather />
+  }
+</po-modal>

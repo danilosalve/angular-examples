@@ -1,4 +1,4 @@
-<po-widget class="po-sm-12 po-md-12 po-lg-6 po-xl-6 po-mb-2" style="position: relative" p-title="Previsão do tempo">
+<po-container style="position: relative" p-title="Previsão do tempo" >
   <po-input
     class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-1"
     p-icon="an an-map-pin"
@@ -19,7 +19,7 @@
     <p class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2">Tente novamente mais tarde.</p>
   } @else {
     @if (hasValue) {
-      <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2">
+      <po-container class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-mb-2" [p-no-padding]="true" [p-no-border]="true">
         @if (weather.temperature && weather.wind) {
           <p class="po-font-text-large-bold" style="text-align: center">{{ city() }}</p>
           <p class="po-font-subtitle" style="text-align: center">{{ weather.temperature }}</p>
@@ -50,4 +50,4 @@
       }
     }
   }
-</po-widget>
+</po-container>

@@ -1,6 +1,7 @@
 import {
   PoFieldModule,
   PoInfoModule,
+  PoLoadingModule,
   PoModalComponent,
   PoModalModule,
   PoNotificationService,
@@ -9,7 +10,7 @@ import {
 } from '@po-ui/ng-components';
 import { ChangeDetectionStrategy, Component, inject, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { map, take } from 'rxjs';
+import { finalize, map, take } from 'rxjs';
 
 import { CurrencyQuotesService } from './shared/services/currency-quotes.service';
 import { CurrencyInfo } from './shared/interfaces/currency-info';
@@ -18,7 +19,7 @@ import { CurrencyInfoMapper } from './shared/helpers/currency-info-mapper';
 import { CurrencyFormatter } from './shared/helpers/currency-formatter';
 @Component({
   selector: 'app-currency-quotes',
-  imports: [PoFieldModule, PoWidgetModule, FormsModule, PoInfoModule, PoModalModule, PoTooltipModule],
+  imports: [PoFieldModule, PoWidgetModule, FormsModule, PoInfoModule, PoModalModule, PoTooltipModule, PoLoadingModule],
   templateUrl: './currency-quotes.component.html',
   changeDetection: ChangeDetectionStrategy.Default
 })
@@ -28,16 +29,19 @@ export class CurrencyQuotesComponent {
   private readonly poNotification = inject(PoNotificationService);
   readonly options = this.currencyQuotesServices.getCurrencyOptions();
   readonly currencyIds = signal<string[]>([]);
+  protected isHideLoading = true;
   currencyInfo: CurrencyInfo[] = [];
   private readonly currencyInfoMapper = new CurrencyInfoMapper(new CurrencyFormatter());
 
   getCurrencyQuotes(): void {
     if ((this.currencyIds()?.length ?? 0) > 0) {
+      this.isHideLoading = false;
       this.currencyQuotesServices
         .getByCurrencyIds(this.currencyIds()!)
         .pipe(
           map((currencys: CurrencyQuotes) => this.currencyInfoMapper.mapFromQuotes(currencys)),
-          take(1)
+          take(1),
+          finalize(() => this.isHideLoading = true)
         )
         .subscribe({
           next: (infos: CurrencyInfo[]) => {
