@@ -13,7 +13,9 @@ export class CurrencyInfoMapper {
         const info: CurrencyInfo = {
           name: currency.name,
           ask: this.formatter.format(currency.ask),
-          bid: this.formatter.format(currency.bid)
+          bid: this.formatter.format(currency.bid),
+          high: this.formatter.format(currency.high),
+          low: this.formatter.format(currency.low)
         };
         infos.push(info);
       }

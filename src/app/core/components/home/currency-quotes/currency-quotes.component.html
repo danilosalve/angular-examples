@@ -21,8 +21,18 @@
       @if (currencyInfo.length > 0) {
         @for (info of currencyInfo; track $index) {
           <po-widget class="po-sm-12 po-md-12 po-lg-6 po-xl-4 po-mb-2" [p-title]="info.name">
-            <po-info p-label="Bid" [p-value]="info.bid" />
-            <po-info p-label="Ask" [p-value]="info.ask" />
+            <po-info
+              p-label="Bid"
+              [p-value]="info.bid"
+              p-tooltip="Preço de compra, preço que o mercado está disposto a pagar."
+            />
+            <po-info
+              p-label="Ask"
+              [p-value]="info.ask"
+              p-tooltip="Preço de venda, preçc que o mercado está pedindo para vender uma moeda."
+            />
+            <po-info p-label="High" [p-value]="info.high" p-tooltip="Maior valor alcançado no dia" />
+            <po-info p-label="Low" [p-value]="info.low" p-tooltip="Menor valor alcançado no dia" />
           </po-widget>
         }
       }

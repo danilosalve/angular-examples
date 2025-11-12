@@ -4,6 +4,7 @@ import {
   PoModalComponent,
   PoModalModule,
   PoNotificationService,
+  PoTooltipModule,
   PoWidgetModule
 } from '@po-ui/ng-components';
 import { ChangeDetectionStrategy, Component, inject, signal, viewChild } from '@angular/core';
@@ -17,7 +18,7 @@ import { CurrencyInfoMapper } from './shared/helpers/currency-info-mapper';
 import { CurrencyFormatter } from './shared/helpers/currency-formatter';
 @Component({
   selector: 'app-currency-quotes',
-  imports: [PoFieldModule, PoWidgetModule, FormsModule, PoInfoModule, PoModalModule],
+  imports: [PoFieldModule, PoWidgetModule, FormsModule, PoInfoModule, PoModalModule, PoTooltipModule],
   templateUrl: './currency-quotes.component.html',
   changeDetection: ChangeDetectionStrategy.Default
 })
