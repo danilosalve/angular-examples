@@ -6,11 +6,7 @@ import { SampleHome } from './samples/shared/interfaces/sample-home';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [
-    PoPageModule,
-    PoContainerModule,
-    SamplesComponent
-  ],
+  imports: [PoPageModule, PoContainerModule, SamplesComponent],
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {

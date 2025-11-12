@@ -41,7 +41,7 @@ export class CurrencyQuotesComponent {
         .pipe(
           map((currencys: CurrencyQuotes) => this.currencyInfoMapper.mapFromQuotes(currencys)),
           take(1),
-          finalize(() => this.isHideLoading = true)
+          finalize(() => (this.isHideLoading = true))
         )
         .subscribe({
           next: (infos: CurrencyInfo[]) => {

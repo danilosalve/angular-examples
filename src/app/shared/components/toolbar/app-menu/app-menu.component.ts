@@ -1,5 +1,12 @@
 import { Component, viewChild } from '@angular/core';
-import { PoIconModule, PoPopoverModule, PoTooltipModule, PoButtonModule, PoModalComponent, PoModalModule } from '@po-ui/ng-components';
+import {
+  PoIconModule,
+  PoPopoverModule,
+  PoTooltipModule,
+  PoButtonModule,
+  PoModalComponent,
+  PoModalModule
+} from '@po-ui/ng-components';
 
 import { CurrencyQuotesComponent } from '../../../../core/components/home/currency-quotes/currency-quotes.component';
 import { CoinsComponent } from '../../../../core/components/home/dashboard/coins/coins.component';
@@ -45,13 +52,12 @@ export class AppMenuComponent {
     }
   ];
 
-
   onClickCoins(): void {
     this.coinsModal().open();
   }
 
   onClickCurrency(): void {
-    this.currencyModal().open()
+    this.currencyModal().open();
   }
 
   onClickWealther(): void {
