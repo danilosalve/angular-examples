@@ -5,7 +5,7 @@
 <po-popover p-trigger="click" [p-target]="appElement" [p-hide-arrow]="true">
   @for (app of apps; track app.icon) {
     <po-button
-      class="po-mr-2"
+      class="po-mr-2 po-mb-2"
       [p-icon]="app.icon"
       (p-click)="app.action()"
       [p-tooltip]="app.tooltip"
