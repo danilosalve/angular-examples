@@ -1,0 +1,30 @@
+<po-container p-title="Store">
+  <po-icon p-icon="an an-question" class="po-clickable" p-tooltip="Exemplo de utilização de @ngrx/signals" />
+  <div class="po-row">
+    <po-info
+      class="po-sm-12 po-mt-2"
+      p-label="Contador"
+      [p-value]="store.count().toString()"
+      [p-orientation]="infoOrientation"
+    />
+    <po-info
+      class="po-sm-12"
+      p-label="Dobro"
+      [p-value]="store.doubled().toString()"
+      [p-orientation]="infoOrientation"
+    />
+    <po-info class="po-sm-12" p-label="Raiz" [p-value]="store.square().toString()" [p-orientation]="infoOrientation" />
+    <po-info class="po-sm-12" p-label="x²" [p-value]="store.pow().toString()" [p-orientation]="infoOrientation" />
+    <po-info class="po-sm-12" p-label="x³" [p-value]="store.cube().toString()" [p-orientation]="infoOrientation" />
+    <po-info
+      class="po-sm-12 po-mb-4"
+      p-label="É um número par?"
+      [p-value]="store.isEven() ? 'Sim' : 'Não'"
+      [p-orientation]="infoOrientation"
+    />
+
+    <po-button class="po-mr-2" (p-click)="store.increment()" p-kind="primary" p-icon="an an-plus-circle" />
+    <po-button class="po-mr-2" (p-click)="store.decrement()" p-icon="an an-minus-circle" />
+    <po-button (p-click)="store.reset()" [p-danger]="true" p-icon="an an-arrow-counter-clockwise" />
+  </div>
+</po-container>
