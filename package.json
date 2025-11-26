@@ -33,7 +33,6 @@
     "@ngrx/signals": "^19.1.0",
     "@po-ui/ng-components": "19.34.0",
     "@po-ui/ng-templates": "19.34.0",
-    "@totvs/po-theme": "^19.34.0",
     "jest-preset-angular": "^14.5.5",
     "ng-event-bus": "^8.0.0",
     "ngx-skeleton-loader": "^10.0.0",
