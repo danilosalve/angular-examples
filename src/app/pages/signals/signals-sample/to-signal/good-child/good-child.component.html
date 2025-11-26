@@ -1,10 +1,15 @@
 <div class="po-row">
   <po-info class="po-sm-12" p-label="Cidade" [p-value]="cityName()" [p-orientation]="infoOrientation" />
   <po-info class="po-sm-12" p-label="Estado" [p-value]="state()" [p-orientation]="infoOrientation" />
-  <po-info class="po-sm-12" p-label="Atualizado em" [p-value]="dateOfUpdate()" [p-orientation]="infoOrientation" />
+  <po-info
+    class="po-sm-12"
+    p-label="Atualizado em"
+    [p-value]="transformDate(dateOfUpdate())"
+    [p-orientation]="infoOrientation"
+  />
 
   @for (clima of clima(); track $index) {
-    <po-info class="po-sm-12" p-label="Data" [p-value]="clima.data" [p-orientation]="infoOrientation" />
+    <po-info class="po-sm-12" p-label="Data" [p-value]="transformDate(clima.data)" [p-orientation]="infoOrientation" />
     <po-info class="po-sm-12" p-label="Condição" [p-value]="clima.condicao_desc" [p-orientation]="infoOrientation" />
     <po-info class="po-sm-12" p-label="Minima" [p-value]="clima.min.toString()" [p-orientation]="infoOrientation" />
     <po-info class="po-sm-12" p-label="Maxima" [p-value]="clima.max.toString()" [p-orientation]="infoOrientation" />
@@ -15,6 +20,4 @@
       [p-orientation]="infoOrientation"
     />
   }
-
-  {{ climate() | json }}
 </div>
