@@ -1,0 +1,20 @@
+@if (info()) {
+  <po-widget class="po-sm-12 po-md-12 po-lg-6 po-xl-4 po-mb-2" [p-title]="name()">
+    <app-currency-info
+      label="Ask"
+      [value]="ask()"
+      help="Preço de venda, preço que o mercado está pedindo para vender uma moeda"
+    />
+    @defer (on interaction(complement)) {
+      <app-currency-info
+        label="Bid"
+        [value]="bid()"
+        help="Preço de compra, preço que o mercado está disposto a pagar"
+      />
+      <app-currency-info label="High" [value]="high()" help="Maior valor alcançado no dia" />
+      <app-currency-info label="Low" [value]="low()" help="Menor valor alcançado no dia" />
+    } @placeholder {
+      <p #complement class="po-font-text-bold">Ver mais Informações</p>
+    }
+  </po-widget>
+}

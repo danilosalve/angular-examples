@@ -1,0 +1,10 @@
+<div class="po-row">
+  <po-info class="po-sm-11 po-md-11 po-lg-11 po-xl-11" [p-label]="label()" [p-value]="value()" />
+  <div #appElement class="po-sm-1 po-md-1 po-lg-1 po-xl-1">
+    <po-icon p-icon="an an-question" #target class="po-clickable" [p-tooltip]="help()" />
+  </div>
+</div>
+
+<po-popover p-trigger="click" [p-target]="appElement" [p-hide-arrow]="true">
+  <p class="po-font-text-small">{{ help() }}</p>
+</po-popover>
