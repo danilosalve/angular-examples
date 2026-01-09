@@ -1,0 +1,1 @@
+import{E as o}from"./chunk-ILNAH6AD.js";import{ia as t}from"./chunk-5QGOOW3X.js";var i=class{constructor(r){this.router=t(o),this.backTo=r?`sample/${r}`:""}onBack(){this.router.navigate([this.backTo])}};export{i as a};
