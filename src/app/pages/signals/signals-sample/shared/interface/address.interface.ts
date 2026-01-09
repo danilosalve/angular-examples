@@ -16,4 +16,5 @@ export interface Address {
   gia: string;
   ddd: string;
   siafi: string;
+  erro?: string;
 }

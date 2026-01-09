@@ -20,11 +20,12 @@
   @let isLoading = addressResource.isLoading();
   @let error = addressResource.error();
   @let hasValue = addressResource.hasValue();
+  @let hasError = address?.erro === 'true';
 
   @if (isLoading) {
     <po-loading-overlay />
   } @else {
-    @if (hasValue && address) {
+    @if (hasValue && address && !hasError) {
       <po-info p-label="Logradouro" [p-value]="address.logradouro" />
       <po-info p-label="Bairro" [p-value]="address.bairro" />
       <po-info p-label="Cidade" [p-value]="address.localidade" />
@@ -33,7 +34,7 @@
       <po-info p-label="DDD" [p-value]="address.ddd" />
     }
   }
-  @if (error && enabled()) {
+  @if ((error || hasError) && enabled()) {
     <p class="po-font-text-large po-mt-2">Ops...</p>
     <p class="po-font-text-large">Ocorreu um erro ao buscar o Endereço :(</p>
   }
