@@ -1,1 +1,0 @@
-import"./chunk-RTRJ3KFH.js";var e=[{path:"replay",title:"Share Replay",loadComponent:()=>import("./chunk-DTWK7RNQ.js").then(t=>t.ReplayComponent)},{path:"users",title:"Usu\xE1rios | Async",loadChildren:()=>import("./chunk-LBU2NVA4.js").then(t=>t.USERS_ROUTES)}];export{e as RXJS_ROUTES};
