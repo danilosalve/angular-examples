@@ -1,0 +1,7 @@
+@if (items()) {
+  @for (item of items(); track item.id) {
+    <app-dragon-ball-card [item]="item" />
+  } @empty {
+    <p class="po-font-text-bold">Nenhum dado encontrado</p>
+  }
+}
