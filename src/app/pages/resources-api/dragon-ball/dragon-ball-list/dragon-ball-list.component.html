@@ -1,1 +1,49 @@
-<p>dragon-ball-list works!</p>
+<po-page-default p-title="Dragon Ball | Lista de Personagens" p-subtitle="Exemplo de uso da API httpResource ">
+  @let dbzCharacter = dbzCharactersResource.value();
+  @let error = dbzCharactersResource.error();
+  @let hasValue = dbzCharactersResource.hasValue();
+  @let isLoading = dbzCharactersResource.isLoading();
+
+  <div class="po-row">
+    <app-type-list-button
+      class="po-xl-1 po-lg-2 po-md-6 po-sm-12 po-mt-1"
+      (changeTypeView)="onChangeTypeView($event)"
+    />
+    <app-search
+      class="po-offset-lg-6 po-offset-xl-8 po-xl-3 po-lg-4 po-offset-lg-6 po-md-6 po-sm-12 po-mb-1"
+      (changeInValue)="onChangeFilter($event)"
+    />
+  </div>
+
+  @if (hasValue && allDbzCharacters().length > 0) {
+    @if (dbzCharacter) {
+      <div class="po-row">
+        <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-1">
+          @if (isTableView()) {
+            <app-dragon-ball-table [items]="allDbzCharacters()" [isLoading]="isLoading" />
+          } @else {
+            <app-dragon-ball-cards [items]="allDbzCharacters()" [isLoading]="isLoading" />
+          }
+        </po-container>
+      </div>
+    }
+  } @else {
+    <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-1">
+      <p class="po-font-text-bold">Nenhum personagem foi encontrado</p>
+    </po-container>
+  }
+
+  @let hasNextPage = hasValue && dbzCharacter?.meta?.currentPage! < dbzCharacter?.meta?.totalPages!;
+
+  <po-container class="footer po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-4">
+    <app-show-more-button (clickShowMore)="onShowMore()" [isLoading]="isLoading" [isDisabled]="!hasNextPage" />
+  </po-container>
+
+  @if (error) {
+    <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-1">
+      <p class="po-font-text-bold">Ops, ocorreu erro ao tentar listar os Personagens :(</p>
+    </po-container>
+  }
+
+  <po-loading-overlay [hidden]="!isLoading" p-text="Carregando personagens" />
+</po-page-default>

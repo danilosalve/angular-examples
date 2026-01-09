@@ -121,6 +121,12 @@ export const MENU_ITEMS: PoMenuItem[] = [
         icon: 'an an-castle-turret'
       },
       {
+        label: 'Dragon Ball | HttpResource',
+        link: 'sample/resources-api/dbz',
+        shortLabel: 'DBZ',
+        icon: 'an an-fire-simple'
+      },
+      {
         label: 'Rick & Morty - Personagens | Resource',
         link: 'sample/resources-api/rick-and-morty',
         shortLabel: 'Personagens',
