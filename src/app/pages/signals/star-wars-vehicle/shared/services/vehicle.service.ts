@@ -46,7 +46,7 @@ export class VehicleService {
   readonly color = computed(() => (this.total() === 0 ? 'color-07' : this.total() > 50000 ? 'color-10' : 'color-02'));
 
   vehiclesResource = rxResource({
-    loader: () => this.http.get<VehicleResponse>(this.vehicleUrl).pipe(map(vr => vr.results))
+    stream: () => this.http.get<VehicleResponse>(this.vehicleUrl).pipe(map(vr => vr.results))
   });
   readonly vehicles = computed(() => this.vehiclesResource.value() ?? ([] as Vehicle[]));
   readonly options = computed(

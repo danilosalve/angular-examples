@@ -30,6 +30,7 @@ export class CharactersListComponent {
 
   private readonly characterService: CharacterService = inject(CharacterService);
   readonly charactersResource = this.characterService.getCharacters;
+  readonly hasNextPage = this.characterService.hasNextPage;
 
   onShowMore(): void {
     this.page.update(p => p + 1);

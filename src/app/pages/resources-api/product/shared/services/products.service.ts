@@ -13,9 +13,9 @@ export class ProductsService {
   private readonly http = inject(HttpClient);
 
   readonly getProducts = rxResource({
-    request: this.limit,
-    loader: ({ request: limit }) => {
-      return this.http.get<Product[]>(`${this.apiUrl}?limit=${limit}`).pipe(shareReplay(1));
+    params: () => ({ limit: this.limit() }),
+    stream: ({ params }) => {
+      return this.http.get<Product[]>(`${this.apiUrl}?limit=${params.limit}`).pipe(shareReplay(1));
     }
   });
 

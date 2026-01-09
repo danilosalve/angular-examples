@@ -10,10 +10,10 @@ export class WeatherService {
   private readonly city = signal('São Paulo');
 
   readonly getWeather: ResourceRef<Weather> = resource({
-    request: this.city,
-    loader: async ({ request: city, abortSignal }) => {
+    params: () => ({ city: this.city() }),
+    loader: async ({ params, abortSignal }) => {
       try {
-        const response = await (await fetch(`${this.apiUrl}/${city}`, { signal: abortSignal })).json();
+        const response = await (await fetch(`${this.apiUrl}/${params.city}`, { signal: abortSignal })).json();
         return response;
       } catch (err) {
         this.handleError(err);

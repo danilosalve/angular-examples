@@ -1,4 +1,4 @@
-import { Injectable, resource, ResourceRef, signal } from '@angular/core';
+import { Injectable, resource, ResourceRef, Signal, signal } from '@angular/core';
 
 import { Character } from '../interfaces/character-rick-and-morty';
 
@@ -9,12 +9,15 @@ export class CharacterService {
   private readonly apiUrl = 'https://rickandmortyapi.com/api/character';
   private readonly name = signal('');
   private readonly page = signal(1);
+  private readonly _hasNextPage = signal<boolean>(false);
   private characters: Character[] = [];
 
+  readonly hasNextPage: Signal<boolean> = this._hasNextPage.asReadonly();
+
   readonly getCharacters: ResourceRef<Character[]> = resource({
-    request: () => ({ page: this.page(), name: this.name() }),
-    loader: async ({ request, abortSignal }) => {
-      const { page, name } = request;
+    params: () => ({ page: this.page(), name: this.name() }),
+    loader: async ({ params, abortSignal }) => {
+      const { page, name } = params;
       try {
         let response = await (await fetch(`${this.apiUrl}/?page=${page}&name=${name}`, { signal: abortSignal })).json();
 
@@ -24,6 +27,7 @@ export class CharacterService {
           this.characters = response.results;
         }
 
+        this._hasNextPage.update(() => response.info.pages !== page);
         response = this.characters;
 
         return response;

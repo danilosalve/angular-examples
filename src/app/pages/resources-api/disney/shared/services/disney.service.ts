@@ -18,15 +18,19 @@ export class DisneyService {
   private readonly http = inject(HttpClient);
 
   readonly getCharacters = rxResource<DisneyCharactersApiResponse, { page: number; size: number; name: string }>({
-    request: () => ({ page: this.page(), size: this.pageSize(), name: this.name() }),
-    loader: ({ request: { page, size, name } }) =>
-      this.http.get<DisneyCharactersApiResponse>(`${this.apiUrl}?page=${page}&pageSize=${size}&name=${name}`).pipe(
-        shareReplay(1),
-        map(response => ({
-          ...response,
-          data: Array.isArray(response.data) ? response.data : [response.data]
-        }))
-      )
+    params: () => ({ page: this.page(), size: this.pageSize(), name: this.name() }),
+    stream: ({ params }) =>
+      this.http
+        .get<DisneyCharactersApiResponse>(
+          `${this.apiUrl}?page=${params.page}&pageSize=${params.size}&name=${params.name}`
+        )
+        .pipe(
+          shareReplay(1),
+          map(response => ({
+            ...response,
+            data: Array.isArray(response.data) ? response.data : [response.data]
+          }))
+        )
   });
 
   updatePagination(page: number, size: number): void {

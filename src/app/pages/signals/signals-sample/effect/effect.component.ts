@@ -33,14 +33,22 @@ export class EffectComponent {
   readonly currentZipCode = computed(() => (this.zipCode().length === 8 ? this.zipCode() : this.lastZipCode()));
   readonly lastZipCode = signal<string>('');
 
-  addressResource = resource({
-    request: this.currentZipCode,
-    loader: ({ request: zipCode, abortSignal }): Promise<Address> => {
-      return fetch(`${this.apiUrl}/${zipCode || '0'}/json/`, { signal: abortSignal }).then(
+  // addressResource = resource({
+  //   request: this.currentZipCode,
+  //   loader: ({ request: zipCode, abortSignal }): Promise<Address> => {
+  //     return fetch(`${this.apiUrl}/${zipCode || '0'}/json/`, { signal: abortSignal }).then(
+  //       address => address.json() as unknown as Address
+  //     );
+  //     // return Promise.resolve(ADDRESS_DEFAULT)
+  //   }
+  // });
+
+  protected readonly addressResource = resource({
+    params: () => ({ code: this.currentZipCode() }),
+    loader: ({ params, abortSignal }) =>
+      fetch(`${this.apiUrl}/${params.code || '0'}/json`, { signal: abortSignal }).then(
         address => address.json() as unknown as Address
-      );
-      // return Promise.resolve(ADDRESS_DEFAULT)
-    }
+      )
   });
 
   constructor() {
