@@ -44,6 +44,11 @@ export const PAGES_ROUTES: Routes = [
         path: 'signals',
         title: 'Signals',
         loadChildren: () => import('./signals/signals.routes').then(r => r.SIGNALS_ROUTES)
+      },
+      {
+        path: 'in-memory',
+        title: 'Angular In Memory API',
+        loadChildren: () => import('./in-memory/in-memory.routes').then(r => r.IN_MEMORY_ROUTES)
       }
     ]
   }

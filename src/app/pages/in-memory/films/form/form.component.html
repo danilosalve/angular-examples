@@ -1,0 +1,71 @@
+<po-page-edit
+  [p-title]="title"
+  [p-breadcrumb]="breadcrumb"
+  (p-save)="onSubmit()"
+  [p-disable-submit]="isLoading"
+  (p-cancel)="onCancel()"
+>
+  @if (form$ | async) {
+    <form [formGroup]="form">
+      <div class="po-md-5 po-lg-5">
+        @if (image) {
+          <po-image [p-src]="image" p-loading="lazy" p-alt="Capa do filme" [p-height]="300" />
+        } @else {
+          <po-image p-src="assets/img/not-found-image.jpg" p-loading="lazy" p-alt="Capa do filme" [p-height]="300" />
+        }
+
+        <po-url
+          formControlName="image"
+          [(ngModel)]="image"
+          p-label="URL da Imagem"
+          p-placeholder="https://imagem.com.br/imagem.jpg"
+          p-clean
+        />
+      </div>
+
+      <div class="po-md-7 po-lg-7">
+        <po-input
+          formControlName="name"
+          p-label="Nome"
+          p-placeholder="Informe o titulo do Filme"
+          [p-no-autocomplete]="true"
+          p-clean
+          p-required
+        />
+
+        <po-multiselect
+          formControlName="genre"
+          p-label="Gênero"
+          p-placeholder="Selecione o gênero do Filme"
+          [p-options]="options"
+          [p-required]="true"
+        />
+
+        <po-input
+          formControlName="duration"
+          p-label="Duração"
+          p-placeholder="00:00"
+          [p-no-autocomplete]="true"
+          [p-pattern]="'[0-9]{2}:[0-9]{2}'"
+          [p-maxlength]="5"
+          p-clean
+          p-required
+        />
+
+        <po-datepicker
+          formControlName="releaseDate"
+          p-label="Data de Lançamento"
+          p-format="dd/mm/yyyy"
+          p-placeholder="01/01/1970"
+          [p-max-date]="maxDate"
+          p-required
+          p-clean
+        />
+      </div>
+    </form>
+  }
+
+  @if (isLoading) {
+    <po-loading-overlay />
+  }
+</po-page-edit>

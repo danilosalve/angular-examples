@@ -52,6 +52,12 @@ export class DashboardComponent {
       url: 'sample/signals/samples',
       description: 'Encontre exemplos das principais funcionalidades de Signals',
       help: 'https://angular.dev/guide/signals'
+    },
+    {
+      title: 'Angular in memory Web API',
+      url: 'sample/in-memory/films',
+      description: 'Encontre exemplos das principais funcionalidades utilizando um backend Fake',
+      help: 'https://www.jsdocs.io/package/angular-in-memory-web-api'
     }
   ];
 }
