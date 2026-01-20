@@ -1,0 +1,40 @@
+<po-page-default
+  p-title="Filmes | Lista de Filmes"
+  p-subtitle="Exemplo de uso do Angular memory web API"
+  [p-actions]="actions"
+>
+  <div class="po-row">
+    <app-type-list-button
+      class="po-xl-1 po-lg-2 po-md-6 po-sm-12 po-mt-1"
+      (changeTypeView)="onChangeTypeView($event)"
+    />
+    <app-search
+      class="po-offset-lg-6 po-offset-xl-8 po-xl-3 po-lg-4 po-offset-lg-6 po-md-6 po-sm-12 po-mb-1"
+      (changeInValue)="onChangeFilter($event)"
+    />
+  </div>
+
+  <div class="po-row">
+    <po-container class="po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-1">
+      @if (isTableView()) {
+        <app-table
+          [items]="items"
+          [isLoading]="isLoading"
+          (editAction)="onFilmEdit($event)"
+          (viewAction)="onFilmView($event)"
+        />
+      } @else {
+        <app-cards
+          [items]="items"
+          [isLoading]="isLoading"
+          (editAction)="onFilmEdit($event)"
+          (viewAction)="onFilmView($event)"
+        />
+      }
+    </po-container>
+  </div>
+
+  <po-container class="footer po-xl-12 po-lg-12 po-md-12 po-sm-12 po-mb-4">
+    <app-show-more-button (clickShowMore)="onShowMore()" [isDisabled]="true" />
+  </po-container>
+</po-page-default>

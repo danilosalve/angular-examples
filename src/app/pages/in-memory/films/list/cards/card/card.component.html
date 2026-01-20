@@ -1,0 +1,34 @@
+@if (item()) {
+  <po-widget
+    class="po-xl-4 po-lg-6 po-md-12 po-sm-12 po-mb-2"
+    [p-height]="height()"
+    (p-primary-action)="onClickEdit()"
+    (p-secondary-action)="onClickView()"
+    p-primary-label="Editar"
+    p-secondary-label="Visualizar"
+  >
+    <div class="po-md-5 po-lg-5">
+      @let image = item().image || 'assets/img/not-found-image.jpg';
+      <po-image [p-src]="image" p-loading="lazy" p-alt="Capa do filme" [p-height]="200" />
+    </div>
+    <div class="po-md-7 po-lg-7">
+      <p class="po-font-subtitle po-xl-12 po-lg-12 po-md-12 po-sm-12">{{ item().name }}</p>
+
+      <div>
+        @for (item of genres(); track item) {
+          <po-tag class="po-mr-1" [p-value]="item" />
+        }
+      </div>
+
+      <div class="po-xl-12 po-lg-12 po-md-12 po-sm-12">
+        <p class="po-font-text-bold po-mt-2">Duração:</p>
+        <p class="po-font-text">{{ item().duration }}</p>
+      </div>
+
+      <div class="po-xl-12 po-lg-12 po-md-12 po-sm-12">
+        <p class="po-font-text-bold po-mt-2">Data de lançamento:</p>
+        <p class="po-font-text">{{ item().releaseDate | date }}</p>
+      </div>
+    </div>
+  </po-widget>
+}

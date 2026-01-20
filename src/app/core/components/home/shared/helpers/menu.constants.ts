@@ -153,6 +153,18 @@ export const MENU_ITEMS: PoMenuItem[] = [
     ]
   },
   {
+    label: 'InMemory API',
+    icon: 'an an-memory',
+    shortLabel: 'InMemory',
+    subItems: [
+      {
+        label: 'Filmes | Crud',
+        link: 'sample/in-memory/films',
+        shortLabel: 'Filmes`'
+      }
+    ]
+  },
+  {
     label: 'Pokédex | Master & Detail',
     link: 'sample/pokedex',
     shortLabel: 'Pokédex',
