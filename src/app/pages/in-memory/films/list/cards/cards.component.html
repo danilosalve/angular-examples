@@ -1,0 +1,11 @@
+@if (items()) {
+  @for (item of items(); track item.id) {
+    <app-card [item]="item" (editAction)="onClickEdit($event)" (viewAction)="onClickView($event)" />
+  } @empty {
+    <p class="po-font-text-bold">Nenhum dado encontrado</p>
+  }
+}
+
+@if (isLoading()) {
+  <po-loading-overlay />
+}

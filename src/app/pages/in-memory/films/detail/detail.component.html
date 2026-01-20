@@ -1,0 +1,39 @@
+<po-page-detail
+  p-title="Detalhes do Filme"
+  [p-breadcrumb]="breadcrumb"
+  (p-remove)="onFilmRemove()"
+  (p-edit)="onFilmEdit()"
+>
+  @if (film) {
+    <div class="po-md-5 po-lg-5">
+      @let image = film.image || 'assets/img/not-found-image.jpg';
+      <po-image [p-src]="image" p-loading="lazy" p-alt="Capa do filme" [p-height]="300" />
+    </div>
+
+    <div class="po-md-7 po-lg-7">
+      <p class="po-font-subtitle po-xl-12 po-lg-12 po-md-12 po-sm-12">{{ film.name }}</p>
+
+      <div>
+        @for (genre of film.genre.split(','); track genre) {
+          <po-tag class="po-mr-1" [p-value]="genre" />
+        }
+      </div>
+
+      <div class="po-xl-12 po-lg-12 po-md-12 po-sm-12">
+        <p class="po-font-text-bold po-mt-2">Duração:</p>
+        <p class="po-font-text">{{ film.duration }}</p>
+      </div>
+
+      <div class="po-xl-12 po-lg-12 po-md-12 po-sm-12">
+        <p class="po-font-text-bold po-mt-2">Data de lançamento:</p>
+        <p class="po-font-text">{{ film.releaseDate | date }}</p>
+      </div>
+    </div>
+  } @else {
+    <p class="po-font-text-bold">Nenhum dado encontrado</p>
+  }
+
+  @if (isLoading) {
+    <po-loading-overlay />
+  }
+</po-page-detail>

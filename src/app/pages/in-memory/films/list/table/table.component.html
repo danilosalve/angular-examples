@@ -1,0 +1,13 @@
+@if (items()) {
+  <po-table
+    [p-actions]="actions"
+    [p-items]="items()"
+    [p-loading]="isLoading()"
+    [p-height]="height"
+    [p-columns]="columns"
+    [p-draggable]="true"
+    [p-sort]="true"
+    p-container="shadow"
+    [p-hide-columns-manager]="true"
+  />
+}
