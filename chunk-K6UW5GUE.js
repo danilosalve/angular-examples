@@ -1,1 +1,0 @@
-import"./chunk-RTRJ3KFH.js";var o=[{path:"",title:"Rick & Morty | Lista de personagens",loadComponent:()=>import("./chunk-ODGJIQWQ.js").then(t=>t.CharactersListComponent)}];export{o as RICK_AND_MORTY_ROUTES};

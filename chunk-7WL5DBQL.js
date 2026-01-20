@@ -1,0 +1,1 @@
+import{A as a,E as i}from"./chunk-MDUUVM26.js";import{E as t,L as n,ia as o,p as r}from"./chunk-QL522RBE.js";var e=!1,d=s=>{let f=o(i);return s.hasChanges()&&!e?(e=confirm("Existem altera\xE7\xF5es pendentes de confirma\xE7\xE3o, deseja realmente sair?"),e&&f.events.pipe(t(m=>m instanceof a),n(1)).subscribe(()=>e=!1),r(e)):r(!0)};export{d as a};
