@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, inject, Injector, TemplateRef, viewChild, ViewContainerRef } from '@angular/core';
 import { PoButtonModule, PoInfoModule, PoPageModule } from '@po-ui/ng-components';
 import { DataServiceToken } from './shared/services/data.service';
@@ -7,7 +7,7 @@ import { HeroesCardComponent } from './heroes-card/heroes-card.component';
 
 @Component({
   selector: 'app-dynamic-component',
-  imports: [CommonModule, PoPageModule, PoButtonModule, PoInfoModule],
+  imports: [PoPageModule, PoButtonModule, PoInfoModule],
   templateUrl: './dynamic-component.component.html'
 })
 export class DynamicComponentComponent {

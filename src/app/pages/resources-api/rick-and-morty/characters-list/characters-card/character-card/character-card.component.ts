@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { PoWidgetModule, PoImageModule, PoBadgeModule, PoTagModule } from '@po-ui/ng-components';
 
@@ -22,7 +22,7 @@ const GENDER_VALUE = {
 
 @Component({
   selector: 'app-character-card',
-  imports: [CommonModule, PoBadgeModule, PoImageModule, PoTagModule, PoWidgetModule, ZoomOnHoverDirective],
+  imports: [PoBadgeModule, PoImageModule, PoTagModule, PoWidgetModule, ZoomOnHoverDirective],
   templateUrl: './character-card.component.html'
 })
 export class CharacterCardComponent implements OnInit {

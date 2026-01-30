@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { PoListViewModule, PoLoadingModule, PoPageModule, PoInfoModule, PoContainerModule } from '@po-ui/ng-components';
 
@@ -8,14 +8,13 @@ import { UserStore } from './shared/services/user.store';
 @Component({
   selector: 'app-signals-store',
   imports: [
-    CommonModule,
     SearchBoxComponent,
     PoPageModule,
     PoLoadingModule,
     PoListViewModule,
     PoInfoModule,
     PoContainerModule
-  ],
+],
   templateUrl: './signals-store.component.html',
   providers: [UserStore],
   host: {

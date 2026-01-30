@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CommonModule } from '@angular/common';
+
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { PoIconModule, PoInfoModule, PoInfoOrientation, PoTooltipModule, PoWidgetModule } from '@po-ui/ng-components';
 import { Subject, takeUntil } from 'rxjs';
@@ -9,7 +9,7 @@ import { IsDeveloperModeDirective } from '../../../../../shared/directives/is-de
 
 @Component({
   selector: 'app-coins',
-  imports: [CommonModule, PoWidgetModule, PoInfoModule, PoIconModule, PoTooltipModule, IsDeveloperModeDirective],
+  imports: [PoWidgetModule, PoInfoModule, PoIconModule, PoTooltipModule, IsDeveloperModeDirective],
   templateUrl: './coins.component.html'
 })
 export class CoinsComponent implements OnInit, OnDestroy {

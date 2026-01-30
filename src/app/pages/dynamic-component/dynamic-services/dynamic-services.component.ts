@@ -1,6 +1,6 @@
 import { Component, inject, Injector } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import {
   PoButtonModule,
   PoContainerModule,
@@ -19,7 +19,7 @@ type PaymentType = 'paypal' | 'pag-seguro' | 'pix';
 
 @Component({
   selector: 'app-dynamic-services',
-  imports: [CommonModule, PoPageModule, PoContainerModule, PoFieldModule, PoButtonModule, ReactiveFormsModule],
+  imports: [PoPageModule, PoContainerModule, PoFieldModule, PoButtonModule, ReactiveFormsModule],
   templateUrl: './dynamic-services.component.html'
 })
 export class DynamicServicesComponent extends BaseDetailComponent {

@@ -1,6 +1,6 @@
 import { PoBadgeModule, PoImageModule, PoTagModule, PoWidgetModule } from '@po-ui/ng-components';
 import { Component, input, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 import { Character } from '../../../shared/interfaces/character';
 import { ZoomOnHoverDirective } from '../../../../../../shared/directives/zoom-on-hover.directive';
@@ -21,7 +21,7 @@ const GENDER_VALUE = {
 
 @Component({
   selector: 'app-dragon-ball-card',
-  imports: [CommonModule, PoBadgeModule, PoImageModule, PoTagModule, PoWidgetModule, ZoomOnHoverDirective],
+  imports: [PoBadgeModule, PoImageModule, PoTagModule, PoWidgetModule, ZoomOnHoverDirective],
   templateUrl: './dragon-ball-card.component.html'
 })
 export class DragonBallCardComponent {
