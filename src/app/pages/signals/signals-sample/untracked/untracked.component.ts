@@ -6,14 +6,7 @@ import { debounceTime, map } from 'rxjs';
 
 @Component({
   selector: 'app-untracked',
-  imports: [
-    PoButtonModule,
-    PoFieldModule,
-    PoContainerModule,
-    ReactiveFormsModule,
-    PoIconModule,
-    PoTooltipModule
-],
+  imports: [PoButtonModule, PoFieldModule, PoContainerModule, ReactiveFormsModule, PoIconModule, PoTooltipModule],
   providers: [TitleCasePipe],
   templateUrl: './untracked.component.html'
 })

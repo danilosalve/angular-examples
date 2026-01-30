@@ -1,4 +1,3 @@
-
 import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { PoWidgetModule, PoImageModule, PoBadgeModule, PoTagModule } from '@po-ui/ng-components';
 

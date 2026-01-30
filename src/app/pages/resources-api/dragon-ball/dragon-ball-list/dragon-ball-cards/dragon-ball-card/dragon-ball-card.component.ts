@@ -1,7 +1,6 @@
 import { PoBadgeModule, PoImageModule, PoTagModule, PoWidgetModule } from '@po-ui/ng-components';
 import { Component, input, signal } from '@angular/core';
 
-
 import { Character } from '../../../shared/interfaces/character';
 import { ZoomOnHoverDirective } from '../../../../../../shared/directives/zoom-on-hover.directive';
 
