@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { PoMultiselectOption } from '@po-ui/ng-components';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,13 +10,11 @@ import { AWESOMEAPI_APIKEY } from '../helpers/currency.constants';
 })
 export class CurrencyQuotesService {
   readonly apiUrl = 'https://economia.awesomeapi.com.br/json/last';
-  readonly headers = new HttpHeaders({
-    'x-api-key': AWESOMEAPI_APIKEY
-  });
+  readonly params = new HttpParams().set('token', AWESOMEAPI_APIKEY);
   private readonly http = inject(HttpClient);
 
   getByCurrencyIds(currencyIds: string[]): Observable<CurrencyQuotes> {
-    return this.http.get<CurrencyQuotes>(`${this.apiUrl}/${currencyIds.join(',')}`, { headers: this.headers });
+    return this.http.get<CurrencyQuotes>(`${this.apiUrl}/${currencyIds.join(',')}`, { params: this.params });
   }
 
   getCurrencyOptions(): PoMultiselectOption[] {
